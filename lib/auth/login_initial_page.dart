@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:uado/main.dart';
+import 'email_login_page.dart';
 
 class InitialLoginPage extends StatefulWidget {
   const InitialLoginPage({Key? key}) : super(key: key);
@@ -124,7 +125,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 child: InkWell(
                   onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => MyHomePage(title: "Home")));
+                          builder: (context) => EmailLoginPage()));
 
                   },
                   child: Container(
