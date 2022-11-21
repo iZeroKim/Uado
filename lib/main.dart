@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uado/auth/login_initial_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Uado',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Home'),
+      home: const InitialLoginPage(),
     );
   }
 }
