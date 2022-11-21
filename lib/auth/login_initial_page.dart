@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:uado/main.dart';
 import 'email_login_page.dart';
+import 'register_page.dart';
 
 class InitialLoginPage extends StatefulWidget {
   const InitialLoginPage({Key? key}) : super(key: key);
@@ -73,12 +74,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                           width: 100.0,
                           height: 40.0,
                           child: Center(
-                            child: Image.asset(
-                              'assets/images/facebook.png',
-                              width: 40.0,
-                              height: 40.0,
-                              fit: BoxFit.cover,
-                            ),
+                            child: Text("f", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
                           )),
                     ),
                   ),
@@ -146,7 +142,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 children: [
                   const Text(
                     'Don\'t have an account? ',
-                    style: TextStyle(color: Colors.grey, fontSize: 18),
+                    style: TextStyle(color: Colors.black, fontSize: 18),
                     textAlign: TextAlign.left,
                   ),
                   TextButton(
@@ -157,7 +153,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => MyHomePage(title: "Home")));
+                          builder: (context) => RegisterPage()));
                     },
                   ),
                 ],
