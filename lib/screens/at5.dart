@@ -181,13 +181,8 @@ class _At5PageState extends State<At5Page> {
                           padding: EdgeInsets.only(right: 20.0),
                           child: TextField(
                             decoration: InputDecoration(
-                              labelText: "Eg 25000",
-                              labelStyle: TextStyle(color: Colors.black),
-                              suffix: Text(
-                                'CC',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 18),
-                              ),
+                              hintText: "Eg 25000",
+                              hintStyle: TextStyle(color: Colors.black),
                               filled: true,
                               border: InputBorder.none,
                               focusedBorder: OutlineInputBorder(
@@ -239,8 +234,8 @@ class _At5PageState extends State<At5Page> {
 
                   const TextField(
                     decoration: InputDecoration(
-                      labelText: "Eg 2500",
-                      labelStyle: TextStyle(color: Colors.black),
+                      hintText: "Eg 2500",
+                      hintStyle: TextStyle(color: Colors.black),
                       suffix: Text(
                         'CC',
                         style: TextStyle(color: Colors.grey, fontSize: 18),
