@@ -100,13 +100,57 @@ class _At7PageState extends State<At7Page> {
                   ),
 
                   // Mechanic List builder
+                  // single List item
+
+
+
 
                   const SizedBox(
                     height: 40.0,
                   ),
 
 
-
+                  Container(
+                    padding:EdgeInsets.all(10),
+                    child:Stack(
+                      children: <Widget>[
+                        Positioned(
+                          top: 30,
+                          left: 30,
+                          height:250,
+                          width: 250,
+                          child: Container(
+                            width: 150,
+                            height: 150,
+                            color: Colors.green[300],
+                            child: Text(
+                              'Green',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 130,
+                          left: 90,
+                          width: 250,
+                          height: 250,
+                          child: Container(
+                            width: 80,
+                            height: 80,
+                            color: Colors.purple[300],
+                            child: Text(
+                              'Purple',
+                              style: TextStyle(color: Colors.white,
+                                  fontSize: 20),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               )
             ],
