@@ -23,8 +23,8 @@ class _At4PageState extends State<At4Page> {
     DropdownMenuItem(child: Text("G63"),value: "g63"),
 
   ];
-  String selectedMaker = "Mercedes";
-  String selectedUnit = "G63";
+  String selectedMaker = "mercedes";
+  String selectedModel = "g63";
 
 
   @override
@@ -146,22 +146,24 @@ class _At4PageState extends State<At4Page> {
                           fontSize: 14,
                           fontWeight: FontWeight.bold)),
                   // Input dropdown
-                  const SizedBox(
-                    height: 20.0,
-                  ),
+                  DropdownButtonFormField(
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black, width: 2),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        border: InputBorder.none,
 
-                  const TextField(
-                    decoration: InputDecoration(
-                      hintText: "Mercedes",
-                      hintStyle: TextStyle(color: Colors.black),
-                      filled: true,
-                      border: InputBorder.none,
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Colors.black, width: 2.0),
+                        filled: true,
                       ),
-                    ),
-                  ),
+                      value: selectedMaker,
+                      onChanged: (String? newMaker) {
+                        setState(() {
+                          selectedMaker = newMaker!;
+                        });
+                      },
+                      items: makers),
+
 
                   const SizedBox(
                     height: 30.0,
@@ -177,18 +179,24 @@ class _At4PageState extends State<At4Page> {
                     height: 20.0,
                   ),
 
-                  const TextField(
-                            decoration: InputDecoration(
-                              hintText: "W205",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
-                              ),
-                            ),
-                          ),
+                  DropdownButtonFormField(
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black, width: 2),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        border: InputBorder.none,
+
+                        filled: true,
+                      ),
+                      value: selectedModel,
+                      onChanged: (String? newModel) {
+                        setState(() {
+                          selectedModel = newModel!;
+                        });
+                      },
+                      items: models),
+
 
 
                   const SizedBox(
