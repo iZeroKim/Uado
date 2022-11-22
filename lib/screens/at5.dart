@@ -24,6 +24,7 @@ class _At5PageState extends State<At5Page> {
     DropdownMenuItem(child: Text("Kilometers"),value: "kms"),
   ];
   int selectedYom = 2010;
+  String selectedUnit = "kms";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -174,8 +175,8 @@ class _At5PageState extends State<At5Page> {
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
-                      Flexible(
+                    children: <Widget>[
+                      const Flexible(
                         child: Padding(
                           padding: EdgeInsets.only(right: 20.0),
                           child: TextField(
@@ -199,19 +200,24 @@ class _At5PageState extends State<At5Page> {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              labelText: "Miles",
-                              labelStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: DropdownButtonFormField(
+                              decoration: InputDecoration(
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(color: Colors.black, width: 2),
+                                  borderRadius: BorderRadius.circular(2),
+                                ),
+                                border: InputBorder.none,
+
+                                filled: true,
                               ),
-                            ),
-                          ),
+                              value: selectedUnit,
+                              onChanged: (String? newUnit) {
+                                setState(() {
+                                  selectedUnit = newUnit!;
+                                });
+                              },
+                              items: units),
                         ),
                       ),
                     ],
