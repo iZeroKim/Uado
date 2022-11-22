@@ -9,6 +9,24 @@ class At4Page extends StatefulWidget {
 
 class _At4PageState extends State<At4Page> {
 
+  List<DropdownMenuItem<String>> makers = const [
+    DropdownMenuItem(child: Text("BMW"),value: "bmw"),
+    DropdownMenuItem(child: Text("Mercedes"),value: "mercedes"),
+    DropdownMenuItem(child: Text("Audi"),value: "audi"),
+    DropdownMenuItem(child: Text("Jeep"),value: "jeep"),
+
+  ];
+  List<DropdownMenuItem<String>> models = const [
+    DropdownMenuItem(child: Text("C180"),value: "c180"),
+    DropdownMenuItem(child: Text("C200"),value: "c200"),
+    DropdownMenuItem(child: Text("RS"),value: "rs"),
+    DropdownMenuItem(child: Text("G63"),value: "g63"),
+
+  ];
+  String selectedMaker = "Mercedes";
+  String selectedUnit = "G63";
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
