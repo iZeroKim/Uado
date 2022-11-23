@@ -17,7 +17,7 @@ class _At701PageState extends State<At701Page> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
         elevation: 1.0,
-        title: const Text("Add Car"),
+        title: const Text("Add Mechanic"),
       ),
       body: SafeArea(
         child: Padding(
