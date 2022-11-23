@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'at701.dart';
 
 class At7Page extends StatefulWidget {
   const At7Page({Key? key}) : super(key: key);
@@ -55,7 +56,12 @@ class _At7PageState extends State<At7Page> {
                           ),
                           SizedBox(height: 15.0,),
                           SimpleDialogOption(
-                            onPressed: () { print("Add mechanic"); },
+                            onPressed: () {
+                              print("Add mechanic");
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => At701Page()));
+
+                              },
                             child:const Text('Mechanic', style: TextStyle(fontSize: 16)),
                           ),
                           SimpleDialogOption(
