@@ -22,13 +22,51 @@ class _At7PageState extends State<At7Page> {
         actions: [
           IconButton(
             icon: const Icon(
-              Icons.add_circle_outline_rounded, color: Colors.white,
-              size: 30,),
+              Icons.add_circle_outline_rounded, color: Colors.white, size: 30,),
+            padding: EdgeInsets.only(right: 15.0),
             tooltip: 'Add Mechanic',
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Add mechanic')));
-            },
+            onPressed:() {
+                setState(() {});
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return SimpleDialog(
+                        title:const Text('WHAT DO YOU WANT TO ADD?', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.bold)),
+                        children: <Widget>[
+                          SizedBox(height: 5.0,),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 5.0,
+                              right: 5.0,
+                            ),
+                            child: Container(
+                              width: double.infinity,
+                              height: 0.5,
+                              padding: EdgeInsets.only(
+                                left: 5.0,
+                                right: 20.0,
+                              ),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(width: 1.0, color: Colors.grey),
+                                  )
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 15.0,),
+                          SimpleDialogOption(
+                            onPressed: () { print("Add mechanic"); },
+                            child:const Text('Mechanic', style: TextStyle(fontSize: 16)),
+                          ),
+                          SimpleDialogOption(
+                            onPressed: () { print("Add garage"); },
+                            child: const Text('Garage', style: TextStyle(fontSize: 16)),
+                          ),
+                        ],
+                      );
+                    });
+              },
+
           ),
         ],
       ),
@@ -108,7 +146,6 @@ class _At7PageState extends State<At7Page> {
 
                 // Mechanic List builder
                 // single List item
-
 
                 const SizedBox(
                   height: 10.0,
