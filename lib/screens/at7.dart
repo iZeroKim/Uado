@@ -106,51 +106,94 @@ class _At7PageState extends State<At7Page> {
 
 
                   const SizedBox(
-                    height: 40.0,
+                    height: 10.0,
                   ),
 
+                  Card(
+                    elevation: 2.0,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
 
-                  Container(
-                    padding:EdgeInsets.all(10),
-                    child:Stack(
-                      children: <Widget>[
-                        Positioned(
-                          top: 30,
-                          left: 30,
-                          height:250,
-                          width: 250,
-                          child: Container(
-                            width: 150,
-                            height: 150,
-                            color: Colors.green[300],
-                            child: Text(
-                              'Green',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20
+                          children: [
+                            const SizedBox(width: 10.0,),
+                            Card(
+                              child: Container(
+                                width: 105.0,
+                                height: 80.0,
+                                padding: EdgeInsets.all(0.0),
+                                child: Center(
+                                  child: Image.asset(
+                                    'assets/images/mechanic.png',
+                                    height: 80.0,
+                                    width: 105.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                            const SizedBox(width: 5.0,),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text("Ketan Car Point"),
+                                Text("2655 keystone avenue, Santa clara, \nCA - 95051", style: TextStyle(color: Colors.grey),)
+                              ],
+                            ),
+                          ],
                         ),
-                        Positioned(
-                          top: 130,
-                          left: 90,
-                          width: 250,
-                          height: 250,
+                        SizedBox(height: 5.0,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                          children: [
+                            Text("20 Km Away", style: TextStyle(color: Colors.grey),),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: const [
+                                Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(78, 199, 50, 1)),
+                                Text(" Provide Pickup"),
+
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: const [
+                                Icon(Icons.star, size: 18,color: Color.fromRGBO(78, 199, 50, 1)),
+                                Text(" 4.5 "),
+                                Text("(213)", style: TextStyle(color: Colors.grey),),
+
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5.0,),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 5.0,
+                            right: 5.0,
+                          ),
                           child: Container(
-                            width: 80,
-                            height: 80,
-                            color: Colors.purple[300],
-                            child: Text(
-                              'Purple',
-                              style: TextStyle(color: Colors.white,
-                                  fontSize: 20),
+                            width: double.infinity,
+                            height: 0.5,
+                            padding: EdgeInsets.only(
+                              left: 5.0,
+                              right: 20.0,
+                            ),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(width: 1.0, color: Colors.grey),
+                                )
                             ),
                           ),
                         ),
+                        SizedBox(height: 5.0,)
                       ],
                     ),
                   ),
+
+
                 ],
               )
             ],

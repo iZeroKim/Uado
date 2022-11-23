@@ -267,6 +267,7 @@ class _At5PageState extends State<At5Page> {
             SizedBox(
               height: 120.0,
               width: 120.0,
+              //Wrap with inkwell and navigate to next
               child: Card(
                   shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
