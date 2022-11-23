@@ -113,62 +113,71 @@ class _At7PageState extends State<At7Page> {
                     elevation: 2.0,
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                        InkWell(
+                          onTap: (){print("Mechanic");},
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
 
-                          children: [
-                            const SizedBox(width: 10.0,),
-                            Card(
-                              child: Container(
-                                width: 105.0,
-                                height: 80.0,
-                                padding: EdgeInsets.all(0.0),
-                                child: Center(
-                                  child: Image.asset(
-                                    'assets/images/mechanic.png',
-                                    height: 80.0,
-                                    width: 105.0,
-                                    fit: BoxFit.cover,
+                                children: [
+                                  const SizedBox(width: 10.0,),
+                                  Card(
+                                    child: Container(
+                                      width: 105.0,
+                                      height: 80.0,
+                                      padding: EdgeInsets.all(0.0),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/mechanic.png',
+                                          height: 80.0,
+                                          width: 105.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                  const SizedBox(width: 5.0,),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: const [
+                                      Text("Ketan Car Point", style: TextStyle(fontWeight: FontWeight.bold),),
+                                      Text("2655 keystone avenue, Santa clara, \nCA - 95051", style: TextStyle(color: Colors.grey),)
+                                    ],
+                                  ),
+                                ],
                               ),
-                            ),
-                            const SizedBox(width: 5.0,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text("Ketan Car Point"),
-                                Text("2655 keystone avenue, Santa clara, \nCA - 95051", style: TextStyle(color: Colors.grey),)
-                              ],
-                            ),
-                          ],
+                              SizedBox(height: 5.0,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                                children: [
+                                  Text("20 Km Away", style: TextStyle(color: Colors.grey),),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: const [
+                                      Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(78, 199, 50, 1)),
+                                      Text(" Provide Pickup"),
+
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: const [
+                                      Icon(Icons.star, size: 18,color: Color.fromRGBO(78, 199, 50, 1)),
+                                      Text(" 4.5 "),
+                                      Text("(213)", style: TextStyle(color: Colors.grey),),
+
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 5.0,),
+                            ],
+                          ),
                         ),
-                        SizedBox(height: 5.0,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-                          children: [
-                            Text("20 Km Away", style: TextStyle(color: Colors.grey),),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
-                                Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(78, 199, 50, 1)),
-                                Text(" Provide Pickup"),
 
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
-                                Icon(Icons.star, size: 18,color: Color.fromRGBO(78, 199, 50, 1)),
-                                Text(" 4.5 "),
-                                Text("(213)", style: TextStyle(color: Colors.grey),),
-
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 5.0,),
                         Padding(
                           padding: const EdgeInsets.only(
                             left: 5.0,
@@ -188,7 +197,57 @@ class _At7PageState extends State<At7Page> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 5.0,)
+                        SizedBox(height: 10.0,),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 10.0,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                            children: [
+                              InkWell(
+                                onTap:(){print("Message");},
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: const [
+                                    Icon(Icons.mail, size: 28, color: Color.fromRGBO(78, 199, 50, 1)),
+                                    Text(" Message"),
+
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 2.0,
+                                  right: 2.0,
+                                ),
+                                child: Container(
+                                  height: 30,
+                                  padding: EdgeInsets.only(
+                                    top: 2.0,
+                                    bottom: 2.0,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                        left: BorderSide(width: 1.1, color: Colors.grey),
+                                      )
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: (){print("Call");},
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: const [
+                                    Icon(Icons.call, size: 28,color: Color.fromRGBO(78, 199, 50, 1)),
+                                    Text(" Call"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
