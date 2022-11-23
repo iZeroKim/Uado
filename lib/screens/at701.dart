@@ -36,8 +36,9 @@ class _At701PageState extends State<At701Page> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Card(
-                        color: const Color.fromRGBO(78, 199, 50, 1),
+                        color: Colors.white,
                         shape: const StadiumBorder(),
+                        elevation: 0.0,
                         child: Container(
                           width: 120.0,
                           height: 120.0,
@@ -55,32 +56,90 @@ class _At701PageState extends State<At701Page> {
                   ),
 
                   const SizedBox(
-                    height: 40.0,
-                  ),
-
-                  const Text("FULL NAME : ",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold)),
-                  // Input dropdown
-                  const SizedBox(
                     height: 20.0,
                   ),
 
+                  //Or text
+                  const Text(
+                    'USER NAME',
+                    style: TextStyle(color: Colors.grey,),
+                    textAlign: TextAlign.left,
+                  ),
+                  // Note: Same code is applied for the TextFormField as well
+                  SizedBox(
+                    width: double.infinity,
+                    height: 35.0,
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder( //<-- SEE HERE
+                          borderSide: BorderSide(
+                              width: 1, color: Colors.grey),
+                        ),
+                      ),
+
+                    ),
+                  ),
                   const SizedBox(
-                    height: 30.0,
+                    height: 12.0,
                   ),
 
-                  const Text("Odometer Reading : ",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold)),
-                  // Input dropdown
-                  const SizedBox(
-                    height: 20.0,
+                  //Or text
+                  const Text(
+                    'EMAIL',
+                    style: TextStyle(color: Colors.grey,),
+                    textAlign: TextAlign.left,
                   ),
+                  // Note: Same code is applied for the TextFormField as well
+                  SizedBox(
+                    width: double.infinity,
+                    height: 35.0,
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder( //<-- SEE HERE
+                          borderSide: BorderSide(
+                              width: 1, color: Colors.grey),
+                        ),
+                      ),
+
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12.0,
+                  ),
+
+
+                  //Or text
+                  const Text(
+                    'MOBILE NUMBER',
+                    style: TextStyle(color: Colors.grey,),
+                    textAlign: TextAlign.left,
+                  ),
+                  // Note: Same code is applied for the TextFormField as well
+                  SizedBox(
+                    width: double.infinity,
+                    height: 35.0,
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder( //<-- SEE HERE
+                          borderSide: BorderSide(
+                              width: 1, color: Colors.grey),
+                        ),
+                      ),
+
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12.0,
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        'GENDER',
+                        style: TextStyle(color: Colors.grey,),
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  )
 
                 ],
               )
@@ -88,28 +147,17 @@ class _At701PageState extends State<At701Page> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
+      bottomNavigationBar: const BottomAppBar(
         elevation: 0.0,
-        color: Colors.white,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: const <Widget>[
-            SizedBox(
-              height: 120.0,
-              width: 120.0,
-              //Wrap with inkwell and navigate to next
-              child: Card(
-                  shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
-                  color: Color.fromRGBO(78, 199, 50, 1),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                    child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
-                  )
-              ),
-            ),
-          ],
+        color: Color.fromRGBO(78, 199, 50, 1),
+        child: SizedBox(
+          height: 55.0,
+          width: double.infinity,
+          //Wrap with inkwell and navigate to next
+
+            child: Center(
+                child: Text("Add", style: TextStyle(color: Colors.white, fontSize: 18))
+            )
         ),
       ),
     );
