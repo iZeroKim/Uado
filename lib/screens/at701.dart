@@ -185,6 +185,7 @@ class _At701PageState extends State<At701Page> {
                           height: 20.0,
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'GENDER',
@@ -192,10 +193,12 @@ class _At701PageState extends State<At701Page> {
                                   TextStyle(color: Colors.grey, fontSize: 14),
                               textAlign: TextAlign.left,
                             ),
-                            ListTile(
-                              title: Text('Female'),
-                              leading: SizedBox(
-                                child: Radio(
+                            SizedBox(
+                              width: 140,
+                              child: ListTile(
+                                title: Text('Female', style: TextStyle(fontSize: 14)),
+                                leading: Radio(
+                                  activeColor: Color.fromRGBO(78, 199, 50, 1),
                                   value: "Female",
                                   groupValue: _gender,
                                   onChanged: (String? value) {
@@ -204,6 +207,23 @@ class _At701PageState extends State<At701Page> {
                                     );
                                   },
                                 ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 140,
+                              child: ListTile(
+                                title: Text('Male', style: TextStyle(fontSize: 14)),
+                                leading: Radio(
+                                  activeColor: Color.fromRGBO(78, 199, 50, 1),
+                                  value: "Male",
+                                  groupValue: _gender,
+                                  onChanged: (String? value) {
+                                    setState((){ _gender = value;
+                                    print(_gender);}
+                                    );
+                                  },
+                                ),
+
                               ),
                             ),
                           ],
