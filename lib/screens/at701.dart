@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class At701Page extends StatefulWidget {
   const At701Page({Key? key}) : super(key: key);
@@ -8,6 +11,11 @@ class At701Page extends StatefulWidget {
 }
 
 class _At701PageState extends State<At701Page> {
+  ImagePicker picker = ImagePicker();
+  XFile? image;
+  var _image;
+  String avatar = 'assets/images/avatar.jpg';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,32 +49,57 @@ class _At701PageState extends State<At701Page> {
                             Stack(
                               alignment: Alignment.topRight,
                               children: [
-                                Container(
-                                  padding: const EdgeInsets.only(
-                                    top: 10.0,
-                                  ),
-                                  height: 140,
-                                  width: 140,
-                                  child: const CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/images/avatar.jpg'),
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(200)),
+                                  child: Container(
+                                    padding: const EdgeInsets.only(
+                                      top: 10.0,
+                                    ),
+                                    height: 140,
+                                    width: 140,
+                                    child: _image != null
+                                        ? Image.file(
+                                            _image,
+                                          )
+                                        : CircleAvatar(
+                                            backgroundImage: AssetImage(avatar),
+                                          ),
                                   ),
                                 ),
-                                Card(
-                                  color: const Color.fromRGBO(78, 199, 50, 1),
-                                  shape: const StadiumBorder(),
-                                  child: Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    child: const Center(
-                                      child: Center(
-                                          child: Icon(
-                                        Icons.add,
-                                        color: Colors.white,
-                                      )),
+                                InkWell(
+                                  onTap: () async {
+                                    print("Add tapped : START");
+                                    image = await picker.pickImage(
+                                        source: ImageSource.gallery);
+                                    print("Add tapped: MID");
+                                    setState(() {
+                                      //update UI
+                                      _image = File(image!.path);
+                                      avatar = image!.path;
+                                    });
+
+                                    image == null
+                                        ? Container()
+                                        : AssetImage('assets/images/car.png');
+                                    print("Add tapped: END");
+                                  },
+                                  child: Card(
+                                    color: const Color.fromRGBO(78, 199, 50, 1),
+                                    shape: const StadiumBorder(),
+                                    child: Container(
+                                      width: 40.0,
+                                      height: 40.0,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      child: const Center(
+                                        child: Center(
+                                            child: Icon(
+                                          Icons.add,
+                                          color: Colors.white,
+                                        )),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -274,7 +307,7 @@ class _At701PageState extends State<At701Page> {
                           children: [
                             Card(
                               child: Container(
-                                  color: Color.fromRGBO(239,239,239, 1),
+                                  color: Color.fromRGBO(239, 239, 239, 1),
                                   padding: EdgeInsets.all(5.0),
                                   child: Row(children: const [
                                     Center(
@@ -290,7 +323,8 @@ class _At701PageState extends State<At701Page> {
                                                 hintStyle: TextStyle(
                                                     color: Colors.black),
                                                 border: InputBorder.none,
-                                                focusedBorder: OutlineInputBorder(
+                                                focusedBorder:
+                                                    OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                       color: Colors.black,
                                                       width: 2.0),
@@ -315,7 +349,8 @@ class _At701PageState extends State<At701Page> {
                                                 hintStyle: TextStyle(
                                                     color: Colors.black),
                                                 border: InputBorder.none,
-                                                focusedBorder: OutlineInputBorder(
+                                                focusedBorder:
+                                                    OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                       color: Colors.black,
                                                       width: 2.0),
@@ -333,7 +368,7 @@ class _At701PageState extends State<At701Page> {
                             Text("TO", style: TextStyle(color: Colors.grey)),
                             Card(
                               child: Container(
-                                  color: Color.fromRGBO(239,239,239, 1),
+                                  color: Color.fromRGBO(239, 239, 239, 1),
                                   padding: EdgeInsets.all(5.0),
                                   child: Row(children: const [
                                     Center(
@@ -349,7 +384,8 @@ class _At701PageState extends State<At701Page> {
                                                 hintStyle: TextStyle(
                                                     color: Colors.black),
                                                 border: InputBorder.none,
-                                                focusedBorder: OutlineInputBorder(
+                                                focusedBorder:
+                                                    OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                       color: Colors.black,
                                                       width: 2.0),
@@ -374,7 +410,8 @@ class _At701PageState extends State<At701Page> {
                                                 hintStyle: TextStyle(
                                                     color: Colors.black),
                                                 border: InputBorder.none,
-                                                focusedBorder: OutlineInputBorder(
+                                                focusedBorder:
+                                                    OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                       color: Colors.black,
                                                       width: 2.0),
@@ -410,10 +447,10 @@ class _At701PageState extends State<At701Page> {
                       ),
                       decoration: BoxDecoration(
                           border: Border(
-                            bottom: BorderSide(
-                                width: 5.0,
-                                color: Color.fromRGBO(247, 247, 247, 1)),
-                          )),
+                        bottom: BorderSide(
+                            width: 5.0,
+                            color: Color.fromRGBO(247, 247, 247, 1)),
+                      )),
                     ),
                   ),
                 ],
@@ -429,8 +466,6 @@ class _At701PageState extends State<At701Page> {
             height: 55.0,
             width: double.infinity,
             //Wrap with inkwell and navigate to next
-
-
 
             child: Center(
                 child: Text("Add",
