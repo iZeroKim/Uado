@@ -21,125 +21,181 @@ class _At701PageState extends State<At701Page> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(0.0),
           child: ListView(
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 20.0,
-                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 20.0,
+                        ),
 
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Card(
-                        color: Colors.white,
-                        shape: const StadiumBorder(),
-                        elevation: 0.0,
-                        child: Container(
-                          width: 120.0,
-                          height: 120.0,
-                          child:  Center(
-                            child: Image.asset(
-                                  'assets/images/car.png',
-                                  height: 120.0,
-                                  width: 120.0,
-                                  fit: BoxFit.cover,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(
+                              alignment: Alignment.topRight,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.only(
+                                    top:10.0,
+                                  ),
+                                  height: 140,
+                                  width: 140,
+                                  child: const CircleAvatar(
+                                    backgroundImage: AssetImage('assets/images/avatar.jpg'),
+                                  ),
                                 ),
+                                Card(
+                                  color: const Color.fromRGBO(78, 199, 50, 1),
+                                  shape: const StadiumBorder(),
+                                  child: Container(
+                                    width: 40.0,
+                                    height: 40.0,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    child: const Center(
+                                      child: Center(
+                                          child: Icon(Icons.add, color: Colors.white,)),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+
+                        //Or text
+                        const Text(
+                          'USER NAME',
+                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          textAlign: TextAlign.left,
+                        ),
+                        // Note: Same code is applied for the TextFormField as well
+                        const SizedBox(
+                          width: double.infinity,
+                          height: 35.0,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              enabledBorder: UnderlineInputBorder( //<-- SEE HERE
+                                borderSide: BorderSide(
+                                    width: 1, color: Colors.grey),
+                              ),
+                            ),
+
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                        const SizedBox(
+                          height: 12.0,
+                        ),
 
+                        //Or text
+                        const Text(
+                          'EMAIL',
+                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          textAlign: TextAlign.left,
+                        ),
+                        // Note: Same code is applied for the TextFormField as well
+                        const SizedBox(
+                          width: double.infinity,
+                          height: 35.0,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              enabledBorder: UnderlineInputBorder( //<-- SEE HERE
+                                borderSide: BorderSide(
+                                    width: 1, color: Colors.grey),
+                              ),
+                            ),
+
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 12.0,
+                        ),
+
+
+                        //Or text
+                        const Text(
+                          'MOBILE NUMBER',
+                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          textAlign: TextAlign.left,
+                        ),
+                        // Note: Same code is applied for the TextFormField as well
+                        const SizedBox(
+                          width: double.infinity,
+                          height: 35.0,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              enabledBorder: UnderlineInputBorder( //<-- SEE HERE
+                                borderSide: BorderSide(
+                                    width: 1, color: Colors.grey),
+                              ),
+                            ),
+
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Row(
+                          children: [
+                            const Text(
+                              'GENDER',
+                              style: TextStyle(color: Colors.grey, fontSize: 12),
+                              textAlign: TextAlign.left,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 20.0,
+                      bottom: 20.0,
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(
+                        left: 5.0,
+                        right: 20.0,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(width: 5.0, color: Colors.grey),
+                          )
+                      ),
+                    ),
+                  ),
+                  const Text(
+                    "Details:",
+                    style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1),),
+                    textAlign: TextAlign.left,
+                  ),
                   const SizedBox(
                     height: 20.0,
                   ),
-
-                  //Or text
                   const Text(
-                    'USER NAME',
+                    'ADDRESS',
                     style: TextStyle(color: Colors.grey,),
                     textAlign: TextAlign.left,
                   ),
-                  // Note: Same code is applied for the TextFormField as well
-                  SizedBox(
-                    width: double.infinity,
-                    height: 35.0,
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder( //<-- SEE HERE
-                          borderSide: BorderSide(
-                              width: 1, color: Colors.grey),
-                        ),
-                      ),
-
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 12.0,
-                  ),
-
-                  //Or text
                   const Text(
-                    'EMAIL',
+                    '121 avenue street, 23 block-20134',
                     style: TextStyle(color: Colors.grey,),
                     textAlign: TextAlign.left,
                   ),
-                  // Note: Same code is applied for the TextFormField as well
-                  SizedBox(
-                    width: double.infinity,
-                    height: 35.0,
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder( //<-- SEE HERE
-                          borderSide: BorderSide(
-                              width: 1, color: Colors.grey),
-                        ),
-                      ),
-
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 12.0,
-                  ),
-
-
-                  //Or text
-                  const Text(
-                    'MOBILE NUMBER',
-                    style: TextStyle(color: Colors.grey,),
-                    textAlign: TextAlign.left,
-                  ),
-                  // Note: Same code is applied for the TextFormField as well
-                  SizedBox(
-                    width: double.infinity,
-                    height: 35.0,
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder( //<-- SEE HERE
-                          borderSide: BorderSide(
-                              width: 1, color: Colors.grey),
-                        ),
-                      ),
-
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 12.0,
-                  ),
-                  Row(
-                    children: [
-                      const Text(
-                        'GENDER',
-                        style: TextStyle(color: Colors.grey,),
-                        textAlign: TextAlign.left,
-                      ),
-                    ],
-                  )
 
                 ],
               )
