@@ -79,7 +79,7 @@ class _At701PageState extends State<At701Page> {
                         //Or text
                         const Text(
                           'USER NAME',
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey, fontSize: 14),
                           textAlign: TextAlign.left,
                         ),
                         // Note: Same code is applied for the TextFormField as well
@@ -103,7 +103,7 @@ class _At701PageState extends State<At701Page> {
                         //Or text
                         const Text(
                           'EMAIL',
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey, fontSize: 14),
                           textAlign: TextAlign.left,
                         ),
                         // Note: Same code is applied for the TextFormField as well
@@ -128,7 +128,7 @@ class _At701PageState extends State<At701Page> {
                         //Or text
                         const Text(
                           'MOBILE NUMBER',
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey, fontSize: 14),
                           textAlign: TextAlign.left,
                         ),
                         // Note: Same code is applied for the TextFormField as well
@@ -173,29 +173,77 @@ class _At701PageState extends State<At701Page> {
                       ),
                       decoration: BoxDecoration(
                           border: Border(
-                            bottom: BorderSide(width: 5.0, color: Colors.grey),
+                            bottom: BorderSide(width: 5.0, color: Color.fromRGBO(247,247,247,1)),
                           )
                       ),
                     ),
                   ),
-                  const Text(
-                    "Details:",
-                    style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1),),
-                    textAlign: TextAlign.left,
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Details:",
+                          style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1),),
+                          textAlign: TextAlign.left,
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        const Text(
+                          'ADDRESS',
+                          style: TextStyle(color: Colors.grey, fontSize: 14),
+                          textAlign: TextAlign.left,
+                        ),
+                        const SizedBox(
+                          height: 12.0,
+                        ),
+                        const Text(
+                          '121 avenue street, 23 block-20134',
+                          style: TextStyle(color: Colors.black,),
+                          textAlign: TextAlign.left,
+                        ),
+
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        InkWell(
+                          onTap:(){print("Message");},
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: const [
+                              Icon(Icons.add_location_alt_outlined, size: 28, color: Color.fromRGBO(78, 199, 50, 1)),
+                              Text(" Add location on map"),
+
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                      ],
+                    ),
                   ),
-                  const SizedBox(
-                    height: 20.0,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 0.0,
+                      bottom: 20.0,
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(
+                        left: 5.0,
+                        right: 20.0,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(width: 5.0, color: Color.fromRGBO(247,247,247,1)),
+                          )
+                      ),
+                    ),
                   ),
-                  const Text(
-                    'ADDRESS',
-                    style: TextStyle(color: Colors.grey,),
-                    textAlign: TextAlign.left,
-                  ),
-                  const Text(
-                    '121 avenue street, 23 block-20134',
-                    style: TextStyle(color: Colors.grey,),
-                    textAlign: TextAlign.left,
-                  ),
+
 
                 ],
               )
