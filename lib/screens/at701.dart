@@ -15,6 +15,7 @@ class _At701PageState extends State<At701Page> {
   XFile? image;
   var _image;
   String avatar = 'assets/images/avatar.jpg';
+  String? _gender = "Male";
 
   @override
   Widget build(BuildContext context) {
@@ -184,12 +185,26 @@ class _At701PageState extends State<At701Page> {
                           height: 20.0,
                         ),
                         Row(
-                          children: const [
+                          children: [
                             Text(
                               'GENDER',
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 14),
                               textAlign: TextAlign.left,
+                            ),
+                            ListTile(
+                              title: Text('Female'),
+                              leading: SizedBox(
+                                child: Radio(
+                                  value: "Female",
+                                  groupValue: _gender,
+                                  onChanged: (String? value) {
+                                    setState((){ _gender = value;
+                                    print(_gender);}
+                                    );
+                                  },
+                                ),
+                              ),
                             ),
                           ],
                         ),
