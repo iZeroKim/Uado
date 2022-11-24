@@ -8,7 +8,6 @@ class At701Page extends StatefulWidget {
 }
 
 class _At701PageState extends State<At701Page> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,12 +43,13 @@ class _At701PageState extends State<At701Page> {
                               children: [
                                 Container(
                                   padding: const EdgeInsets.only(
-                                    top:10.0,
+                                    top: 10.0,
                                   ),
                                   height: 140,
                                   width: 140,
                                   child: const CircleAvatar(
-                                    backgroundImage: AssetImage('assets/images/avatar.jpg'),
+                                    backgroundImage:
+                                        AssetImage('assets/images/avatar.jpg'),
                                   ),
                                 ),
                                 Card(
@@ -63,7 +63,10 @@ class _At701PageState extends State<At701Page> {
                                     ),
                                     child: const Center(
                                       child: Center(
-                                          child: Icon(Icons.add, color: Colors.white,)),
+                                          child: Icon(
+                                        Icons.add,
+                                        color: Colors.white,
+                                      )),
                                     ),
                                   ),
                                 ),
@@ -88,12 +91,12 @@ class _At701PageState extends State<At701Page> {
                           height: 35.0,
                           child: TextField(
                             decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder( //<-- SEE HERE
-                                borderSide: BorderSide(
-                                    width: 1, color: Colors.grey),
+                              enabledBorder: UnderlineInputBorder(
+                                //<-- SEE HERE
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.grey),
                               ),
                             ),
-
                           ),
                         ),
                         const SizedBox(
@@ -112,18 +115,17 @@ class _At701PageState extends State<At701Page> {
                           height: 35.0,
                           child: TextField(
                             decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder( //<-- SEE HERE
-                                borderSide: BorderSide(
-                                    width: 1, color: Colors.grey),
+                              enabledBorder: UnderlineInputBorder(
+                                //<-- SEE HERE
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.grey),
                               ),
                             ),
-
                           ),
                         ),
                         const SizedBox(
                           height: 12.0,
                         ),
-
 
                         //Or text
                         const Text(
@@ -137,22 +139,23 @@ class _At701PageState extends State<At701Page> {
                           height: 35.0,
                           child: TextField(
                             decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder( //<-- SEE HERE
-                                borderSide: BorderSide(
-                                    width: 1, color: Colors.grey),
+                              enabledBorder: UnderlineInputBorder(
+                                //<-- SEE HERE
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.grey),
                               ),
                             ),
-
                           ),
                         ),
                         const SizedBox(
                           height: 20.0,
                         ),
                         Row(
-                          children: [
-                            const Text(
+                          children: const [
+                            Text(
                               'GENDER',
-                              style: TextStyle(color: Colors.grey, fontSize: 12),
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 14),
                               textAlign: TextAlign.left,
                             ),
                           ],
@@ -163,7 +166,7 @@ class _At701PageState extends State<At701Page> {
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 20.0,
-                      bottom: 20.0,
+                      bottom: 10.0,
                     ),
                     child: Container(
                       width: double.infinity,
@@ -173,9 +176,10 @@ class _At701PageState extends State<At701Page> {
                       ),
                       decoration: BoxDecoration(
                           border: Border(
-                            bottom: BorderSide(width: 5.0, color: Color.fromRGBO(247,247,247,1)),
-                          )
-                      ),
+                        bottom: BorderSide(
+                            width: 5.0,
+                            color: Color.fromRGBO(247, 247, 247, 1)),
+                      )),
                     ),
                   ),
                   Padding(
@@ -185,7 +189,9 @@ class _At701PageState extends State<At701Page> {
                       children: [
                         const Text(
                           "Details:",
-                          style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1),),
+                          style: TextStyle(
+                            color: Color.fromRGBO(78, 199, 50, 1),
+                          ),
                           textAlign: TextAlign.left,
                         ),
                         const SizedBox(
@@ -201,23 +207,189 @@ class _At701PageState extends State<At701Page> {
                         ),
                         const Text(
                           '121 avenue street, 23 block-20134',
-                          style: TextStyle(color: Colors.black,),
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
                           textAlign: TextAlign.left,
                         ),
-
                         const SizedBox(
                           height: 20.0,
                         ),
                         InkWell(
-                          onTap:(){print("Message");},
+                          onTap: () {
+                            print("Message");
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: const [
-                              Icon(Icons.add_location_alt_outlined, size: 28, color: Color.fromRGBO(78, 199, 50, 1)),
+                              Icon(Icons.add_location_alt_outlined,
+                                  size: 28,
+                                  color: Color.fromRGBO(78, 199, 50, 1)),
                               Text(" Add location on map"),
-
                             ],
                           ),
+                        ),
+                        const SizedBox(
+                          height: 10.0,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 0.0,
+                      bottom: 10.0,
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(
+                        left: 5.0,
+                        right: 20.0,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border(
+                        bottom: BorderSide(
+                            width: 5.0,
+                            color: Color.fromRGBO(247, 247, 247, 1)),
+                      )),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Hours of Operation:",
+                          style: TextStyle(
+                            color: Color.fromRGBO(78, 199, 50, 1),
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Card(
+                              child: Container(
+                                  color: Color.fromRGBO(239,239,239, 1),
+                                  padding: EdgeInsets.all(5.0),
+                                  child: Row(children: const [
+                                    Center(
+                                      child: SizedBox(
+                                        width: 40,
+                                        child: Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.all(0.0),
+                                            child: TextField(
+                                              textAlign: TextAlign.center,
+                                              decoration: InputDecoration(
+                                                hintText: "8",
+                                                hintStyle: TextStyle(
+                                                    color: Colors.black),
+                                                border: InputBorder.none,
+                                                focusedBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(":"),
+                                    Center(
+                                      child: SizedBox(
+                                        width: 45,
+                                        child: Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.all(0.0),
+                                            child: TextField(
+                                              textAlign: TextAlign.center,
+                                              decoration: InputDecoration(
+                                                hintText: "00",
+                                                hintStyle: TextStyle(
+                                                    color: Colors.black),
+                                                border: InputBorder.none,
+                                                focusedBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(": "),
+                                    Text(" am  "),
+                                  ])),
+                            ),
+                            Text("TO", style: TextStyle(color: Colors.grey)),
+                            Card(
+                              child: Container(
+                                  color: Color.fromRGBO(239,239,239, 1),
+                                  padding: EdgeInsets.all(5.0),
+                                  child: Row(children: const [
+                                    Center(
+                                      child: SizedBox(
+                                        width: 40,
+                                        child: Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.all(0.0),
+                                            child: TextField(
+                                              textAlign: TextAlign.center,
+                                              decoration: InputDecoration(
+                                                hintText: "5",
+                                                hintStyle: TextStyle(
+                                                    color: Colors.black),
+                                                border: InputBorder.none,
+                                                focusedBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(":"),
+                                    Center(
+                                      child: SizedBox(
+                                        width: 45,
+                                        child: Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.all(0.0),
+                                            child: TextField(
+                                              textAlign: TextAlign.center,
+                                              decoration: InputDecoration(
+                                                hintText: "00",
+                                                hintStyle: TextStyle(
+                                                    color: Colors.black),
+                                                border: InputBorder.none,
+                                                focusedBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                      color: Colors.black,
+                                                      width: 2.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(": "),
+                                    Text(" pm  "),
+                                  ])),
+                            ),
+                          ],
                         ),
                         const SizedBox(
                           height: 20.0,
@@ -228,7 +400,7 @@ class _At701PageState extends State<At701Page> {
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 0.0,
-                      bottom: 20.0,
+                      bottom: 10.0,
                     ),
                     child: Container(
                       width: double.infinity,
@@ -238,13 +410,12 @@ class _At701PageState extends State<At701Page> {
                       ),
                       decoration: BoxDecoration(
                           border: Border(
-                            bottom: BorderSide(width: 5.0, color: Color.fromRGBO(247,247,247,1)),
-                          )
-                      ),
+                            bottom: BorderSide(
+                                width: 5.0,
+                                color: Color.fromRGBO(247, 247, 247, 1)),
+                          )),
                     ),
                   ),
-
-
                 ],
               )
             ],
@@ -255,14 +426,15 @@ class _At701PageState extends State<At701Page> {
         elevation: 0.0,
         color: Color.fromRGBO(78, 199, 50, 1),
         child: SizedBox(
-          height: 55.0,
-          width: double.infinity,
-          //Wrap with inkwell and navigate to next
+            height: 55.0,
+            width: double.infinity,
+            //Wrap with inkwell and navigate to next
+
+
 
             child: Center(
-                child: Text("Add", style: TextStyle(color: Colors.white, fontSize: 18))
-            )
-        ),
+                child: Text("Add",
+                    style: TextStyle(color: Colors.white, fontSize: 18)))),
       ),
     );
   }
