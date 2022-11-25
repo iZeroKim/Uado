@@ -568,7 +568,8 @@ class _At701PageState extends State<At701Page> {
                           },
                           child: const Chip(
                             backgroundColor: Colors.white,
-
+                            shape:StadiumBorder(side: BorderSide(color: Color.fromRGBO(78, 199, 50, 1),),
+                            ),
                             avatar: Icon(Icons.add, color: Color.fromRGBO(78, 199, 50, 1),),
                             label: Text("Add", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
 
