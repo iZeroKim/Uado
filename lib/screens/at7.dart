@@ -24,7 +24,7 @@ class _At7PageState extends State<At7Page> {
           IconButton(
             icon: const Icon(
               Icons.add_circle_outline_rounded, color: Colors.white, size: 30,),
-            padding: EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 15.0),
             tooltip: 'Add Mechanic',
             onPressed:() {
                 setState(() {});
@@ -34,7 +34,7 @@ class _At7PageState extends State<At7Page> {
                       return SimpleDialog(
                         title:const Text('WHAT DO YOU WANT TO ADD?', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.bold)),
                         children: <Widget>[
-                          SizedBox(height: 5.0,),
+                          const SizedBox(height: 5.0,),
                           Padding(
                             padding: const EdgeInsets.only(
                               left: 5.0,
@@ -43,23 +43,23 @@ class _At7PageState extends State<At7Page> {
                             child: Container(
                               width: double.infinity,
                               height: 0.5,
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                 left: 5.0,
                                 right: 20.0,
                               ),
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                   border: Border(
                                     bottom: BorderSide(width: 1.0, color: Colors.grey),
                                   )
                               ),
                             ),
                           ),
-                          SizedBox(height: 15.0,),
+                          const SizedBox(height: 15.0,),
                           SimpleDialogOption(
                             onPressed: () {
                               print("Add mechanic");
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => At701Page()));
+                                  builder: (context) => const At701Page()));
 
                               },
                             child:const Text('Mechanic', style: TextStyle(fontSize: 16)),
@@ -178,7 +178,7 @@ class _At7PageState extends State<At7Page> {
                                             child: Container(
                                               width: 105.0,
                                               height: 80.0,
-                                              padding: EdgeInsets.all(0.0),
+                                              padding: const EdgeInsets.all(0.0),
                                               child: Center(
                                                 child: Image.asset(
                                                   'assets/images/mechanic.png',
@@ -199,12 +199,12 @@ class _At7PageState extends State<At7Page> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 5.0,),
+                                      const SizedBox(height: 5.0,),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                                         children: [
-                                          Text("20 Km Away", style: TextStyle(color: Colors.grey),),
+                                          const Text("20 Km Away", style: TextStyle(color: Colors.grey),),
                                           Row(
                                             mainAxisAlignment: MainAxisAlignment.start,
                                             children: const [
@@ -224,7 +224,7 @@ class _At7PageState extends State<At7Page> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 5.0,),
+                                      const SizedBox(height: 5.0,),
                                     ],
                                   ),
                                 ),
@@ -238,18 +238,18 @@ class _At7PageState extends State<At7Page> {
                                   child: Container(
                                     width: double.infinity,
                                     height: 0.5,
-                                    padding: EdgeInsets.only(
+                                    padding: const EdgeInsets.only(
                                       left: 5.0,
                                       right: 20.0,
                                     ),
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         border: Border(
                                           bottom: BorderSide(width: 1.0, color: Colors.grey),
                                         )
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 10.0,),
+                                const SizedBox(height: 10.0,),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 10.0,
@@ -276,11 +276,11 @@ class _At7PageState extends State<At7Page> {
                                         ),
                                         child: Container(
                                           height: 30,
-                                          padding: EdgeInsets.only(
+                                          padding: const EdgeInsets.only(
                                             top: 2.0,
                                             bottom: 2.0,
                                           ),
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               border: Border(
                                                 left: BorderSide(width: 1.1, color: Colors.grey),
                                               )

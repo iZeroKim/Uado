@@ -16,7 +16,8 @@ class _At701PageState extends State<At701Page> {
   var _image;
   String avatar = 'assets/images/avatar.jpg';
   String? _gender = "Male";
-
+  List<String> _dynamicChips = ['Wheel alignment', 'Mechanic', 'Spare parts'];
+  var eCtrl = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -476,7 +477,7 @@ class _At701PageState extends State<At701Page> {
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 0.0,
-                      bottom: 10.0,
+                      bottom: 20.0,
                     ),
                     child: Container(
                       width: double.infinity,
@@ -492,6 +493,161 @@ class _At701PageState extends State<At701Page> {
                       )),
                     ),
                   ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Add Tags:",
+                          style: TextStyle(
+                            color: Color.fromRGBO(78, 199, 50, 1),
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Wrap(
+                          spacing: 6.0,
+                          runSpacing: 6.0,
+                          children: List<Widget>.generate(_dynamicChips.length, (int index) {
+                            return Chip(
+                              label: Text(_dynamicChips[index]),
+                              onDeleted: () {
+                                setState(() {
+                                  _dynamicChips.removeAt(index);
+                                });
+                              },
+                            );
+                          }),
+                        ),
+                        const SizedBox(height: 10, width: 10),
+                        InkWell(
+                          onTap: () {
+                            setState(() {});
+                            var chip = "";
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text('Add Tag'),
+                                    content: TextField(
+                                      onChanged: (value) {
+                                        setState(() {
+                                          chip = value;
+                                        });
+                                      },
+                                      controller: eCtrl,
+                                      decoration: InputDecoration(hintText: "Tag"),
+                                    ),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        child: Text('CANCEL', style: TextStyle(color:Colors.redAccent),),
+                                        onPressed: () {
+                                          setState(() {
+                                            Navigator.pop(context);
+                                          });
+                                        },
+                                      ),
+                                      TextButton(
+                                        child: Text('OK',style: TextStyle(color:Colors.lightGreenAccent),),
+                                        onPressed: () {
+                                          setState(() {
+
+                                            _dynamicChips.add(chip);
+                                            eCtrl.clear();
+                                            Navigator.pop(context);
+                                          });
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                });
+                          },
+                          child: const Chip(
+                            backgroundColor: Colors.white,
+
+                            avatar: Icon(Icons.add, color: Color.fromRGBO(78, 199, 50, 1),),
+                            label: Text("Add", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
+
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 0.0,
+                      bottom: 20.0,
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.only(
+                        left: 5.0,
+                        right: 20.0,
+                      ),
+                      decoration: const BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(
+                                width: 5.0,
+                                color: Color.fromRGBO(247, 247, 247, 1)),
+                          )),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Link Social Media:",
+                          style: TextStyle(
+                            color: Color.fromRGBO(78, 199, 50, 1),
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Card(
+
+                              shape: const StadiumBorder(),
+                              child: Container(
+                                width: 50.0,
+                                height: 50.0,
+                                child: const Center(
+                                  child: Center(
+                                      child: Icon(Icons.facebook),
+                                ),
+
+                              ),),
+                            ),
+                            Card(
+
+                              shape: const StadiumBorder(),
+                              child: Container(
+                                width: 50.0,
+                                height: 50.0,
+                                child: const Center(
+                                  child: Center(
+                                    child: Icon(Icons.facebook),
+                                  ),
+
+                                ),),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
                 ],
               )
             ],
