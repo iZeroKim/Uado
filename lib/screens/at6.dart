@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'at7.dart';
 
 class At6Page extends StatefulWidget {
   const At6Page({Key? key}) : super(key: key);
@@ -262,22 +263,30 @@ class _At6PageState extends State<At6Page> {
       bottomNavigationBar: BottomAppBar(
         elevation: 0.0,
         color: Colors.white,
+
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
-          children: const <Widget>[
+          children: <Widget>[
             SizedBox(
               height: 120.0,
               width: 120.0,
               // Wrap with inkwell and navigate to next
-              child: Card(
-                  shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
-                  color: Color.fromRGBO(78, 199, 50, 1),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                    child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
-                  )
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => At7Page()));
+
+                },
+                child: Card(
+                    shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
+                    color: Color.fromRGBO(78, 199, 50, 1),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 40.0, top: 40.0),
+                      child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
+                    )
+                ),
               ),
             ),
           ],

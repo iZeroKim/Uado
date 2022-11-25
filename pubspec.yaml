@@ -20,6 +20,7 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
   google_fonts: 2.2.0
+  flutter_native_splash: ^2.2.15
 
 flutter:
 
@@ -31,3 +32,7 @@ flutter:
   assets:
     - assets/images/
 
+flutter_native_splash:
+  image: assets/images/car.png
+  color: “42a5f5”
+  android_disable_fullscreen: true

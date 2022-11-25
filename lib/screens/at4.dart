@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'at5.dart';
 
 class At4Page extends StatefulWidget {
   const At4Page({Key? key}) : super(key: key);
@@ -249,20 +250,27 @@ class _At4PageState extends State<At4Page> {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
-          children: const <Widget>[
+          children: <Widget>[
             SizedBox(
               height: 120.0,
               width: 120.0,
 
               //Wrap with inkwell and navigate to next
-              child: Card(
-                  shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
-                  color: Color.fromRGBO(78, 199, 50, 1),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                    child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
-                  )
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => At5Page()));
+
+                },
+                child: Card(
+                    shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
+                    color: Color.fromRGBO(78, 199, 50, 1),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 40.0, top: 40.0),
+                      child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
+                    )
+                ),
               ),
             ),
           ],

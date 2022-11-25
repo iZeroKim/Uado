@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uado/auth/login_initial_page.dart';
-import 'screens/at702.dart';
+// import 'screens/at701.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  At702Page(),
+      home:  InitialLoginPage(),
     );
   }
 }

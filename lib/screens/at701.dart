@@ -114,7 +114,7 @@ class _At701PageState extends State<At701Page> {
 
                         //Or text
                         const Text(
-                          'USER NAME',
+                          'FULL NAME',
                           style: TextStyle(color: Colors.grey, fontSize: 14),
                           textAlign: TextAlign.left,
                         ),

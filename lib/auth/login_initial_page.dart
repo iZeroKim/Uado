@@ -20,7 +20,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // App logo
               const SizedBox(
@@ -40,27 +40,19 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
               Text(
                 "Welcome to Uado",
                 style: TextStyle(
-                    fontSize: 35, color: Color.fromRGBO(78, 199, 50, 1)),
+                    fontSize: 16, color: Color.fromRGBO(78, 199, 50, 1)),
               ),
 
               const SizedBox(
                 height: 20.0,
               ),
-              //Login with text
-              const Text(
-                'Login with',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-                textAlign: TextAlign.start,
-              ),
+
 
               const SizedBox(
                 height: 20.0,
               ),
               //Row to hold facebook and google buttons
-              Row(
+              Column(
                 children: [
                   Card(
                     shape: StadiumBorder(),
@@ -71,31 +63,44 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                         print("tapped");
                       },
                       child: Container(
-                          width: 100.0,
-                          height: 40.0,
+                        padding: EdgeInsets.all(10.0),
+                          width: double.infinity,
+                          height: 45.0,
                           child: Center(
-                            child: Text("f", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text("f ", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
+                                Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
+                                Text(" Facebook ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                              ],
+                            ),
                           )),
                     ),
                   ),
                   SizedBox(width: 20),
                   Card(
                     shape: StadiumBorder(),
-                    color: Colors.white,
+                    color: Colors.red,
                     elevation: 8,
                     child: new InkWell(
                       onTap: () {
                         print("tapped");
                       },
                       child: Container(
-                          width: 100.0,
-                          height: 40.0,
+                          padding: EdgeInsets.all(10.0),
+                          width: double.infinity,
+                          height: 50.0,
                           child: Center(
-                            child: Image.asset(
-                              'assets/images/google.png',
-                              width: 40.0,
-                              height: 40.0,
-                              fit: BoxFit.cover,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("G ", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
+                                Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
+                                Text(" Google ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                              ],
                             ),
                           )),
                     ),
@@ -125,13 +130,25 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
 
                   },
                   child: Container(
-                    width: 200.0,
+                    width: double.infinity,
                     height: 40.0,
-                    child: Center(
-                        child: Text(
-                      "EMAIL",
-                      style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
-                    )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(Icons.email, size: 28, color: Colors.white,),
+                              Text("  Sign in With ", style: TextStyle(color: Colors.white, fontSize: 18)),
+                              Text(
+                        "Email",
+                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                            ],
+                          )
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -139,11 +156,12 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 height: 20.0,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
                     'Don\'t have an account? ',
                     style: TextStyle(color: Colors.black, fontSize: 18),
-                    textAlign: TextAlign.left,
+
                   ),
                   TextButton(
                     child: Text(

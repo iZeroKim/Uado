@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'at701.dart';
+import 'at702.dart';
 
 class At7Page extends StatefulWidget {
   const At7Page({Key? key}) : super(key: key);
@@ -166,7 +167,11 @@ class _At7PageState extends State<At7Page> {
                             child: Column(
                               children: [
                                 InkWell(
-                                  onTap: (){print("Mechanic");},
+                                  onTap: (){
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) => At702Page()));
+
+                                  },
                                   child: Column(
                                     children: [
                                       Row(

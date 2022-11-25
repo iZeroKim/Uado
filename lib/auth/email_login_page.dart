@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uado/main.dart';
 import 'register_page.dart';
+import '../screens/at4.dart';
 
 class EmailLoginPage extends StatefulWidget {
   const EmailLoginPage({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
           padding: const EdgeInsets.all(30.0),
           child: ListView(
             children: [Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // App logo
                 const SizedBox(
@@ -46,7 +47,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                 Text(
                   "Welcome to Uado",
                   style: TextStyle(
-                      fontSize: 32, color: Color.fromRGBO(78, 199, 50, 1)),
+                      fontSize: 18, color: Color.fromRGBO(78, 199, 50, 1)),
                 ),
 
                 const SizedBox(
@@ -54,10 +55,13 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                 ),
 
                 //Or text
-                const Text(
-                  'EMAIL',
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
-                  textAlign: TextAlign.left,
+                SizedBox(
+                  width: double.infinity,
+                  child: const Text(
+                    'EMAIL',
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
                 // Note: Same code is applied for the TextFormField as well
                 const TextField(
@@ -72,10 +76,13 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                 const SizedBox(
                   height: 20.0,
                 ),
-                const Text(
-                  'PASSWORD',
-                  style: TextStyle(color: Colors.grey),
-                  textAlign: TextAlign.left,
+                SizedBox(
+                  width: double.infinity,
+                  child: const Text(
+                    'PASSWORD',
+                    style: TextStyle(color: Colors.grey),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
                 const TextField(
                   obscureText: true,
@@ -97,12 +104,12 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => MyHomePage(title: "Home")));
+                          builder: (context) => At4Page()));
 
                     },
                     child: Container(
-                      width: 180.0,
-                      height: 40.0,
+                      width: double.infinity,
+                      padding: EdgeInsets.all(10.0),
                       child: Center(
                           child: Text(
                             "LOGIN",
@@ -115,6 +122,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                   height: 20.0,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
                       'Don\'t have an account? ',
