@@ -17,49 +17,18 @@ class At702Page extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(
-                Icons.add_circle_outline_rounded, color: Colors.white, size: 30,),
+                Icons.star_border_outlined, color: Colors.white, size: 30,),
               padding: const EdgeInsets.only(right: 15.0),
-              tooltip: 'Add Mechanic',
-              onPressed:() {
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return SimpleDialog(
-                        title:const Text('WHAT DO YOU WANT TO ADD?', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.bold)),
-                        children: <Widget>[
-                          const SizedBox(height: 5.0,),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 5.0,
-                              right: 5.0,
-                            ),
-                            child: Container(
-                              width: double.infinity,
-                              height: 0.5,
-                              padding: const EdgeInsets.only(
-                                left: 5.0,
-                                right: 20.0,
-                              ),
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(width: 1.0, color: Colors.grey),
-                                  )
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 15.0,),
-                          SimpleDialogOption(
-                            onPressed: () {},
-                            child:const Text('Mechanic', style: TextStyle(fontSize: 16)),
-                          ),
-                          SimpleDialogOption(
-                            onPressed: () { print("Add garage"); },
-                            child: const Text('Garage', style: TextStyle(fontSize: 16)),
-                          ),
-                        ],
-                      );
-                    });
-              },
+              tooltip: 'Rate',
+              onPressed:() {},
+
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.share_outlined, color: Colors.white, size: 30,),
+              padding: const EdgeInsets.only(right: 15.0),
+              tooltip: 'Share',
+              onPressed:() {},
 
             ),
           ],
