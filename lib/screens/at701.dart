@@ -54,14 +54,15 @@ class _At701PageState extends State<At701Page> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(200)),
                                   child: Container(
-                                    padding: const EdgeInsets.only(
-                                      top: 10.0,
-                                    ),
                                     height: 140,
                                     width: 140,
                                     child: _image != null
-                                        ? Image.file(
-                                            _image,
+                                        ? ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(200.0),
+                                            child: Image.file(
+                                              _image,
+                                            ),
                                           )
                                         : CircleAvatar(
                                             backgroundImage: AssetImage(avatar),
@@ -80,9 +81,6 @@ class _At701PageState extends State<At701Page> {
                                       avatar = image!.path;
                                     });
 
-                                    image == null
-                                        ? Container()
-                                        : AssetImage('assets/images/car.png');
                                     print("Add tapped: END");
                                   },
                                   child: Card(
@@ -187,24 +185,27 @@ class _At701PageState extends State<At701Page> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               'GENDER',
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 14),
                               textAlign: TextAlign.left,
                             ),
                             SizedBox(
-                              width: 140,
+                              width: 150,
                               child: ListTile(
-                                title: Text('Female', style: TextStyle(fontSize: 14)),
+                                title: const Text('Female',
+                                    style: TextStyle(fontSize: 14)),
                                 leading: Radio(
-                                  activeColor: Color.fromRGBO(78, 199, 50, 1),
+                                  activeColor:
+                                      const Color.fromRGBO(78, 199, 50, 1),
                                   value: "Female",
                                   groupValue: _gender,
                                   onChanged: (String? value) {
-                                    setState((){ _gender = value;
-                                    print(_gender);}
-                                    );
+                                    setState(() {
+                                      _gender = value;
+                                      print(_gender);
+                                    });
                                   },
                                 ),
                               ),
@@ -212,18 +213,20 @@ class _At701PageState extends State<At701Page> {
                             SizedBox(
                               width: 140,
                               child: ListTile(
-                                title: Text('Male', style: TextStyle(fontSize: 14)),
+                                title: const Text('Male',
+                                    style: TextStyle(fontSize: 14)),
                                 leading: Radio(
-                                  activeColor: Color.fromRGBO(78, 199, 50, 1),
+                                  activeColor:
+                                      const Color.fromRGBO(78, 199, 50, 1),
                                   value: "Male",
                                   groupValue: _gender,
                                   onChanged: (String? value) {
-                                    setState((){ _gender = value;
-                                    print(_gender);}
-                                    );
+                                    setState(() {
+                                      _gender = value;
+                                      print(_gender);
+                                    });
                                   },
                                 ),
-
                               ),
                             ),
                           ],
@@ -238,11 +241,11 @@ class _At701PageState extends State<At701Page> {
                     ),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         left: 5.0,
                         right: 20.0,
                       ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           border: Border(
                         bottom: BorderSide(
                             width: 5.0,
@@ -310,11 +313,11 @@ class _At701PageState extends State<At701Page> {
                     ),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         left: 5.0,
                         right: 20.0,
                       ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           border: Border(
                         bottom: BorderSide(
                             width: 5.0,
@@ -342,8 +345,8 @@ class _At701PageState extends State<At701Page> {
                           children: [
                             Card(
                               child: Container(
-                                  color: Color.fromRGBO(239, 239, 239, 1),
-                                  padding: EdgeInsets.all(5.0),
+                                  color: const Color.fromRGBO(239, 239, 239, 1),
+                                  padding: const EdgeInsets.all(5.0),
                                   child: Row(children: const [
                                     Center(
                                       child: SizedBox(
@@ -400,11 +403,12 @@ class _At701PageState extends State<At701Page> {
                                     Text(" am  "),
                                   ])),
                             ),
-                            Text("TO", style: TextStyle(color: Colors.grey)),
+                            const Text("TO",
+                                style: TextStyle(color: Colors.grey)),
                             Card(
                               child: Container(
-                                  color: Color.fromRGBO(239, 239, 239, 1),
-                                  padding: EdgeInsets.all(5.0),
+                                  color: const Color.fromRGBO(239, 239, 239, 1),
+                                  padding: const EdgeInsets.all(5.0),
                                   child: Row(children: const [
                                     Center(
                                       child: SizedBox(
@@ -476,11 +480,11 @@ class _At701PageState extends State<At701Page> {
                     ),
                     child: Container(
                       width: double.infinity,
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         left: 5.0,
                         right: 20.0,
                       ),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           border: Border(
                         bottom: BorderSide(
                             width: 5.0,
