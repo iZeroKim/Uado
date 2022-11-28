@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uado/auth/login_initial_page.dart';
+import 'package:uado/providers/mechanic_provider.dart';
 import 'screens/at702.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +14,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Uado',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+
+    return
+      MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MechanicProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Uado',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home:  At702Page(),
       ),
-      home:  At702Page(),
     );
   }
 }
