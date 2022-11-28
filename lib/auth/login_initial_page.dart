@@ -58,7 +58,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                     shape: StadiumBorder(),
                     color: Colors.blue,
                     elevation: 8,
-                    child: new InkWell(
+                    child: InkWell(
                       onTap: () {
                         print("tapped");
                       },
@@ -70,7 +70,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Text("f ", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
                                 Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
                                 Text(" Facebook ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
@@ -84,7 +84,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                     shape: StadiumBorder(),
                     color: Colors.red,
                     elevation: 8,
-                    child: new InkWell(
+                    child: InkWell(
                       onTap: () {
                         print("tapped");
                       },
@@ -96,7 +96,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                              children: const [
                                 Text("G ", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
                                 Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
                                 Text(" Google ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
@@ -138,7 +138,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
+                            children: const [
                               Icon(Icons.email, size: 28, color: Colors.white,),
                               Text("  Sign in With ", style: TextStyle(color: Colors.white, fontSize: 18)),
                               Text(

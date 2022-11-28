@@ -117,7 +117,7 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                               // Returning SizedBox instead of a Container
                               return SizedBox(
                                 child: Center(
-                                  child: Text("Show nearest items"),
+                                  child: Text("Show all items"),
                                 ),
                               );
                             },
@@ -149,7 +149,7 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                               // Returning SizedBox instead of a Container
                               return SizedBox(
                                 child: Center(
-                                  child: Text("Show all items"),
+                                  child: Text("Show nearest items"),
                                 ),
                               );
                             },
