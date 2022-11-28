@@ -18,7 +18,10 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
   @override
   void initState() {
     super.initState();
-    Provider.of<MechanicProvider>(context).getAllMechanics();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<MechanicProvider>(context).getAllMechanics();
+    });
+
   }
 
   @override
