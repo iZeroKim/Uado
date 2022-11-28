@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'at7.dart';
+import 'mechanics_list.dart';
 
 class At6Page extends StatefulWidget {
   const At6Page({Key? key}) : super(key: key);
@@ -275,7 +275,7 @@ class _At6PageState extends State<At6Page> {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => At7Page()));
+                      builder: (context) => MechanicsListPage()));
 
                 },
                 child: Card(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/mechanic_provider.dart';
-import 'screens/at702.dart';
+import 'screens/mechanics_list.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:  At702Page(),
+        home:  MechanicsListPage(),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uado/main.dart';
 import 'login_initial_page.dart';
-import '../screens/at7.dart';
+import '../screens/mechanics_list.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -168,7 +168,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => At7Page()));
+                          builder: (context) => MechanicsListPage()));
 
                     },
                     child: Container(

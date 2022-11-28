@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uado/providers/mechanic_provider.dart';
 import 'at701.dart';
 import 'at702.dart';
 
-class At7Page extends StatefulWidget {
-  const At7Page({Key? key}) : super(key: key);
+class MechanicsListPage extends StatefulWidget {
+  const MechanicsListPage({Key? key}) : super(key: key);
 
   @override
-  State<At7Page> createState() => _At7PageState();
+  State<MechanicsListPage> createState() => _MechanicsListPageState();
 }
 
-class _At7PageState extends State<At7Page> {
+class _MechanicsListPageState extends State<MechanicsListPage> {
   final names = ["Samuel Kimani", "Allan Doe", "John Doe", "Samuel Kimani", "Allan Doe", "John Doe"];
+
+
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<MechanicProvider>(context).getAllMechanics();
+  }
 
   @override
   Widget build(BuildContext context) {
