@@ -170,7 +170,11 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
 
                 Consumer<MechanicProvider>(
                     builder: (context, value, child){
-
+                      if(value.isLoading){
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
                       return Expanded(
                           child: ListView.builder(
                               itemCount: value.mechanics.length,
