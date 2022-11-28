@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class At702Page extends StatelessWidget {
-  const At702Page({super.key});
+  At702Page({super.key});
+
+  List<String> _dynamicChips = ['Wheel alignment', 'Mechanic', 'Spare parts'];
 
   @override
   Widget build(BuildContext context) {
@@ -73,29 +75,29 @@ class At702Page extends StatelessWidget {
                               child:Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text("Location", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18),),
+                                  const Text("Location", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Row(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: const [
-                                        Expanded(child: Text("123 alex street, nr.alkapuri block, \n CA-230329", style: TextStyle(color: Colors.grey, fontSize: 18),)),
+                                        Expanded(child: Text("123 alex street, nr.alkapuri block, \n CA-230329", style: TextStyle(color: Colors.grey),)),
                                         Icon(Icons.file_upload_rounded, color:Color.fromRGBO(78, 199, 50, 1),)
                                       ],
                                     ),
                                   ),
 
                                   const SizedBox(height: 5.0,),
-                                  const Text("Operation Time", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18),),
+                                  const Text("Operation Time", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Row(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: const [
-                                        Expanded(child: Text("09:00 am - 05:00 pm", style: TextStyle(color: Colors.grey, fontSize: 18),)),
-                                        Text("Open", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18),)
+                                        Expanded(child: Text("09:00 am - 05:00 pm", style: TextStyle(color: Colors.grey,),)),
+                                        Text("Open", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),)
                                       ],
                                     ),
                                   ),
@@ -120,9 +122,20 @@ class At702Page extends StatelessWidget {
                             Padding(padding: const EdgeInsets.all(8.0),
                               child:Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text("Tags", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18),),
-                                  SizedBox(height: 15.0,),
+                                children: [
+                                  const Text("Tags", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
+                                  const SizedBox(height: 15.0,),
+                                  Padding(padding: const EdgeInsets.all(8.0),
+                                    child: Wrap(
+                                      spacing: 6.0,
+                                      runSpacing: 6.0,
+                                      children: List<Widget>.generate(_dynamicChips.length, (int index) {
+                                        return Chip(
+                                          label: Text(_dynamicChips[index]),
+                                        );
+                                      }),
+                                    ),
+                                  )
                                 ],
                               ),
                             )
@@ -144,9 +157,41 @@ class At702Page extends StatelessWidget {
                             Padding(padding: const EdgeInsets.all(8.0),
                               child:Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text("Connect with us on", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18),),
-                                  SizedBox(height: 15.0,),
+                                children: [
+                                  const Text("Connect with us on", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
+                                  const SizedBox(height: 15.0,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Card(
+
+                                        shape: const StadiumBorder(),
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: const Center(
+                                            child: Center(
+                                              child: Icon(Icons.facebook),
+                                            ),
+
+                                          ),),
+                                      ),
+                                      Card(
+
+                                        shape: const StadiumBorder(),
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: const Center(
+                                            child: Center(
+                                              child: Icon(Icons.facebook),
+                                            ),
+
+                                          ),),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 20.0)
                                 ],
                               ),
                             )
@@ -171,19 +216,15 @@ class At702Page extends StatelessWidget {
                                   padding: const EdgeInsets.all(18.0),
                                   child: Row(
                                     children: const [
-                                      Text("3.5/5", style: TextStyle(color: Colors.black, fontSize: 28),),
+                                      Text("3.5/5", style: TextStyle(color: Colors.black, fontSize: 24),),
                                     ],
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.all(0.0),
+                                  padding: const EdgeInsets.all(0.0),
                                   child: Container(
                                     width: double.infinity,
-                                    height: 0.5,
-                                    padding: const EdgeInsets.only(
-                                      left: 5.0,
-                                      right: 20.0,
-                                    ),
+                                    height: 0.3,
                                     decoration: const BoxDecoration(
                                         border: Border(
                                           bottom: BorderSide(width: 1.0, color: Colors.grey),
@@ -191,7 +232,16 @@ class At702Page extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 15.0,),
+                                const SizedBox(height: 15.0,),
+                                Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Row(
+                                    children: const [
+                                      Text("3.5/5", style: TextStyle(color: Colors.black, fontSize: 24),),
+                                    ],
+                                  ),
+                                ),
+
                               ],
                             ),
                           )
@@ -217,6 +267,7 @@ class At702Page extends StatelessWidget {
             ),
 
           ],
-        ));
+        )
+    );
   }
 }

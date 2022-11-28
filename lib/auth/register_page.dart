@@ -168,7 +168,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => MyHomePage(title: "Home")));
+                          builder: (context) => At7Page()));
 
                     },
                     child: Container(
@@ -200,7 +200,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => At7Page()));
+                            builder: (context) => InitialLoginPage()));
                       },
                     ),
                   ],
