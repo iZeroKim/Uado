@@ -19,4 +19,6 @@ class MechanicProvider extends ChangeNotifier{
     isLoading = false;
     notifyListeners();
   }
+
+
 }

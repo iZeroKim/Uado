@@ -107,14 +107,8 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                       InkWell(
                         onTap: (){
                           showModalBottomSheet<void>(
-                            // context and builder are
-                            // required properties in this widget
                             context: context,
                             builder: (BuildContext context) {
-                              // we set up a container inside which
-                              // we create center column and display text
-
-                              // Returning SizedBox instead of a Container
                               return SizedBox(
                                 child: Center(
                                   child: Text("Show all items"),
@@ -139,14 +133,8 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                       InkWell(
                         onTap: (){
                           showModalBottomSheet<void>(
-                            // context and builder are
-                            // required properties in this widget
                             context: context,
                             builder: (BuildContext context) {
-                              // we set up a container inside which
-                              // we create center column and display text
-
-                              // Returning SizedBox instead of a Container
                               return SizedBox(
                                 child: Center(
                                   child: Text("Show nearest items"),

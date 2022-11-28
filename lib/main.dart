@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/mechanic_provider.dart';
 import 'screens/mechanics_list.dart';
@@ -25,43 +26,14 @@ class MyApp extends StatelessWidget {
         title: 'Uado',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+            backwardsCompatibility: false, // 1
+            systemOverlayStyle: SystemUiOverlayStyle.light, // 2
+          ),
         ),
-        home:  InitialLoginPage(),
+        home:  const InitialLoginPage(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Home page.',
-            ),
-
-          ],
-        ),
-      ),
-    );
-  }
-}
