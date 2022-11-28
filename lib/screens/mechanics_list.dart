@@ -12,7 +12,7 @@ class MechanicsListPage extends StatefulWidget {
 }
 
 class _MechanicsListPageState extends State<MechanicsListPage> {
-
+  String? selected_sort_value = "popularity";
   @override
   void initState() {
     super.initState();
@@ -21,6 +21,8 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
     });
 
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -102,29 +104,35 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
 
                     children: [
-                      Card(
-                        color: const Color.fromRGBO(78, 199, 50, 1),
-                        shape: const StadiumBorder(),
-                        child: Container(
-                          width: 40.0,
-                          height: 40.0,
-                          child: const Center(
-                            child: Center(
-                                child: Icon(Icons.menu, color: Colors.white,)),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        color: Colors.white,
-                        shape: const StadiumBorder(),
-                        elevation: 0.0,
-                        child: Container(
-                          width: 60.0,
-                          height: 60.0,
-                          child: const Center(
-                            child: Center(
-                                child: Icon(Icons.pin_drop_rounded, color: Color
-                                    .fromRGBO(78, 199, 50, 1), size: 40,)),
+                      InkWell(
+                        onTap: (){
+                          showModalBottomSheet<void>(
+                            // context and builder are
+                            // required properties in this widget
+                            context: context,
+                            builder: (BuildContext context) {
+                              // we set up a container inside which
+                              // we create center column and display text
+
+                              // Returning SizedBox instead of a Container
+                              return SizedBox(
+                                child: Center(
+                                  child: Text("Show nearest items"),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Card(
+                          color: const Color.fromRGBO(78, 199, 50, 1),
+                          shape: const StadiumBorder(),
+                          child: Container(
+                            width: 40.0,
+                            height: 40.0,
+                            child: const Center(
+                              child: Center(
+                                  child: Icon(Icons.menu, color: Colors.white,)),
+                            ),
                           ),
                         ),
                       ),
@@ -140,13 +148,147 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
 
                               // Returning SizedBox instead of a Container
                               return SizedBox(
-                                height: 200,
                                 child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const <Widget>[
-                                      Text('Sort By'),
-                                    ],
+                                  child: Text("Show all items"),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Card(
+                          color: Colors.white,
+                          shape: const StadiumBorder(),
+                          elevation: 0.0,
+                          child: Container(
+                            width: 60.0,
+                            height: 60.0,
+                            child: const Center(
+                              child: Center(
+                                  child: Icon(Icons.pin_drop_rounded, color: Color
+                                      .fromRGBO(78, 199, 50, 1), size: 40,)),
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){
+                          showModalBottomSheet<void>(
+                            // context and builder are
+                            // required properties in this widget
+                            context: context,
+                            builder: (BuildContext context) {
+                              // we set up a container inside which
+                              // we create center column and display text
+
+                              // Returning SizedBox instead of a Container
+                              return SizedBox(
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children:  [
+                                          Text('  SORT BY', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+                                          SizedBox(height: 10,),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                              left: 5.0,
+                                              right: 5.0,
+                                            ),
+                                            child: Container(
+                                              width: double.infinity,
+                                              height: 0.5,
+                                              padding: const EdgeInsets.only(
+                                                left: 5.0,
+                                                right: 20.0,
+                                              ),
+                                              decoration: const BoxDecoration(
+                                                  border: Border(
+                                                    bottom: BorderSide(width: 1.0, color: Colors.grey),
+                                                  )
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 10,),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: ListTile(
+                                              title: const Text('Popularity',
+                                                  style: TextStyle(fontSize: 14)),
+                                              leading: Radio(
+                                                activeColor:
+                                                const Color.fromRGBO(78, 199, 50, 1),
+                                                value: "popularity",
+                                                groupValue: selected_sort_value,
+                                                onChanged: (String? value) {
+                                                  setState(() {
+                                                    selected_sort_value= value;
+                                                    print(selected_sort_value);
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: ListTile(
+                                              title: const Text('Price - Low to High',
+                                                  style: TextStyle(fontSize: 14)),
+                                              leading: Radio(
+                                                activeColor:
+                                                const Color.fromRGBO(78, 199, 50, 1),
+                                                value: "cheapest",
+                                                groupValue: selected_sort_value,
+                                                onChanged: (String? value) {
+                                                  setState(() {
+                                                    selected_sort_value = value;
+                                                    print(selected_sort_value);
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: ListTile(
+                                              title: const Text('Price - High to Low',
+                                                  style: TextStyle(fontSize: 14)),
+                                              leading: Radio(
+                                                activeColor:
+                                                const Color.fromRGBO(78, 199, 50, 1),
+                                                value: "expensive",
+                                                groupValue: selected_sort_value,
+                                                onChanged: (String? value) {
+                                                  setState(() {
+                                                    selected_sort_value = value;
+                                                    print(selected_sort_value);
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: ListTile(
+                                              title: const Text('Newest First',
+                                                  style: TextStyle(fontSize: 14)),
+                                              leading: Radio(
+                                                activeColor:
+                                                const Color.fromRGBO(78, 199, 50, 1),
+                                                value: "cheapest",
+                                                groupValue: selected_sort_value,
+                                                onChanged: (String? value) {
+                                                  setState(() {
+                                                    selected_sort_value = value;
+                                                    print(selected_sort_value);
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+
                                   ),
                                 ),
                               );
@@ -169,17 +311,37 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                           ),
                         ),
                       ),
-                      Card(
-                        color: Colors.white,
-                        shape: const StadiumBorder(),
-                        elevation: 0.0,
-                        child: Container(
-                          width: 60.0,
-                          height: 60.0,
-                          child: const Center(
-                            child: Center(
-                                child: Icon(Icons.filter_alt, color: Color
-                                    .fromRGBO(78, 199, 50, 1), size: 40,)),
+                      InkWell(
+                        onTap: (){
+                          showModalBottomSheet<void>(
+                            // context and builder are
+                            // required properties in this widget
+                            context: context,
+                            builder: (BuildContext context) {
+                              // we set up a container inside which
+                              // we create center column and display text
+
+                              // Returning SizedBox instead of a Container
+                              return SizedBox(
+                                child: Center(
+                                  child: Text("Apply filters on items"),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Card(
+                          color: Colors.white,
+                          shape: const StadiumBorder(),
+                          elevation: 0.0,
+                          child: Container(
+                            width: 60.0,
+                            height: 60.0,
+                            child: const Center(
+                              child: Center(
+                                  child: Icon(Icons.filter_alt, color: Color
+                                      .fromRGBO(78, 199, 50, 1), size: 40,)),
+                            ),
                           ),
                         ),
                       ),
@@ -242,8 +404,8 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
                                                 Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children:  [
-                                                    Text(mechanic.name, style: TextStyle(fontWeight: FontWeight.bold),),
-                                                    Text(mechanic.address, style: TextStyle(color: Colors.grey),)
+                                                    Text(mechanic.name, style: const TextStyle(fontWeight: FontWeight.bold),),
+                                                    Text(mechanic.address, style: const TextStyle(color: Colors.grey),)
                                                   ],
                                                 ),
                                               ],
