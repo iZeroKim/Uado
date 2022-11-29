@@ -21,10 +21,12 @@ class _DashBoardState extends State<DashBoard> {
     AppService garages = AppService(name: "Garages", imagePath: "assets/images/mechanic.png", link: MechanicsListPage());
     AppService records = AppService(name: "Service records", imagePath: "assets/images/mechanic.png");
     AppService chat = AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
+    AppService trips = AppService(name: "Trips", imagePath: "assets/images/mechanic.png");
     AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/mechanic.png");
     AppService parts = AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
     AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/mechanic.png");
     AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
+
     List<AppService> services = [garages, records, chat, insurance, parts, clubs, buy];
     return Scaffold(
       backgroundColor: Colors.white,
@@ -59,7 +61,7 @@ class _DashBoardState extends State<DashBoard> {
                     color: const Color.fromRGBO(246,248,250,1),
                     elevation: 2,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      padding: const EdgeInsets.only(top: 20.0, bottom: 20.0, right: 10.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +79,7 @@ class _DashBoardState extends State<DashBoard> {
                           ButtonBar(
                             children: <Widget>[
                               SizedBox(
-                                  height:40,width: 40,
+                                  height:40,width: 60,
                                   child:Center(
                                     child: ElevatedButton(
                                       onPressed: (){},
