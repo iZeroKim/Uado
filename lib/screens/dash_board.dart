@@ -18,20 +18,19 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   Widget build(BuildContext context) {
-    AppService garages = AppService(name: "Garages", imagePath: "assets/images/avatar", link: MechanicsListPage());
-    AppService records = AppService(name: "Service records", imagePath: "assets/images/avatar");
-    AppService chat = AppService(name: "Chat", imagePath: "assets/images/avatar");
-    AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/avatar");
-    AppService parts = AppService(name: "Buy part", imagePath: "assets/images/avatar");
-    AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/avatar");
-    AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/avatar");
+    AppService garages = AppService(name: "Garages", imagePath: "assets/images/mechanic.png", link: MechanicsListPage());
+    AppService records = AppService(name: "Service records", imagePath: "assets/images/mechanic.png");
+    AppService chat = AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
+    AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/mechanic.png");
+    AppService parts = AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
+    AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/mechanic.png");
+    AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
     List<AppService> services = [garages, records, chat, insurance, parts, clubs, buy];
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        foregroundColor: Colors.black,
         title: const Text("Hello Kim"),
+
       ),
       body: ListView(
         children: [
@@ -43,11 +42,12 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   const SizedBox(height: 50.0),
                   const Text(
-                    " Mercedes C200",
+                    "Mercedes C200",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Color
+                            .fromRGBO(78, 199, 50, 1),
                         fontWeight: FontWeight.bold,
-                        fontSize: 38),
+                        fontSize: 34),
                   ),
                   const SizedBox(height: 15.0),
                   Card(
@@ -57,32 +57,35 @@ class _DashBoardState extends State<DashBoard> {
                     color: const Color.fromRGBO(246,248,250,1),
                     elevation: 2,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      padding: const EdgeInsets.symmetric(vertical: 20.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           const ListTile(
-                            title: Text('Specifications',
-                                style: TextStyle(
-                                    fontSize: 18.0, fontWeight: FontWeight.bold)),
-                            subtitle: Text(
-                              '2010 Model \nRecently services',
+                            title: Padding(
+                              padding: EdgeInsets.only(bottom: 8.0),
+                              child: Text('Specifications',
+                                  style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18.0, fontWeight: FontWeight.bold)),
                             ),
+                            subtitle: Text(
+                              '2010 Model \nRecently services', style: TextStyle(color: Colors.black),),
                           ),
                           ButtonBar(
                             children: <Widget>[
                               SizedBox(
-                                  height:50,width: 50,
-                                  child:ElevatedButton(
-                                    onPressed: (){},
-                                    child: const Icon(Icons.navigate_next, color: Colors.white,),
-                                    style: ElevatedButton.styleFrom(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(50),
-                                          //border radius equal to or more than 50% of width
-                                        )
+                                  height:40,width: 40,
+                                  child:Center(
+                                    child: ElevatedButton(
+                                      onPressed: (){},
+                                      child: const Icon(Icons.navigate_next, color: Colors.white,),
+                                      style: ElevatedButton.styleFrom(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(50),
+                                            //border radius equal to or more than 50% of width
+                                          )
+                                      ),
                                     ),
                                   )
                               )
@@ -96,44 +99,52 @@ class _DashBoardState extends State<DashBoard> {
                   const Text(
                     " Choose the service you require",
                     style: TextStyle(
-                        color: Colors.black,fontSize: 18.0, fontWeight: FontWeight.bold),
+                        color: Color.fromRGBO(78, 199, 50, 1),fontSize: 18.0, fontWeight: FontWeight.bold),
                   ),
 
                     GridView.builder(
-                      itemCount: 6,
+                      itemCount: services.length,
                       shrinkWrap: true,
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 8.0 / 10.0,
-                        crossAxisCount: 3,
+                        childAspectRatio: 10.0 / 10.0,
+                        crossAxisCount: 2,
                       ),
                       itemBuilder: (BuildContext context, int index) {
+                        var service = services[index];
                         return Padding(
                             padding: const EdgeInsets.all(5),
-                            child: Card(
-                                semanticContainer: true,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                clipBehavior: Clip.antiAlias,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Expanded(
-                                        child: Container(
-                                          decoration: const BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage('assets/images/mechanic.png'),
-                                                fit: BoxFit.fill),
-                                          ),
-                                        )),
-                                    const Padding(
-                                        padding: EdgeInsets.all(10.0),
-                                        child: Text(
-                                          "Garages",
-                                          style: TextStyle(fontSize: 18.0),
-                                        )),
-                                  ],
-                                )));
+                            child: InkWell(
+                              onTap: (){
+                                service.link != null ?
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => service.link!))
+                                    : print("Null");
+                              },
+                              child: Card(
+                                  semanticContainer: true,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  clipBehavior: Clip.antiAlias,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Expanded(
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(service.imagePath),
+                                                  fit: BoxFit.fill),
+                                            ),
+                                          )),
+                                      Padding(
+                                          padding: EdgeInsets.all(10.0),
+                                          child: Text(
+                                            service.name,
+                                          )),
+                                    ],
+                                  )),
+                            ));
                       },
                     ),
                   const SizedBox(height: 50,)
