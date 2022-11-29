@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 class At702Page extends StatelessWidget {
   At702Page({super.key});
 
   List<String> _dynamicChips = ['Wheel alignment', 'Mechanic', 'Spare parts'];
+  double _rating = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +13,7 @@ class At702Page extends StatelessWidget {
     double avatar_top = MediaQuery.of(context).size.height * 0.17;
     double avatar_left = MediaQuery.of(context).size.width * 0.4;
     double card_top = MediaQuery.of(context).size.height * 0.23;
+
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -220,29 +223,15 @@ class At702Page extends StatelessWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
-                                        Card(
-                                          shape: const StadiumBorder(),
-                                          child: Container(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: const Center(
-                                              child: Center(
-                                                child: Icon(Icons.facebook),
-                                              ),
-                                            ),
-                                          ),
+                                        GFIconButton(
+                                          onPressed: (){},
+                                          icon: Icon(Icons.facebook_outlined),
+                                          shape: GFIconButtonShape.circle,
                                         ),
-                                        Card(
-                                          shape: const StadiumBorder(),
-                                          child: Container(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: const Center(
-                                              child: Center(
-                                                child: Icon(Icons.facebook),
-                                              ),
-                                            ),
-                                          ),
+                                        GFIconButton(
+                                          onPressed: (){},
+                                          icon: Icon(Icons.whatsapp),
+                                          shape: GFIconButtonShape.circle,
                                         ),
                                       ],
                                     ),
@@ -272,12 +261,44 @@ class At702Page extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(18.0),
                                     child: Row(
-                                      children: const [
+                                      children: [
                                         Text(
                                           "3.5/5",
                                           style: TextStyle(
                                               color: Colors.black, fontSize: 24),
+                                          textAlign: TextAlign.start,
                                         ),
+                                        SizedBox(width: 20,),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            //Rating
+                                            Row(
+                                              children: [
+                                                GFRating(
+                                                  color: Color.fromRGBO(255,191,27,1),
+                                                  borderColor: Color.fromRGBO(255,191,27,1),
+                                                  size: 20,
+                                                  value: _rating,
+                                                  onChanged: (value) {
+                                                    // setState(() {
+                                                    //   _rating = value;
+                                                    // });
+                                                  },
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(height: 5.0,),
+                                            //Rating and review row
+                                            Row(
+                                              children: const [
+                                                Text("21 Rating"),
+                                                Text(" , "),
+                                                Text("3 Reviews")
+                                              ],
+                                            )
+                                          ],
+                                        )
                                       ],
                                     ),
                                   ),
