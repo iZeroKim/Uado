@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/mechanic_provider.dart';
+import 'package:uado/screens/dash_board.dart';
 import 'screens/mechanics_list.dart';
 import 'package:provider/provider.dart';
 
@@ -25,13 +26,15 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Uado',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.lightGreen,
           appBarTheme: const AppBarTheme(
             backwardsCompatibility: false, // 1
             systemOverlayStyle: SystemUiOverlayStyle.light, // 2
           ),
         ),
-        home:  const InitialLoginPage(),
+
+        //home:  const InitialLoginPage(),
+        home: const DashBoard(),
       ),
     );
   }
