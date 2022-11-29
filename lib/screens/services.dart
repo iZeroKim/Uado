@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);
@@ -39,12 +40,12 @@ class _ServicesState extends State<Services> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 "Mercedes C200",
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 18),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15.0,
                               ),
                               Row(
@@ -59,7 +60,7 @@ class _ServicesState extends State<Services> {
                                       Text("Car mileage", style: TextStyle(color: Colors.grey),)
                                     ],
                                   ),
-                                  SizedBox(width: 70,),
+                                  const SizedBox(width: 70,),
                                   Padding(
                                     padding: const EdgeInsets.only(right: 20),
                                     child: Column(
@@ -73,7 +74,8 @@ class _ServicesState extends State<Services> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 15,)
+                                  const SizedBox(height: 15,),
+
 
                                 ],
                               )
@@ -81,6 +83,42 @@ class _ServicesState extends State<Services> {
                           ),
                         )
                       ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: InkWell(
+                    onTap: (){
+                      DatePicker.showDatePicker(context,
+                          showTitleActions: true,
+                          minTime: DateTime.now(),
+                          maxTime: DateTime(2030, 1, 1 ),
+                          onChanged: (date) {
+                            print('change $date');
+                          },
+                          onConfirm: (date) {
+                            print('confirm $date');
+                          }, currentTime: DateTime.now(), locale: LocaleType.en);
+                    },
+                    child: Card(
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: const [
+                            Icon(Icons.calendar_month_outlined, color: Color.fromRGBO(78, 199, 50, 1),),
+                            SizedBox(width:10.0),
+                            Text(
+                              "Schedule Service Date",
+                              style: TextStyle(
+                                  color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
