@@ -35,10 +35,10 @@ class _ServicesState extends State<Services> {
                           width: double.infinity,
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 "Mercedes C200",
                                 style: TextStyle(
@@ -47,7 +47,36 @@ class _ServicesState extends State<Services> {
                               SizedBox(
                                 height: 15.0,
                               ),
-                              SizedBox(height: 20.0)
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: const [
+                                      Text("Last Service", style: TextStyle(color: Colors.grey),),
+                                      SizedBox(height: 5.0, ),
+                                      Text("Insurance Expiry", style: TextStyle(color: Colors.grey),),
+                                      SizedBox(height: 5.0,),
+                                      Text("Car mileage", style: TextStyle(color: Colors.grey),)
+                                    ],
+                                  ),
+                                  SizedBox(width: 70,),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: const [
+                                        Text("29, Nov 2022", style: TextStyle(fontWeight: FontWeight.bold),),
+                                        SizedBox(height: 5.0,),
+                                        Text("30, Jan 2023", style: TextStyle(fontWeight: FontWeight.bold)),
+                                        SizedBox(height: 5.0,),
+                                        Text("12,000 km", style: TextStyle(fontWeight: FontWeight.bold))
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 15,)
+
+                                ],
+                              )
                             ],
                           ),
                         )
