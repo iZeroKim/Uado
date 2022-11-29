@@ -9,6 +9,7 @@ class Services extends StatefulWidget {
 }
 
 class _ServicesState extends State<Services> {
+  DateTime? _date;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +53,20 @@ class _ServicesState extends State<Services> {
                                 children: [
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: const [
-                                      Text("Last Service", style: TextStyle(color: Colors.grey),),
-                                      SizedBox(height: 5.0, ),
-                                      Text("Insurance Expiry", style: TextStyle(color: Colors.grey),),
-                                      SizedBox(height: 5.0,),
-                                      Text("Car mileage", style: TextStyle(color: Colors.grey),)
+                                    children:  [
+                                      const Text("Last Service", style: TextStyle(color: Colors.grey),),
+                                      const SizedBox(height: 5.0, ),
+                                      if (_date != null)Column(
+                                        children: const [
+                                          ( Text("Last Service", style: TextStyle(color: Colors.grey),)),
+                                          SizedBox(height: 5.0, ),
+                                        ],
+                                      )
+                                      else
+                                        Container(),
+                                      const Text("Insurance Expiry", style: TextStyle(color: Colors.grey),),
+                                      const SizedBox(height: 5.0,),
+                                      const Text("Car mileage", style: TextStyle(color: Colors.grey),)
                                     ],
                                   ),
                                   const SizedBox(width: 70,),
@@ -65,12 +74,20 @@ class _ServicesState extends State<Services> {
                                     padding: const EdgeInsets.only(right: 20),
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: const [
-                                        Text("29, Nov 2022", style: TextStyle(fontWeight: FontWeight.bold),),
-                                        SizedBox(height: 5.0,),
-                                        Text("30, Jan 2023", style: TextStyle(fontWeight: FontWeight.bold)),
-                                        SizedBox(height: 5.0,),
-                                        Text("12,000 km", style: TextStyle(fontWeight: FontWeight.bold))
+                                      children: [
+                                        const Text("29, Nov 2022", style: TextStyle(fontWeight: FontWeight.bold),),
+                                        const SizedBox(height: 5.0,),
+                                        if (_date != null)Column(
+                                          children: [
+                                            Text(_date!.toString(), style: const TextStyle(color: Colors.grey),),
+                                            const SizedBox(height: 5.0, ),
+                                          ],
+                                        )
+                                        else
+                                          Container(),
+                                        const Text("30, Jan 2023", style: TextStyle(fontWeight: FontWeight.bold)),
+                                        const SizedBox(height: 5.0,),
+                                        const Text("12,000 km", style: TextStyle(fontWeight: FontWeight.bold))
                                       ],
                                     ),
                                   ),
@@ -96,10 +113,10 @@ class _ServicesState extends State<Services> {
                           minTime: DateTime.now(),
                           maxTime: DateTime(2030, 1, 1 ),
                           onChanged: (date) {
-                            print('change $date');
+                            print('confirm $date');
                           },
                           onConfirm: (date) {
-                            print('confirm $date');
+                            _date = date;
                           }, currentTime: DateTime.now(), locale: LocaleType.en);
                     },
                     child: Card(
