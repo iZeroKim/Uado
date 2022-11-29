@@ -325,7 +325,6 @@ class At702Page extends StatelessWidget {
                   height: 100,
                   width: 100,
                   child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/react.png"),
                     backgroundColor: Color.fromRGBO(78, 199, 50, 1),
                     child: Text(
                       "K",

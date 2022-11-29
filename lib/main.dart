@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             backwardsCompatibility: false, // 1
             systemOverlayStyle: SystemUiOverlayStyle.light, // 2
+            foregroundColor: Colors.white,
           ),
         ),
 

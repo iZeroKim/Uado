@@ -30,6 +30,8 @@ class _DashBoardState extends State<DashBoard> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Hello Kim"),
+        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        elevation: 1.0,
 
       ),
       body: ListView(
@@ -105,6 +107,7 @@ class _DashBoardState extends State<DashBoard> {
                     GridView.builder(
                       itemCount: services.length,
                       shrinkWrap: true,
+                      physics: ScrollPhysics(),
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         childAspectRatio: 10.0 / 10.0,
                         crossAxisCount: 2,
