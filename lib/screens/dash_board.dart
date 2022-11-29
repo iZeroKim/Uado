@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../models/AppService.dart';
+import '../screens/mechanics_list.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -8,8 +10,22 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
+    AppService garages = AppService(name: "Garages", imagePath: "assets/images/avatar", link: MechanicsListPage());
+    AppService records = AppService(name: "Service records", imagePath: "assets/images/avatar");
+    AppService chat = AppService(name: "Chat", imagePath: "assets/images/avatar");
+    AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/avatar");
+    AppService parts = AppService(name: "Buy part", imagePath: "assets/images/avatar");
+    AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/avatar");
+    AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/avatar");
+    List<AppService> services = [garages, records, chat, insurance, parts, clubs, buy];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -25,7 +41,7 @@ class _DashBoardState extends State<DashBoard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 50.0),
+                  const SizedBox(height: 50.0),
                   const Text(
                     " Mercedes C200",
                     style: TextStyle(
@@ -33,12 +49,12 @@ class _DashBoardState extends State<DashBoard> {
                         fontWeight: FontWeight.bold,
                         fontSize: 38),
                   ),
-                  SizedBox(height: 15.0),
+                  const SizedBox(height: 15.0),
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    color: Color.fromRGBO(246,248,250,1),
+                    color: const Color.fromRGBO(246,248,250,1),
                     elevation: 2,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -61,7 +77,7 @@ class _DashBoardState extends State<DashBoard> {
                                   height:50,width: 50,
                                   child:ElevatedButton(
                                     onPressed: (){},
-                                    child: Icon(Icons.navigate_next, color: Colors.white,),
+                                    child: const Icon(Icons.navigate_next, color: Colors.white,),
                                     style: ElevatedButton.styleFrom(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(50),
@@ -76,7 +92,7 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30.0,),
+                  const SizedBox(height: 30.0,),
                   const Text(
                     " Choose the service you require",
                     style: TextStyle(
@@ -86,13 +102,13 @@ class _DashBoardState extends State<DashBoard> {
                     GridView.builder(
                       itemCount: 6,
                       shrinkWrap: true,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         childAspectRatio: 8.0 / 10.0,
                         crossAxisCount: 3,
                       ),
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             child: Card(
                                 semanticContainer: true,
                                 shape: RoundedRectangleBorder(
@@ -104,13 +120,13 @@ class _DashBoardState extends State<DashBoard> {
                                   children: <Widget>[
                                     Expanded(
                                         child: Container(
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage('assets/images/mechanic.png'),
                                                 fit: BoxFit.fill),
                                           ),
                                         )),
-                                    Padding(
+                                    const Padding(
                                         padding: EdgeInsets.all(10.0),
                                         child: Text(
                                           "Garages",
@@ -120,7 +136,7 @@ class _DashBoardState extends State<DashBoard> {
                                 )));
                       },
                     ),
-                  SizedBox(height: 50,)
+                  const SizedBox(height: 50,)
 
                 ],
               ),
@@ -130,4 +146,6 @@ class _DashBoardState extends State<DashBoard> {
       ),
     );
   }
+
+  _DashBoardState();
 }
