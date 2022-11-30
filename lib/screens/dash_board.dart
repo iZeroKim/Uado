@@ -43,7 +43,7 @@ class _DashBoardState extends State<DashBoard> {
                 children: [
                   const SizedBox(height: 50.0),
                   const Text(
-                    "Mercedes C200",
+                    " Mercedes C200",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -68,10 +68,10 @@ class _DashBoardState extends State<DashBoard> {
                             title: Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Specifications',
-                                  style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.bold)),
+                                  style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold)),
                             ),
                             subtitle: Text(
-                              '2010 Model \nRecently services', style: TextStyle(color: Colors.black87),),
+                              '2010 Model \nRecently services', style: TextStyle(color: Colors.white),),
                           ),
                           ButtonBar(
                             children: <Widget>[
@@ -80,13 +80,14 @@ class _DashBoardState extends State<DashBoard> {
                                   child:Center(
                                     child: ElevatedButton(
                                       onPressed: (){},
-                                      child: const Icon(Icons.navigate_next, color: Colors.white,),
+                                      child: const Icon(Icons.navigate_next, color: Color
+                                          .fromRGBO(78, 199, 50, 1),),
                                       style: ElevatedButton.styleFrom(
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(50),
                                             //border radius equal to or more than 50% of width
                                           ),
-                                        backgroundColor: Colors.black
+                                        backgroundColor: Colors.white
                                       ),
                                     ),
                                   )

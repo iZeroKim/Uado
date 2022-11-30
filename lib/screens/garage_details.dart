@@ -9,7 +9,7 @@ class GarageDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double bg_bottom = 550;
+    double bg_bottom =MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height * 0.03) ;
     double avatar_top = MediaQuery.of(context).size.height * 0.17;
     double avatar_left = MediaQuery.of(context).size.width * 0.4;
     double card_top = MediaQuery.of(context).size.height * 0.23;
@@ -44,11 +44,23 @@ class GarageDetails extends StatelessWidget {
             ),
           ],
         ),
+        bottomNavigationBar: const BottomAppBar(
+      elevation: 10.0,
+      color: Colors.white,
+      child: SizedBox(
+          height: 55.0,
+          width: double.infinity,
+          //Wrap with inkwell and navigate to next
+
+          child: Center(
+              child: Text("Write Review",
+                  style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18)))),
+    ),
         body: SingleChildScrollView(
           child: Stack(
             children: <Widget>[
               Container(
-                height: 1000,
+                height: 970,
               ),
               Positioned.fill(
                 top: 0,
@@ -137,7 +149,7 @@ class GarageDetails extends StatelessWidget {
                                                 ),
                                               )),
                                           Text(
-                                            "Open",
+                                            "Currently Open",
                                             style: TextStyle(
                                                 color: Color.fromRGBO(
                                                     78, 199, 50, 1)),
@@ -319,13 +331,32 @@ class GarageDetails extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(18.0),
-                                    child: Row(
-                                      children: const [
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children:  [
                                         Text(
-                                          "3.5/5",
-                                          style: TextStyle(
-                                              color: Colors.black, fontSize: 24),
+                                          "Super Cool",
+                                          style: TextStyle( fontSize: 16),
                                         ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            GFRating(
+                                              color: Color.fromRGBO(255,191,27,1),
+                                              borderColor: Color.fromRGBO(255,191,27,1),
+                                              size: 20,
+                                              value: 3.0,
+                                              onChanged: (value) {},
+                                            ),
+                                            Text("Nov 30, 2022"),
+                                          ],
+
+                                        ),
+                                        SizedBox(height: 5,),
+                                        Text("By John Doe"),
+                                        SizedBox(height: 10,),
+                                        Text("100% Payment Protection, 7 days easy return in case item is defective or damaged or different from what was described.")
+
                                       ],
                                     ),
                                   ),
