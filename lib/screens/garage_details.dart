@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'garage_review.dart';
 
 class GarageDetails extends StatelessWidget {
   GarageDetails({super.key});
@@ -44,7 +45,7 @@ class GarageDetails extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: const BottomAppBar(
+        bottomNavigationBar: BottomAppBar(
       elevation: 10.0,
       color: Colors.white,
       child: SizedBox(
@@ -52,9 +53,14 @@ class GarageDetails extends StatelessWidget {
           width: double.infinity,
           //Wrap with inkwell and navigate to next
 
-          child: Center(
-              child: Text("Write Review",
-                  style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18)))),
+          child: InkWell(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddGarageReview() ));
+            },
+            child: Center(
+                child: Text("Write Review",
+                    style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18))),
+          )),
     ),
         body: SingleChildScrollView(
           child: Stack(
