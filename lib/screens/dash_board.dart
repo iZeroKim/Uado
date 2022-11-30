@@ -24,7 +24,7 @@ class _DashBoardState extends State<DashBoard> {
     AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/mechanic.png");
     AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records, insurance, chat, parts, clubs, buy, trips];
+    List<AppService> services = [garages, records];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

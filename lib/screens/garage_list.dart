@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'add_garage.dart';
 import 'garage_details.dart';
+import 'package:getwidget/getwidget.dart';
 
 class GarageList extends StatefulWidget {
   const GarageList({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class GarageList extends StatefulWidget {
 
 class _GarageListState extends State<GarageList> {
   String? selected_sort_value = "popularity";
+  final GFBottomSheetController _controller = GFBottomSheetController();
+
+  var dropList = ["Wheels", "Rims", "Engine"];
   @override
   void initState() {
     super.initState();
@@ -257,40 +261,6 @@ class _GarageListState extends State<GarageList> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        onTap: (){
-                          showModalBottomSheet<void>(
-                            // context and builder are
-                            // required properties in this widget
-                            context: context,
-                            builder: (BuildContext context) {
-                              // we set up a container inside which
-                              // we create center column and display text
-
-                              // Returning SizedBox instead of a Container
-                              return const SizedBox(
-                                child: Center(
-                                  child: Text("Apply filters on items"),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        child: Card(
-                          color: Colors.white,
-                          shape: const StadiumBorder(),
-                          elevation: 0.0,
-                          child: Container(
-                            width: 60.0,
-                            height: 60.0,
-                            child: const Center(
-                              child: Center(
-                                  child: Icon(Icons.filter_alt, color: Color
-                                      .fromRGBO(78, 199, 50, 1), size: 40,)),
-                            ),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -460,6 +430,110 @@ class _GarageListState extends State<GarageList> {
 
 
         ),
+      ),
+      bottomSheet: GFBottomSheet(
+        elevation: 10,
+        controller: _controller,
+        maxContentHeight: 400,
+        stickyHeaderHeight: 100,
+        stickyHeader: Container(
+          decoration: BoxDecoration(color: Colors.white,
+              boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 1)]
+          ),
+          child:  GFListTile(
+            avatar: Card(
+              color: Color.fromRGBO(230, 230, 230, 1),
+              shape: const StadiumBorder(),
+              elevation: 0.0,
+              child: Container(
+                width: 50.0,
+                height: 50.0,
+                child: const Center(
+                  child: Center(
+                      child: Icon(Icons.filter_alt, color: Color
+                          .fromRGBO(78, 199, 50, 1), size: 40,)),
+                ),
+              ),
+            ),
+            titleText: 'Add Filter',
+            subTitleText: 'Filter list with tags',
+
+          ),
+        ),
+        contentBody: Container(
+          height: 200,
+          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: ListView(
+            shrinkWrap: true,
+            physics: const ScrollPhysics(),
+            children: [
+              Center(
+                  child: GFMultiSelect(
+                    items: dropList,
+                    onSelect: (value) {
+                      print('selected $value ');
+                    },
+                    dropdownTitleTileText: 'Select tags ',
+                    dropdownTitleTileMargin: EdgeInsets.only(
+                        top: 20, left: 10, right: 10, bottom: 5),
+                    dropdownTitleTilePadding: EdgeInsets.all(10),
+                    dropdownUnderlineBorder:
+                    const BorderSide(color: Colors.transparent, width: 2),
+                    dropdownTitleTileBorder:
+                    Border.all(color: Colors.grey, width: 1),
+                    dropdownTitleTileBorderRadius: BorderRadius.circular(5),
+                    expandedIcon: const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.black54,
+                    ),
+                    collapsedIcon: const Icon(
+                      Icons.keyboard_arrow_up,
+                      color: Colors.black54,
+                    ),
+                    submitButton: Text('OK'),
+                    cancelButton: Text('Cancel'),
+                    dropdownTitleTileTextStyle:
+                    const TextStyle(fontSize: 14, color: Colors.black54),
+                    padding: const EdgeInsets.all(6),
+                    margin: const EdgeInsets.all(6),
+                    type: GFCheckboxType.basic,
+                    activeBgColor: GFColors.SUCCESS,
+                    activeBorderColor: GFColors.SUCCESS,
+                    inactiveBorderColor: Colors.grey,
+
+                  ),)
+            ],
+          ),
+        ),
+        stickyFooter: Container(
+          color: GFColors.SUCCESS,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                'My Car App',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              Text(
+                'your car companion app',
+                style: TextStyle(fontSize: 15, color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+        stickyFooterHeight: 50,
+      ),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: GFColors.SUCCESS,
+          child: _controller.isBottomSheetOpened ? Icon(Icons.keyboard_arrow_down, color:Colors.white):Icon(Icons.keyboard_arrow_up, color: Colors.white,),
+          onPressed: () {
+            _controller.isBottomSheetOpened
+                ? _controller.hideBottomSheet()
+                : _controller.showBottomSheet();
+          }
       ),
     );
   }
