@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mechanics_list.dart';
+import 'dash_board.dart';
 
 class At6Page extends StatefulWidget {
   const At6Page({Key? key}) : super(key: key);
@@ -275,7 +275,7 @@ class _At6PageState extends State<At6Page> {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => MechanicsListPage()));
+                      builder: (context) => DashBoard()));
 
                 },
                 child: Card(

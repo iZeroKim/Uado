@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uado/main.dart';
 import 'register_page.dart';
-import '../screens/at4.dart';
+import '../screens/dash_board.dart';
 
 class EmailLoginPage extends StatefulWidget {
   const EmailLoginPage({Key? key}) : super(key: key);
@@ -104,7 +104,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => At4Page()));
+                          builder: (context) => DashBoard()));
 
                     },
                     child: Container(

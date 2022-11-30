@@ -32,13 +32,13 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
         elevation: 1.0,
-        title: const Text("Mechanics"),
+        title: const Text("Garages"),
         actions: [
           IconButton(
             icon: const Icon(
               Icons.add_circle_outline_rounded, color: Colors.white, size: 30,),
             padding: const EdgeInsets.only(right: 15.0),
-            tooltip: 'Add Mechanic',
+            tooltip: 'Add Garage',
             onPressed:() {
                 setState(() {});
                 showDialog(

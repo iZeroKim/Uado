@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/AppService.dart';
 import '../screens/mechanics_list.dart';
+import '../screens/services.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -12,22 +13,18 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
 
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
-    AppService garages = AppService(name: "Garages", imagePath: "assets/images/mechanic.png", link: MechanicsListPage());
-    AppService records = AppService(name: "Service records", imagePath: "assets/images/mechanic.png");
+    AppService garages = AppService(name: "Garages", imagePath: "assets/images/garage.jpg", link: MechanicsListPage());
+    AppService records = AppService(name: "Service records", imagePath: "assets/images/repairs.jpg", link: Services());
     AppService chat = AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
     AppService trips = AppService(name: "Trips", imagePath: "assets/images/mechanic.png");
-    AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/mechanic.png");
+    AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/car.jpg");
     AppService parts = AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
     AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/mechanic.png");
     AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records, chat, insurance, parts, clubs, buy];
+    List<AppService> services = [garages, records, insurance, chat, parts, clubs, buy, trips];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -48,8 +45,7 @@ class _DashBoardState extends State<DashBoard> {
                   const Text(
                     "Mercedes C200",
                     style: TextStyle(
-                        color: Color
-                            .fromRGBO(78, 199, 50, 1),
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 34),
                   ),
@@ -58,7 +54,8 @@ class _DashBoardState extends State<DashBoard> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    color: const Color.fromRGBO(246,248,250,1),
+                    color: const Color
+                        .fromRGBO(78, 199, 50, 1),
                     elevation: 2,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20.0, bottom: 20.0, right: 10.0),
@@ -71,15 +68,15 @@ class _DashBoardState extends State<DashBoard> {
                             title: Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Specifications',
-                                  style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18.0, fontWeight: FontWeight.bold)),
+                                  style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.bold)),
                             ),
                             subtitle: Text(
-                              '2010 Model \nRecently services', style: TextStyle(color: Colors.black),),
+                              '2010 Model \nRecently services', style: TextStyle(color: Colors.black87),),
                           ),
                           ButtonBar(
                             children: <Widget>[
                               SizedBox(
-                                  height:40,width: 60,
+                                  width: 60,
                                   child:Center(
                                     child: ElevatedButton(
                                       onPressed: (){},
@@ -88,7 +85,8 @@ class _DashBoardState extends State<DashBoard> {
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(50),
                                             //border radius equal to or more than 50% of width
-                                          )
+                                          ),
+                                        backgroundColor: Colors.black
                                       ),
                                     ),
                                   )
@@ -103,7 +101,7 @@ class _DashBoardState extends State<DashBoard> {
                   const Text(
                     " Choose the service you require",
                     style: TextStyle(
-                        color: Color.fromRGBO(78, 199, 50, 1),fontSize: 18.0, fontWeight: FontWeight.bold),
+                        color: Colors.black,fontSize: 18.0, fontWeight: FontWeight.bold),
                   ),
 
                     GridView.builder(
