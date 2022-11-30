@@ -57,21 +57,20 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                   Card(
                     shape: StadiumBorder(),
                     color: Colors.blue,
-                    elevation: 8,
+                    elevation: 10,
                     child: InkWell(
                       onTap: () {
                         print("tapped");
                       },
                       child: Container(
-                        padding: EdgeInsets.all(10.0),
+                        padding: EdgeInsets.all(5.0),
                           width: double.infinity,
-                          height: 45.0,
                           child: Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: const [
-                                Text("f ", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
+                                Text("f ", style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w900)),
                                 Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
                                 Text(" Facebook ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                               ],
@@ -79,29 +78,27 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                           )),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(height: 10),
                   Card(
                     shape: StadiumBorder(),
                     color: Colors.red,
-                    elevation: 8,
+                    elevation: 10,
                     child: InkWell(
                       onTap: () {
                         print("tapped");
                       },
                       child: Container(
-                          padding: EdgeInsets.all(10.0),
+                        alignment: Alignment.center,
+                          padding: EdgeInsets.all(5.0),
                           width: double.infinity,
-                          height: 50.0,
-                          child: Center(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text("G ", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
-                                Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
-                                Text(" Google ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
-                              ],
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Text("G ", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900)),
+                              Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
+                              Text(" Google ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                            ],
                           )),
                     ),
                   ),
@@ -123,17 +120,18 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
               Card(
                 color: Color.fromRGBO(78, 199, 50, 1),
                 shape: StadiumBorder(),
+                elevation: 10.0,
                 child: InkWell(
                   onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => EmailLoginPage()));
 
                   },
+
                   child: Container(
                     width: double.infinity,
-                    height: 40.0,
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Center(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -153,7 +151,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 ),
               ),
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

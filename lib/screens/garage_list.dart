@@ -67,7 +67,7 @@ class _GarageListState extends State<GarageList> {
                           showModalBottomSheet<void>(
                             context: context,
                             builder: (BuildContext context) {
-                              return SizedBox(
+                              return const SizedBox(
                                 child: Center(
                                   child: Text("Show all items"),
                                 ),
@@ -93,7 +93,7 @@ class _GarageListState extends State<GarageList> {
                           showModalBottomSheet<void>(
                             context: context,
                             builder: (BuildContext context) {
-                              return SizedBox(
+                              return const SizedBox(
                                 child: Center(
                                   child: Text("Show nearest items"),
                                 ),
@@ -134,8 +134,8 @@ class _GarageListState extends State<GarageList> {
                                     child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children:  [
-                                          Text('  SORT BY', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
-                                          SizedBox(height: 10,),
+                                          const Text('  SORT BY', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+                                          const SizedBox(height: 10,),
                                           Padding(
                                             padding: const EdgeInsets.only(
                                               left: 5.0,
@@ -155,7 +155,7 @@ class _GarageListState extends State<GarageList> {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(height: 10,),
+                                          const SizedBox(height: 10,),
                                           SizedBox(
                                             width: double.infinity,
                                             child: ListTile(
@@ -268,7 +268,7 @@ class _GarageListState extends State<GarageList> {
                               // we create center column and display text
 
                               // Returning SizedBox instead of a Container
-                              return SizedBox(
+                              return const SizedBox(
                                 child: Center(
                                   child: Text("Apply filters on items"),
                                 ),
@@ -317,7 +317,7 @@ class _GarageListState extends State<GarageList> {
                                 return Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                                   child: Card(
-                                    elevation: 2.0,
+                                    elevation: 6.0,
                                     child: Column(
                                       children: [
                                         InkWell(
@@ -367,7 +367,7 @@ class _GarageListState extends State<GarageList> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                     children: const [
-                                                      Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(78, 199, 50, 1)),
+                                                      Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(255,191,27,1)),
                                                       Text(" Provide Pickup"),
 
                                                     ],
@@ -375,7 +375,7 @@ class _GarageListState extends State<GarageList> {
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                     children: const [
-                                                      Icon(Icons.star, size: 18,color: Color.fromRGBO(78, 199, 50, 1)),
+                                                      Icon(Icons.star, size: 18,color: Color.fromRGBO(255,191,27,1)),
                                                       Text(" 4.5 "),
                                                       Text("(213)", style: TextStyle(color: Colors.grey),),
 
@@ -383,32 +383,19 @@ class _GarageListState extends State<GarageList> {
                                                   ),
                                                 ],
                                               ),
-                                              const SizedBox(height: 5.0,),
+
                                             ],
                                           ),
                                         ),
 
 
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                            left: 5.0,
-                                            right: 5.0,
-                                          ),
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: 0.5,
-                                            padding: const EdgeInsets.only(
-                                              left: 5.0,
-                                              right: 20.0,
-                                            ),
-                                            decoration: const BoxDecoration(
-                                                border: Border(
-                                                  bottom: BorderSide(width: 1.0, color: Colors.grey),
-                                                )
-                                            ),
-                                          ),
+                                        const Divider(
+                                          height: 20,
+                                          thickness: 0.5,
+                                          indent: 5,
+                                          endIndent: 5,
+                                          color: Colors.grey,
                                         ),
-                                        const SizedBox(height: 10.0,),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
                                             vertical: 10.0,

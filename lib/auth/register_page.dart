@@ -25,7 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
-            top: 5.0,
+            top: 30.0,
             left: 30.0,
             right: 30.0,
             bottom: 30.0
@@ -33,17 +33,23 @@ class _RegisterPageState extends State<RegisterPage> {
           child: ListView(
             children: [Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 // App logo
                 //Sign up with
-                const Text(
-                  'Sign up with',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                      fontWeight: FontWeight.bold
-                  ),
-                  textAlign: TextAlign.start,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Sign up with',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                          fontWeight: FontWeight.bold
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
 
                 const SizedBox(
@@ -52,25 +58,26 @@ class _RegisterPageState extends State<RegisterPage> {
                 //Row to hold facebook and google buttons
                 Row(
                   children: [
-                    Card(
-                      shape: StadiumBorder(),
-                      color: Colors.blue,
-                      elevation: 8,
-                      child: new InkWell(
-                        onTap: () {
-                          print("tapped");
-                        },
-                        child: Container(
-                            width: 100.0,
-                            height: 40.0,
-                            child: Center(
-                              child: Text("f", style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w900)),
-                            )),
+                    Expanded(
+                      child: Card(
+                        shape: const StadiumBorder(),
+                        color: Colors.blue,
+                        elevation: 8,
+                        child: InkWell(
+                          onTap: () {
+                            print("tapped");
+                          },
+                          child: Container(
+                              width: 100.0,
+                              child: const Center(
+                                child: Text("f", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w900)),
+                              )),
+                        ),
                       ),
                     ),
-                    SizedBox(width: 20),
-                    Card(
-                      shape: StadiumBorder(),
+                    const SizedBox(width: 10),
+                    Expanded(child: Card(
+                      shape: const StadiumBorder(),
                       color: Colors.white,
                       elevation: 8,
                       child: new InkWell(
@@ -78,32 +85,35 @@ class _RegisterPageState extends State<RegisterPage> {
                           print("tapped");
                         },
                         child: Container(
-                            width: 100.0,
-                            height: 40.0,
                             child: Center(
                               child: Image.asset(
                                 'assets/images/google.png',
-                                width: 40.0,
-                                height: 40.0,
+                                width: 35.0,
+                                height: 35.0,
                                 fit: BoxFit.cover,
                               ),
                             )),
                       ),
-                    ),
+                    )),
                   ],
                 ),
                 //Or text
                 const SizedBox(
                   height: 20.0,
                 ),
-                const Text(
-                  'or',
-                  style: TextStyle(color: Colors.grey, fontSize: 18),
-                  textAlign: TextAlign.left,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'or',
+                      style: TextStyle(color: Colors.grey, fontSize: 18),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
 
                 const SizedBox(
-                  height: 30.0,
+                  height: 20.0,
                 ),
 
                 //Or text
@@ -163,18 +173,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 //Email login button
                 Card(
-                  color: Color.fromRGBO(78, 199, 50, 1),
-                  shape: StadiumBorder(),
+                  color: const Color.fromRGBO(78, 199, 50, 1),
+                  shape: const StadiumBorder(),
                   child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => GarageList()));
+                          builder: (context) => const GarageList()));
 
                     },
                     child: Container(
-                      width: 180.0,
+                      width: double.infinity,
                       height: 40.0,
-                      child: Center(
+                      child: const Center(
                           child: Text(
                             "SIGNUP",
                             style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
@@ -183,9 +193,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
                       'Already have an account?',
@@ -193,14 +204,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       textAlign: TextAlign.left,
                     ),
                     TextButton(
-                      child: Text(
+                      child: const Text(
                         " Login",
                         style: TextStyle(
                             fontSize: 18, color: Color.fromRGBO(78, 199, 50, 1)),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => InitialLoginPage()));
+                            builder: (context) => const InitialLoginPage()));
                       },
                     ),
                   ],
