@@ -139,6 +139,50 @@ class _ServicesState extends State<Services> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 10,),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Card(
+                    color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "SERVICE HISTORY",
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 18),
+                              ),
+                              const SizedBox(
+                                height: 15.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("21,Nov 2022", style: TextStyle(color: Colors.black),),
+                                  SizedBox(height: 5.0, ),
+                                  Row(
+                                    children: [
+                                      Text("Ksh 1500", style: TextStyle(color: Colors.black),),
+                                      SizedBox(height: 5.0,),
+                                      Icon(Icons.navigate_next, color: Colors.grey,)
+
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ],

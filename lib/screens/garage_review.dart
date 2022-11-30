@@ -64,7 +64,7 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                                     const Text("Ketan Car Point", style: TextStyle(color: Colors.black, fontSize: 18,),),
                                     const SizedBox(height: 5,),
                                     const Text("Rate this merchant", style: TextStyle(color: Colors.grey, fontSize: 18),),
-                                    SizedBox(height: 20,),
+                                    const SizedBox(height: 20,),
                                     GFRating(
                                       color: const Color.fromRGBO(255,191,27,1),
                                       borderColor: const Color.fromRGBO(255,191,27,1),
@@ -76,9 +76,9 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                                         });
                                       },
                                     ),
-                                    SizedBox(height:20),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                    const SizedBox(height:20),
+                                    const Padding(
+                                      padding: EdgeInsets.symmetric(horizontal: 20.0),
                                       child: TextField(
                                         decoration: InputDecoration(
                                           hintText: "Write your review",
@@ -87,7 +87,7 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height:25),
+                                    const SizedBox(height:25),
                                     InkWell(
                                       onTap: (){
                                         //Capture rate and review
@@ -95,11 +95,11 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                                       },
                                       child: Container(
                                         height: 60,
-                                        color: Color.fromRGBO(230, 230, 230, 1),
+                                        color: const Color.fromRGBO(230, 230, 230, 1),
                                         child: Center(
                                           child: TextButton(
                                              onPressed: () { print("Submit"); Navigator.of(context).pop();},
-                                            child: Text("SUBMIT", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18, fontWeight: FontWeight.bold),),
+                                            child: const Text("SUBMIT", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18, fontWeight: FontWeight.bold),),
                                           )
                                         ),
                                       ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uado/auth/login_initial_page.dart';
@@ -37,8 +39,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home:  const InitialLoginPage(),
-        // home: const AddGarageReview(),
+        // home:  const InitialLoginPage(),
+        home: const Services(),
       ),
     );
   }
