@@ -6,7 +6,6 @@ import 'package:uado/screens/garage_details.dart';
 import 'package:uado/screens/dash_board.dart';
 import 'package:uado/screens/services.dart';
 import 'screens/garage_list.dart';
-import 'screens/dash_board.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -37,8 +36,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home:  const InitialLoginPage(),
-        // home: const DashBoard(),
+        // home:  const InitialLoginPage(),
+        home: const DashBoard(),
       ),
     );
   }
