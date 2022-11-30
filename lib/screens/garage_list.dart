@@ -314,150 +314,153 @@ class _GarageListState extends State<GarageList> {
                               itemCount: value.garages.length,
                               itemBuilder: (context, index) {
                                 var garage = value.garages[index];
-                                return Card(
-                                  elevation: 2.0,
-                                  child: Column(
-                                    children: [
-                                      InkWell(
-                                        onTap: (){
-                                          Navigator.of(context).push(MaterialPageRoute(
-                                              builder: (context) => GarageDetails()));
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                                  child: Card(
+                                    elevation: 2.0,
+                                    child: Column(
+                                      children: [
+                                        InkWell(
+                                          onTap: (){
+                                            Navigator.of(context).push(MaterialPageRoute(
+                                                builder: (context) => GarageDetails()));
 
-                                        },
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.start,
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.start,
 
-                                              children: [
-                                                const SizedBox(width: 10.0,),
-                                                Card(
-                                                  child: Container(
-                                                    width: 105.0,
-                                                    height: 80.0,
-                                                    padding: const EdgeInsets.all(0.0),
-                                                    child: Center(
-                                                      child: Image.asset(
-                                                        'assets/images/mechanic.png',
-                                                        height: 80.0,
-                                                        width: 105.0,
-                                                        fit: BoxFit.cover,
+                                                children: [
+                                                  const SizedBox(width: 10.0,),
+                                                  Card(
+                                                    child: Container(
+                                                      width: 105.0,
+                                                      height: 80.0,
+                                                      padding: const EdgeInsets.all(0.0),
+                                                      child: Center(
+                                                        child: Image.asset(
+                                                          'assets/images/mechanic.png',
+                                                          height: 80.0,
+                                                          width: 105.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                                const SizedBox(width: 5.0,),
-                                                Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children:  [
-                                                    Text(garage.name, style: const TextStyle(fontWeight: FontWeight.bold),),
-                                                    Text(garage.address, style: const TextStyle(color: Colors.grey),)
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 5.0,),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  const SizedBox(width: 5.0,),
+                                                  Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children:  [
+                                                      Text(garage.name, style: const TextStyle(fontWeight: FontWeight.bold),),
+                                                      Text(garage.address, style: const TextStyle(color: Colors.grey),)
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              const SizedBox(height: 10.0,),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-                                              children: [
-                                                const Text("20 Km Away", style: TextStyle(color: Colors.grey),),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                  children: const [
-                                                    Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(78, 199, 50, 1)),
-                                                    Text(" Provide Pickup"),
+                                                children: [
+                                                  const Text("20 Km Away", style: TextStyle(color: Colors.grey),),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                    children: const [
+                                                      Icon(Icons.arrow_circle_up_rounded, size: 18, color: Color.fromRGBO(78, 199, 50, 1)),
+                                                      Text(" Provide Pickup"),
 
-                                                  ],
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                  children: const [
-                                                    Icon(Icons.star, size: 18,color: Color.fromRGBO(78, 199, 50, 1)),
-                                                    Text(" 4.5 "),
-                                                    Text("(213)", style: TextStyle(color: Colors.grey),),
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                    children: const [
+                                                      Icon(Icons.star, size: 18,color: Color.fromRGBO(78, 199, 50, 1)),
+                                                      Text(" 4.5 "),
+                                                      Text("(213)", style: TextStyle(color: Colors.grey),),
 
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 5.0,),
-                                          ],
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              const SizedBox(height: 5.0,),
+                                            ],
+                                          ),
                                         ),
-                                      ),
 
 
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                          left: 5.0,
-                                          right: 5.0,
-                                        ),
-                                        child: Container(
-                                          width: double.infinity,
-                                          height: 0.5,
+                                        Padding(
                                           padding: const EdgeInsets.only(
                                             left: 5.0,
-                                            right: 20.0,
+                                            right: 5.0,
                                           ),
-                                          decoration: const BoxDecoration(
-                                              border: Border(
-                                                bottom: BorderSide(width: 1.0, color: Colors.grey),
-                                              )
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 10.0,),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                          vertical: 10.0,
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                                          children: [
-                                            InkWell(
-                                              onTap:(){print("Message");},
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.start,
-                                                children: const [
-                                                  Icon(Icons.mail, size: 28, color: Color.fromRGBO(78, 199, 50, 1)),
-                                                  Text(" Message"),
-
-                                                ],
-                                              ),
+                                          child: Container(
+                                            width: double.infinity,
+                                            height: 0.5,
+                                            padding: const EdgeInsets.only(
+                                              left: 5.0,
+                                              right: 20.0,
                                             ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                left: 2.0,
-                                                right: 2.0,
+                                            decoration: const BoxDecoration(
+                                                border: Border(
+                                                  bottom: BorderSide(width: 1.0, color: Colors.grey),
+                                                )
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 10.0,),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            vertical: 10.0,
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                                            children: [
+                                              InkWell(
+                                                onTap:(){print("Message");},
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  children: const [
+                                                    Icon(Icons.mail, size: 28, color: Color.fromRGBO(78, 199, 50, 1)),
+                                                    Text(" Message"),
+
+                                                  ],
+                                                ),
                                               ),
-                                              child: Container(
-                                                height: 30,
+                                              Padding(
                                                 padding: const EdgeInsets.only(
-                                                  top: 2.0,
-                                                  bottom: 2.0,
+                                                  left: 2.0,
+                                                  right: 2.0,
                                                 ),
-                                                decoration: const BoxDecoration(
-                                                    border: Border(
-                                                      left: BorderSide(width: 1.1, color: Colors.grey),
-                                                    )
+                                                child: Container(
+                                                  height: 30,
+                                                  padding: const EdgeInsets.only(
+                                                    top: 2.0,
+                                                    bottom: 2.0,
+                                                  ),
+                                                  decoration: const BoxDecoration(
+                                                      border: Border(
+                                                        left: BorderSide(width: 1.1, color: Colors.grey),
+                                                      )
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            InkWell(
-                                              onTap: (){print("Call");},
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.start,
-                                                children: const [
-                                                  Icon(Icons.call, size: 28,color: Color.fromRGBO(78, 199, 50, 1)),
-                                                  Text(" Call"),
-                                                ],
+                                              InkWell(
+                                                onTap: (){print("Call");},
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  children: const [
+                                                    Icon(Icons.call, size: 28,color: Color.fromRGBO(78, 199, 50, 1)),
+                                                    Text(" Call"),
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 );
                               }));
