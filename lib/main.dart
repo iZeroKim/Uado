@@ -5,7 +5,7 @@ import 'package:uado/providers/mechanic_provider.dart';
 import 'package:uado/screens/at702.dart';
 import 'package:uado/screens/dash_board.dart';
 import 'package:uado/screens/services.dart';
-import 'screens/mechanics_list.dart';
+import 'screens/garage_list.dart';
 import 'screens/dash_board.dart';
 import 'package:provider/provider.dart';
 

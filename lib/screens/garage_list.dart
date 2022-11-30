@@ -4,14 +4,14 @@ import 'package:uado/providers/mechanic_provider.dart';
 import 'at701.dart';
 import 'at702.dart';
 
-class MechanicsListPage extends StatefulWidget {
-  const MechanicsListPage({Key? key}) : super(key: key);
+class GarageList extends StatefulWidget {
+  const GarageList({Key? key}) : super(key: key);
 
   @override
-  State<MechanicsListPage> createState() => _MechanicsListPageState();
+  State<GarageList> createState() => _GarageListState();
 }
 
-class _MechanicsListPageState extends State<MechanicsListPage> {
+class _GarageListState extends State<GarageList> {
   String? selected_sort_value = "popularity";
   @override
   void initState() {
@@ -40,50 +40,8 @@ class _MechanicsListPageState extends State<MechanicsListPage> {
             padding: const EdgeInsets.only(right: 15.0),
             tooltip: 'Add Garage',
             onPressed:() {
-                setState(() {});
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return SimpleDialog(
-                        title:const Text('WHAT DO YOU WANT TO ADD?', style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.bold)),
-                        children: <Widget>[
-                          const SizedBox(height: 5.0,),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 5.0,
-                              right: 5.0,
-                            ),
-                            child: Container(
-                              width: double.infinity,
-                              height: 0.5,
-                              padding: const EdgeInsets.only(
-                                left: 5.0,
-                                right: 20.0,
-                              ),
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(width: 1.0, color: Colors.grey),
-                                  )
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 15.0,),
-                          SimpleDialogOption(
-                            onPressed: () {
-                              print("Add mechanic");
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const At701Page()));
-
-                              },
-                            child:const Text('Mechanic', style: TextStyle(fontSize: 16)),
-                          ),
-                          SimpleDialogOption(
-                            onPressed: () { print("Add garage"); },
-                            child: const Text('Garage', style: TextStyle(fontSize: 16)),
-                          ),
-                        ],
-                      );
-                    });
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const At701Page()));
               },
 
           ),

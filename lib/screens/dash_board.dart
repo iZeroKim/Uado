@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/AppService.dart';
-import '../screens/mechanics_list.dart';
+import '../screens/garage_list.dart';
 import '../screens/services.dart';
 
 class DashBoard extends StatefulWidget {
@@ -15,7 +15,7 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   Widget build(BuildContext context) {
-    AppService garages = AppService(name: "Garages", imagePath: "assets/images/garage.jpg", link: MechanicsListPage());
+    AppService garages = AppService(name: "Garages", imagePath: "assets/images/garage.jpg", link: GarageList());
     AppService records = AppService(name: "Service records", imagePath: "assets/images/repairs.jpg", link: Services());
     AppService chat = AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
     AppService trips = AppService(name: "Trips", imagePath: "assets/images/mechanic.png");
