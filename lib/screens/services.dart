@@ -156,10 +156,54 @@ class _ServicesState extends State<Services> {
                               const Text(
                                 "SERVICE HISTORY",
                                 style: TextStyle(
-                                    color: Colors.grey, fontSize: 18),
+                                    color: Colors.grey, fontSize: 16),
                               ),
                               const SizedBox(
                                 height: 15.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("21,Nov 2022", style: TextStyle(color: Colors.black),),
+                                  SizedBox(height: 5.0, ),
+                                  Row(
+                                    children: [
+                                      Text("Ksh 1500", style: TextStyle(color: Colors.black),),
+                                      SizedBox(height: 5.0,),
+                                      Icon(Icons.navigate_next, color: Colors.grey,)
+
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const Divider(
+                                height: 20,
+                                thickness: 0.5,
+                                indent: 0,
+                                endIndent: 0,
+                                color: Colors.grey,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("21,Nov 2022", style: TextStyle(color: Colors.black),),
+                                  SizedBox(height: 5.0, ),
+                                  Row(
+                                    children: [
+                                      Text("Ksh 1500", style: TextStyle(color: Colors.black),),
+                                      SizedBox(height: 5.0,),
+                                      Icon(Icons.navigate_next, color: Colors.grey,)
+
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const Divider(
+                                height: 20,
+                                thickness: 0.5,
+                                indent: 0,
+                                endIndent: 0,
+                                color: Colors.grey,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

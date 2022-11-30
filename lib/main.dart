@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uado/auth/login_initial_page.dart';
-import 'package:uado/providers/mechanic_provider.dart';
+import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/screens/garage_details.dart';
 import 'package:uado/screens/dash_board.dart';
 import 'package:uado/screens/garage_review.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return
       MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => MechanicProvider()),
+        ChangeNotifierProvider(create: (_) => GarageProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uado/providers/mechanic_provider.dart';
+import 'package:uado/providers/garage_provider.dart';
 import 'add_garage.dart';
 import 'garage_details.dart';
 
@@ -17,7 +17,7 @@ class _GarageListState extends State<GarageList> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<MechanicProvider>(context, listen: false).getAllMechanics();
+      Provider.of<GarageProvider>(context, listen: false).getAllGarages();
     });
 
   }
@@ -302,7 +302,7 @@ class _GarageListState extends State<GarageList> {
                   height: 10.0,
                 ),
 
-                Consumer<MechanicProvider>(
+                Consumer<GarageProvider>(
                     builder: (context, value, child){
                       if(value.isLoading){
                         return const Center(
@@ -311,9 +311,9 @@ class _GarageListState extends State<GarageList> {
                       }
                       return Expanded(
                           child: ListView.builder(
-                              itemCount: value.mechanics.length,
+                              itemCount: value.garages.length,
                               itemBuilder: (context, index) {
-                                var mechanic = value.mechanics[index];
+                                var garage = value.garages[index];
                                 return Card(
                                   elevation: 2.0,
                                   child: Column(
@@ -350,8 +350,8 @@ class _GarageListState extends State<GarageList> {
                                                 Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children:  [
-                                                    Text(mechanic.name, style: const TextStyle(fontWeight: FontWeight.bold),),
-                                                    Text(mechanic.address, style: const TextStyle(color: Colors.grey),)
+                                                    Text(garage.name, style: const TextStyle(fontWeight: FontWeight.bold),),
+                                                    Text(garage.address, style: const TextStyle(color: Colors.grey),)
                                                   ],
                                                 ),
                                               ],
