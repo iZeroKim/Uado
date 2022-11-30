@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:uado/screens/garage_details.dart';
 
 
 class AddGarageReview extends StatefulWidget {
@@ -52,7 +53,6 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                           Stack(
                             children: <Widget>[
                               Container(
-                                height: 300,
                                 child: Column(
                                   children: [
                                     Container(
@@ -64,8 +64,7 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                                     const Text("Ketan Car Point", style: TextStyle(color: Colors.black, fontSize: 18,),),
                                     const SizedBox(height: 5,),
                                     const Text("Rate this merchant", style: TextStyle(color: Colors.grey, fontSize: 18),),
-
-
+                                    SizedBox(height: 20,),
                                     GFRating(
                                       color: const Color.fromRGBO(255,191,27,1),
                                       borderColor: const Color.fromRGBO(255,191,27,1),
@@ -77,26 +76,61 @@ class _AddGarageReviewState extends State<AddGarageReview> {
                                         });
                                       },
                                     ),
+                                    SizedBox(height:20),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          hintText: "Write your review",
+                                          border: InputBorder.none,
+
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height:25),
+                                    InkWell(
+                                      onTap: (){
+                                        //Capture rate and review
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Container(
+                                        height: 60,
+                                        color: Color.fromRGBO(230, 230, 230, 1),
+                                        child: Center(
+                                          child: TextButton(
+                                             onPressed: () { print("Submit"); Navigator.of(context).pop();},
+                                            child: Text("SUBMIT", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1), fontSize: 18, fontWeight: FontWeight.bold),),
+                                          )
+                                        ),
+                                      ),
+                                    ),
+
                                   ],
                                 ),
                               ),
                                Positioned(
                                 top: 10,
                                 left: avatar_left,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Center(
-                                      child: SizedBox(
-                                        height: 80,
-                                        width: avatar_width,
-                                        child: const Image(
-                                          image: AssetImage("assets/images/mechanic.png"),
-                                          fit: BoxFit.cover,
+                                child: Card(
+                                  elevation: 8.0,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(0.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Center(
+                                          child: SizedBox(
+                                            height: 80,
+                                            width: avatar_width,
+                                            child: const Image(
+                                              image: AssetImage("assets/images/mechanic.png"),
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
 
