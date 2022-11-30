@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/mechanic_provider.dart';
-import 'at701.dart';
-import 'at702.dart';
+import 'add_garage.dart';
+import 'garage_details.dart';
 
 class GarageList extends StatefulWidget {
   const GarageList({Key? key}) : super(key: key);
@@ -40,8 +40,8 @@ class _GarageListState extends State<GarageList> {
             padding: const EdgeInsets.only(right: 15.0),
             tooltip: 'Add Garage',
             onPressed:() {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const At701Page()));
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const AddGarage()));
               },
 
           ),
@@ -321,7 +321,7 @@ class _GarageListState extends State<GarageList> {
                                       InkWell(
                                         onTap: (){
                                           Navigator.of(context).push(MaterialPageRoute(
-                                              builder: (context) => At702Page()));
+                                              builder: (context) => GarageDetails()));
 
                                         },
                                         child: Column(

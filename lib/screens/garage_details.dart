@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
-class At702Page extends StatelessWidget {
-  At702Page({super.key});
+class GarageDetails extends StatelessWidget {
+  GarageDetails({super.key});
 
   List<String> _dynamicChips = ['Wheel alignment', 'Mechanic', 'Spare parts'];
   double _rating = 4;

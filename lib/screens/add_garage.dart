@@ -3,14 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class At701Page extends StatefulWidget {
-  const At701Page({Key? key}) : super(key: key);
+class AddGarage extends StatefulWidget {
+  const AddGarage({Key? key}) : super(key: key);
 
   @override
-  State<At701Page> createState() => _At701PageState();
+  State<AddGarage> createState() => _AddGarageState();
 }
 
-class _At701PageState extends State<At701Page> {
+class _AddGarageState extends State<AddGarage> {
   ImagePicker picker = ImagePicker();
   XFile? image;
   var _image;
@@ -26,7 +26,7 @@ class _At701PageState extends State<At701Page> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
         elevation: 1.0,
-        title: const Text("Add Mechanic"),
+        title: const Text("Add Garage"),
       ),
       body: SafeArea(
         child: Padding(
@@ -114,7 +114,7 @@ class _At701PageState extends State<At701Page> {
 
                         //Or text
                         const Text(
-                          'FULL NAME',
+                          'GARAGE NAME',
                           style: TextStyle(color: Colors.grey, fontSize: 14),
                           textAlign: TextAlign.left,
                         ),
@@ -179,58 +179,6 @@ class _At701PageState extends State<At701Page> {
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text(
-                              'GENDER',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 14),
-                              textAlign: TextAlign.left,
-                            ),
-                            SizedBox(
-                              width: 150,
-                              child: ListTile(
-                                title: const Text('Female',
-                                    style: TextStyle(fontSize: 14)),
-                                leading: Radio(
-                                  activeColor:
-                                      const Color.fromRGBO(78, 199, 50, 1),
-                                  value: "Female",
-                                  groupValue: _gender,
-                                  onChanged: (String? value) {
-                                    setState(() {
-                                      _gender = value;
-                                      print(_gender);
-                                    });
-                                  },
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 140,
-                              child: ListTile(
-                                title: const Text('Male',
-                                    style: TextStyle(fontSize: 14)),
-                                leading: Radio(
-                                  activeColor:
-                                      const Color.fromRGBO(78, 199, 50, 1),
-                                  value: "Male",
-                                  groupValue: _gender,
-                                  onChanged: (String? value) {
-                                    setState(() {
-                                      _gender = value;
-                                      print(_gender);
-                                    });
-                                  },
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),
