@@ -17,6 +17,8 @@ class _GarageListState extends State<GarageList> {
   final GFBottomSheetController _controller = GFBottomSheetController();
 
   var dropList = ["Wheels", "Rims", "Engine"];
+
+  List list = [];
   @override
   void initState() {
     super.initState();
@@ -434,15 +436,15 @@ class _GarageListState extends State<GarageList> {
       bottomSheet: GFBottomSheet(
         elevation: 10,
         controller: _controller,
-        maxContentHeight: 400,
+        // maxContentHeight: 400,
         stickyHeaderHeight: 100,
         stickyHeader: Container(
-          decoration: BoxDecoration(color: Colors.white,
+          decoration: const BoxDecoration(color: Colors.white,
               boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 1)]
           ),
           child:  GFListTile(
             avatar: Card(
-              color: Color.fromRGBO(230, 230, 230, 1),
+              color: const Color.fromRGBO(230, 230, 230, 1),
               shape: const StadiumBorder(),
               elevation: 0.0,
               child: Container(
@@ -462,7 +464,7 @@ class _GarageListState extends State<GarageList> {
         ),
         contentBody: Container(
           height: 200,
-          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: ListView(
             shrinkWrap: true,
             physics: const ScrollPhysics(),
@@ -471,12 +473,13 @@ class _GarageListState extends State<GarageList> {
                   child: GFMultiSelect(
                     items: dropList,
                     onSelect: (value) {
+                      list  = value;
                       print('selected $value ');
                     },
                     dropdownTitleTileText: 'Select tags ',
-                    dropdownTitleTileMargin: EdgeInsets.only(
+                    dropdownTitleTileMargin: const EdgeInsets.only(
                         top: 20, left: 10, right: 10, bottom: 5),
-                    dropdownTitleTilePadding: EdgeInsets.all(10),
+                    dropdownTitleTilePadding: const EdgeInsets.all(10),
                     dropdownUnderlineBorder:
                     const BorderSide(color: Colors.transparent, width: 2),
                     dropdownTitleTileBorder:
@@ -490,8 +493,6 @@ class _GarageListState extends State<GarageList> {
                       Icons.keyboard_arrow_up,
                       color: Colors.black54,
                     ),
-                    submitButton: Text('OK'),
-                    cancelButton: Text('Cancel'),
                     dropdownTitleTileTextStyle:
                     const TextStyle(fontSize: 14, color: Colors.black54),
                     padding: const EdgeInsets.all(6),
@@ -510,17 +511,30 @@ class _GarageListState extends State<GarageList> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
+              const Text(
                 'My Car App',
                 style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
-              Text(
-                'your car companion app',
-                style: TextStyle(fontSize: 15, color: Colors.white),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      print(list);
+                    }, child:const Text('Apply Filters',
+                      style: TextStyle(fontSize: 15, color: Colors.white)),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      print("x");
+                    }, child:const Text('Cancel',
+                      style: TextStyle(fontSize: 15, color: Colors.white)),
+                  ),
+                ],
               ),
+
             ],
           ),
         ),
@@ -528,7 +542,7 @@ class _GarageListState extends State<GarageList> {
       ),
       floatingActionButton: FloatingActionButton(
           backgroundColor: GFColors.SUCCESS,
-          child: _controller.isBottomSheetOpened ? Icon(Icons.keyboard_arrow_down, color:Colors.white):Icon(Icons.keyboard_arrow_up, color: Colors.white,),
+          child: _controller.isBottomSheetOpened ? const Icon(Icons.keyboard_arrow_down, color:Colors.white):const Icon(Icons.keyboard_arrow_up, color: Colors.white,),
           onPressed: () {
             _controller.isBottomSheetOpened
                 ? _controller.hideBottomSheet()
