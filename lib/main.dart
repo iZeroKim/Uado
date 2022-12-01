@@ -10,6 +10,7 @@ import 'package:uado/screens/garage_review.dart';
 import 'package:uado/screens/services.dart';
 import 'screens/garage_list.dart';
 import 'package:provider/provider.dart';
+import 'package:uado/screens/trips.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,8 +40,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home:  const InitialLoginPage(),
-        // home: const GarageList(),
+        // home:  const InitialLoginPage(),
+        home: const Trips(),
       ),
     );
   }
