@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'trip_details.dart';
+
 class Trips extends StatefulWidget {
   const Trips({Key? key}) : super(key: key);
 
@@ -56,61 +58,68 @@ class _TripsState extends State<Trips> {
                                   itemBuilder: (context,index){
 
                                     return Card(
-                                      child: Container(
-                                        width: 320,
-                                        color: Colors.white,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                children: const [
-                                                  Text("Nairobi",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold ,fontSize: 16) ,),
-                                                  SizedBox(width:10.0),
-                                                  Text("to",style: TextStyle(color: Colors.grey, ) ,),
-                                                  SizedBox(width:10.0),
-                                                  Text("Nakuru",style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold ,fontSize: 16) ,)
-                                                ],
-                                              ),
-                                              SizedBox(height: 10.0),
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                children: [
-                                                  Row(
-                                                    children: [
-                                                      Icon(Icons.directions_car_sharp, size: 32, color: Color.fromRGBO(255,191,27,1),),
-                                                      SizedBox(width: 5.0),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.end,
-                                                        children: [
-                                                          Text("Distance", style: TextStyle(color:Colors.grey),),
-                                                          SizedBox(height: 10.0),
-                                                          Text("100 km", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Icon(Icons.timer_outlined, size: 32, color: Color.fromRGBO(255,191,27,1),),
-                                                      SizedBox(width: 5.0),
-                                                      Column(
-                                                        mainAxisAlignment: MainAxisAlignment.end,
-                                                        children: [
-                                                          Text("Duration", style: TextStyle(color:Colors.grey),),
-                                                          SizedBox(height: 10.0),
-                                                          Text("100 min", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
+                                      child: InkWell(
+                                        onTap: (){
+                                          print("View trip");
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TripDetails()));
+
+                                        },
+                                        child: Container(
+                                          width: 320,
+                                          color: Colors.white,
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  children: const [
+                                                    Text("Nairobi",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold ,fontSize: 16) ,),
+                                                    SizedBox(width:10.0),
+                                                    Text("to",style: TextStyle(color: Colors.grey, ) ,),
+                                                    SizedBox(width:10.0),
+                                                    Text("Nakuru",style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold ,fontSize: 16) ,)
                                                   ],
+                                                ),
+                                                const SizedBox(height: 10.0),
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        const Icon(Icons.directions_car_sharp, size: 32, color: Color.fromRGBO(255,191,27,1),),
+                                                        const SizedBox(width: 5.0),
+                                                        Column(
+                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                          children: const [
+                                                            Text("Distance", style: TextStyle(color:Colors.grey),),
+                                                            SizedBox(height: 10.0),
+                                                            Text("100 km", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        const Icon(Icons.timer_outlined, size: 32, color: Color.fromRGBO(255,191,27,1),),
+                                                        const SizedBox(width: 5.0),
+                                                        Column(
+                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                          children: const [
+                                                            Text("Duration", style: TextStyle(color:Colors.grey),),
+                                                            SizedBox(height: 10.0),
+                                                            Text("100 min", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    ],
 
-                                              )
+                                                )
 
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
