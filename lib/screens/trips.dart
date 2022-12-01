@@ -35,32 +35,89 @@ class _TripsState extends State<Trips> {
               children: [
                 Expanded(
                   child: ListView.builder(
-
                       scrollDirection: Axis.vertical,
                       itemCount: 10,
                       itemBuilder: (context,index){
 
-                        return Padding(
-                          padding: const EdgeInsets.all(0.0),
-                          child: Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20.0, top: 20.0, right: 10.0, bottom: 10.0),
-                                  child: Text("22, November 2022",style: TextStyle(color: Colors.grey, fontSize: 16) ,textAlign: TextAlign.left,),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(2.0),
-                                  child: Container(
-                                    width: double.infinity - 50,
-                                    height: 80,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.only(left: 20.0, top: 20.0, right: 10.0, bottom: 10.0),
+                              child: Text("22, November 2022",style: TextStyle(color: Colors.grey, fontSize: 16) ,textAlign: TextAlign.left,),
                             ),
-                          ),
+                            Container(
+                              height: 130,
+                              width: double.infinity,
+                              child: ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: 10,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context,index){
+
+                                    return Card(
+                                      child: Container(
+                                        width: 320,
+                                        color: Colors.white,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: const [
+                                                  Text("Nairobi",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold ,fontSize: 16) ,),
+                                                  SizedBox(width:10.0),
+                                                  Text("to",style: TextStyle(color: Colors.grey, ) ,),
+                                                  SizedBox(width:10.0),
+                                                  Text("Nakuru",style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold ,fontSize: 16) ,)
+                                                ],
+                                              ),
+                                              SizedBox(height: 10.0),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Icon(Icons.directions_car_sharp, size: 32, color: Color.fromRGBO(255,191,27,1),),
+                                                      SizedBox(width: 5.0),
+                                                      Column(
+                                                        mainAxisAlignment: MainAxisAlignment.end,
+                                                        children: [
+                                                          Text("Distance", style: TextStyle(color:Colors.grey),),
+                                                          SizedBox(height: 10.0),
+                                                          Text("100 km", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Icon(Icons.timer_outlined, size: 32, color: Color.fromRGBO(255,191,27,1),),
+                                                      SizedBox(width: 5.0),
+                                                      Column(
+                                                        mainAxisAlignment: MainAxisAlignment.end,
+                                                        children: [
+                                                          Text("Duration", style: TextStyle(color:Colors.grey),),
+                                                          SizedBox(height: 10.0),
+                                                          Text("100 min", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),)
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  ],
+
+                                              )
+
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }),
+                            ),
+                          ],
                         );
                       }),
                 ),
