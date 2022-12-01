@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'garage_review.dart';
-import 'package:flutter_dash/flutter_dash.dart';
+import 'garage_mechanics.dart';
 
 class GarageDetails extends StatelessWidget {
   GarageDetails({super.key});
@@ -67,7 +67,7 @@ class GarageDetails extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                height: 970,
+                height: 1070,
               ),
               Positioned.fill(
                 top: 0,
@@ -164,6 +164,52 @@ class GarageDetails extends StatelessWidget {
                                         ],
                                       ),
                                     ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Card(
+                          color: Colors.white,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                height: 5,
+                                width: double.infinity,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Our Mechanics",
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(78, 199, 50, 1)),
+                                    ),
+                                    const SizedBox(
+                                      height: 15.0,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children:[
+                                          Text("4 mechanics found"),
+                                          InkWell(
+                                            onTap: (){
+                                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => GarageMechanics()));
+                                            },
+                                            child: Text("VIEW", style: TextStyle(color: Colors.blue),),
+                                          )
+                                        ]
+                                      ),
+                                    )
                                   ],
                                 ),
                               )

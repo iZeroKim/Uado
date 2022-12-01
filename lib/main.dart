@@ -40,10 +40,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        // home:  const InitialLoginPage(),
-        home: const Trips(),
+        home:  const InitialLoginPage(),
+        // home: const Trips(),
       ),
     );
   }
 }
-
