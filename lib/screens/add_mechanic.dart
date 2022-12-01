@@ -18,6 +18,7 @@ class _AddMechanicState extends State<AddMechanic> {
   String? _gender = "Male";
   List<String> _dynamicChips = ['Wheel alignment', 'Mechanic', 'Spare parts'];
   var eCtrl = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,7 +126,6 @@ class _AddMechanicState extends State<AddMechanic> {
                           child: TextField(
                             decoration: InputDecoration(
                               enabledBorder: UnderlineInputBorder(
-
                                 borderSide:
                                     BorderSide(width: 1, color: Colors.grey),
                               ),
@@ -493,7 +493,6 @@ class _AddMechanicState extends State<AddMechanic> {
                       )),
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
@@ -512,7 +511,8 @@ class _AddMechanicState extends State<AddMechanic> {
                         Wrap(
                           spacing: 6.0,
                           runSpacing: 6.0,
-                          children: List<Widget>.generate(_dynamicChips.length, (int index) {
+                          children: List<Widget>.generate(_dynamicChips.length,
+                              (int index) {
                             return Chip(
                               label: Text(_dynamicChips[index]),
                               onDeleted: () {
@@ -540,11 +540,16 @@ class _AddMechanicState extends State<AddMechanic> {
                                         });
                                       },
                                       controller: eCtrl,
-                                      decoration: InputDecoration(hintText: "Tag"),
+                                      decoration:
+                                          InputDecoration(hintText: "Tag"),
                                     ),
                                     actions: <Widget>[
                                       TextButton(
-                                        child: Text('CANCEL', style: TextStyle(color:Colors.redAccent),),
+                                        child: Text(
+                                          'CANCEL',
+                                          style: TextStyle(
+                                              color: Colors.redAccent),
+                                        ),
                                         onPressed: () {
                                           setState(() {
                                             Navigator.pop(context);
@@ -552,10 +557,13 @@ class _AddMechanicState extends State<AddMechanic> {
                                         },
                                       ),
                                       TextButton(
-                                        child: Text('OK',style: TextStyle(color:Colors.lightGreenAccent),),
+                                        child: Text(
+                                          'OK',
+                                          style: TextStyle(
+                                              color: Colors.lightGreenAccent),
+                                        ),
                                         onPressed: () {
                                           setState(() {
-
                                             _dynamicChips.add(chip);
                                             eCtrl.clear();
                                             Navigator.pop(context);
@@ -568,11 +576,20 @@ class _AddMechanicState extends State<AddMechanic> {
                           },
                           child: const Chip(
                             backgroundColor: Colors.white,
-                            shape:StadiumBorder(side: BorderSide(color: Color.fromRGBO(78, 199, 50, 1),),
+                            shape: StadiumBorder(
+                              side: BorderSide(
+                                color: Color.fromRGBO(78, 199, 50, 1),
+                              ),
                             ),
-                            avatar: Icon(Icons.add, color: Color.fromRGBO(78, 199, 50, 1),),
-                            label: Text("Add", style: TextStyle(color: Color.fromRGBO(78, 199, 50, 1)),),
-
+                            avatar: Icon(
+                              Icons.add,
+                              color: Color.fromRGBO(78, 199, 50, 1),
+                            ),
+                            label: Text(
+                              "Add",
+                              style: TextStyle(
+                                  color: Color.fromRGBO(78, 199, 50, 1)),
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -581,7 +598,6 @@ class _AddMechanicState extends State<AddMechanic> {
                       ],
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 0.0,
@@ -595,13 +611,12 @@ class _AddMechanicState extends State<AddMechanic> {
                       ),
                       decoration: const BoxDecoration(
                           border: Border(
-                            bottom: BorderSide(
-                                width: 5.0,
-                                color: Color.fromRGBO(247, 247, 247, 1)),
-                          )),
+                        bottom: BorderSide(
+                            width: 5.0,
+                            color: Color.fromRGBO(247, 247, 247, 1)),
+                      )),
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
@@ -618,20 +633,6 @@ class _AddMechanicState extends State<AddMechanic> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Card(
-
-                              shape: const StadiumBorder(),
-                              child: Container(
-                                width: 50.0,
-                                height: 50.0,
-                                child: const Center(
-                                  child: Center(
-                                      child: Icon(Icons.facebook),
-                                ),
-
-                              ),),
-                            ),
-                            Card(
-
                               shape: const StadiumBorder(),
                               child: Container(
                                 width: 50.0,
@@ -640,8 +641,20 @@ class _AddMechanicState extends State<AddMechanic> {
                                   child: Center(
                                     child: Icon(Icons.facebook),
                                   ),
-
-                                ),),
+                                ),
+                              ),
+                            ),
+                            Card(
+                              shape: const StadiumBorder(),
+                              child: Container(
+                                width: 50.0,
+                                height: 50.0,
+                                child: const Center(
+                                  child: Center(
+                                    child: Icon(Icons.facebook),
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -649,7 +662,6 @@ class _AddMechanicState extends State<AddMechanic> {
                       ],
                     ),
                   ),
-
                 ],
               )
             ],

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:uado/services/garage_services.dart';
 import 'package:uado/models/Garage.dart';
+import 'package:uado/services/garage_services.dart';
 
-class GarageProvider extends ChangeNotifier{
+class GarageProvider extends ChangeNotifier {
   final GarageServices _garageServices = GarageServices();
   bool isLoading = false;
 
   List<Garage> _garages = [];
+
   List<Garage> get garages => _garages;
 
-  Future<void> getAllGarages() async{
+  Future<void> getAllGarages() async {
     isLoading = true;
     notifyListeners();
 
@@ -19,6 +20,4 @@ class GarageProvider extends ChangeNotifier{
     isLoading = false;
     notifyListeners();
   }
-
-
 }

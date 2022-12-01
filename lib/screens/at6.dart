@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'dash_board.dart';
 
 class At6Page extends StatefulWidget {
@@ -10,14 +11,15 @@ class At6Page extends StatefulWidget {
 
 class _At6PageState extends State<At6Page> {
   List<DropdownMenuItem<String>> insuranceCompanies = const [
-    DropdownMenuItem(child: Text("UAP insurance"),value: "uap"),
-    DropdownMenuItem(child: Text("Directline"),value: "directline"),
-    DropdownMenuItem(child: Text("CIC"),value: "cic"),
-    DropdownMenuItem(child: Text("ICEA Lion"),value: "icea"),
-    DropdownMenuItem(child: Text("Madison"),value: "madison"),
+    DropdownMenuItem(child: Text("UAP insurance"), value: "uap"),
+    DropdownMenuItem(child: Text("Directline"), value: "directline"),
+    DropdownMenuItem(child: Text("CIC"), value: "cic"),
+    DropdownMenuItem(child: Text("ICEA Lion"), value: "icea"),
+    DropdownMenuItem(child: Text("Madison"), value: "madison"),
   ];
   int selectedYom = 2010;
   String selectedIC = "uap";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,12 +79,12 @@ class _At6PageState extends State<At6Page> {
                           child: const Center(
                             child: Center(
                                 child: Text(
-                                  "2",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500),
-                                )),
+                              "2",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            )),
                           ),
                         ),
                       ),
@@ -101,12 +103,12 @@ class _At6PageState extends State<At6Page> {
                           child: const Center(
                             child: Center(
                                 child: Text(
-                                  "3",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500),
-                                )),
+                              "3",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            )),
                           ),
                         ),
                       ),
@@ -134,7 +136,6 @@ class _At6PageState extends State<At6Page> {
                           borderRadius: BorderRadius.circular(2),
                         ),
                         border: InputBorder.none,
-
                         filled: true,
                       ),
                       value: selectedIC,
@@ -190,7 +191,7 @@ class _At6PageState extends State<At6Page> {
                               border: InputBorder.none,
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.black, width: 2.0),
+                                    BorderSide(color: Colors.black, width: 2.0),
                               ),
                             ),
                           ),
@@ -227,7 +228,7 @@ class _At6PageState extends State<At6Page> {
                               border: InputBorder.none,
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.black, width: 2.0),
+                                    BorderSide(color: Colors.black, width: 2.0),
                               ),
                             ),
                           ),
@@ -244,7 +245,7 @@ class _At6PageState extends State<At6Page> {
                               border: InputBorder.none,
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.black, width: 2.0),
+                                    BorderSide(color: Colors.black, width: 2.0),
                               ),
                             ),
                           ),
@@ -252,8 +253,6 @@ class _At6PageState extends State<At6Page> {
                       ),
                     ],
                   ),
-
-
                 ],
               )
             ],
@@ -263,7 +262,6 @@ class _At6PageState extends State<At6Page> {
       bottomNavigationBar: BottomAppBar(
         elevation: 0.0,
         color: Colors.white,
-
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -274,19 +272,23 @@ class _At6PageState extends State<At6Page> {
               // Wrap with inkwell and navigate to next
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => DashBoard()));
-
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => DashBoard()));
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(200),
+                    )),
                     color: Color.fromRGBO(78, 199, 50, 1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                      child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
-                    )
-                ),
+                      child: Icon(
+                        Icons.navigate_next,
+                        size: 70,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
             ),
           ],

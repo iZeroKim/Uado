@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'at5.dart';
 
 class At4Page extends StatefulWidget {
@@ -9,24 +10,20 @@ class At4Page extends StatefulWidget {
 }
 
 class _At4PageState extends State<At4Page> {
-
   List<DropdownMenuItem<String>> makers = const [
-    DropdownMenuItem(child: Text("BMW"),value: "bmw"),
-    DropdownMenuItem(child: Text("Mercedes"),value: "mercedes"),
-    DropdownMenuItem(child: Text("Audi"),value: "audi"),
-    DropdownMenuItem(child: Text("Jeep"),value: "jeep"),
-
+    DropdownMenuItem(child: Text("BMW"), value: "bmw"),
+    DropdownMenuItem(child: Text("Mercedes"), value: "mercedes"),
+    DropdownMenuItem(child: Text("Audi"), value: "audi"),
+    DropdownMenuItem(child: Text("Jeep"), value: "jeep"),
   ];
   List<DropdownMenuItem<String>> models = const [
-    DropdownMenuItem(child: Text("C180"),value: "c180"),
-    DropdownMenuItem(child: Text("C200"),value: "c200"),
-    DropdownMenuItem(child: Text("RS"),value: "rs"),
-    DropdownMenuItem(child: Text("G63"),value: "g63"),
-
+    DropdownMenuItem(child: Text("C180"), value: "c180"),
+    DropdownMenuItem(child: Text("C200"), value: "c200"),
+    DropdownMenuItem(child: Text("RS"), value: "rs"),
+    DropdownMenuItem(child: Text("G63"), value: "g63"),
   ];
   String selectedMaker = "mercedes";
   String selectedModel = "g63";
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,6 @@ class _At4PageState extends State<At4Page> {
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
-
         elevation: 1.0,
         title: const Text("Add Car"),
       ),
@@ -95,12 +91,12 @@ class _At4PageState extends State<At4Page> {
                           child: const Center(
                             child: Center(
                                 child: Text(
-                                  "2",
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(78, 199, 50, 1),
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500),
-                                )),
+                              "2",
+                              style: TextStyle(
+                                  color: Color.fromRGBO(78, 199, 50, 1),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            )),
                           ),
                         ),
                       ),
@@ -155,7 +151,6 @@ class _At4PageState extends State<At4Page> {
                           borderRadius: BorderRadius.circular(2),
                         ),
                         border: InputBorder.none,
-
                         filled: true,
                       ),
                       value: selectedMaker,
@@ -165,7 +160,6 @@ class _At4PageState extends State<At4Page> {
                         });
                       },
                       items: makers),
-
 
                   const SizedBox(
                     height: 30.0,
@@ -188,7 +182,6 @@ class _At4PageState extends State<At4Page> {
                           borderRadius: BorderRadius.circular(2),
                         ),
                         border: InputBorder.none,
-
                         filled: true,
                       ),
                       value: selectedModel,
@@ -198,8 +191,6 @@ class _At4PageState extends State<At4Page> {
                         });
                       },
                       items: models),
-
-
 
                   const SizedBox(
                     height: 30.0,
@@ -212,10 +203,13 @@ class _At4PageState extends State<At4Page> {
                               color: Colors.blue,
                               fontSize: 14,
                               fontWeight: FontWeight.bold)),
-                      Text("(optional)",
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14,),),
+                      Text(
+                        "(optional)",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                        ),
+                      ),
                     ],
                   ),
                   // Input dropdown
@@ -258,19 +252,23 @@ class _At4PageState extends State<At4Page> {
               //Wrap with inkwell and navigate to next
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => At5Page()));
-
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => At5Page()));
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(200),
+                    )),
                     color: Color.fromRGBO(78, 199, 50, 1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                      child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
-                    )
-                ),
+                      child: Icon(
+                        Icons.navigate_next,
+                        size: 70,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
             ),
           ],

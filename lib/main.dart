@@ -1,16 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/garage_provider.dart';
-import 'package:uado/screens/garage_details.dart';
-import 'package:uado/screens/dash_board.dart';
-import 'package:uado/screens/garage_review.dart';
-import 'package:uado/screens/services.dart';
-import 'screens/garage_list.dart';
-import 'package:provider/provider.dart';
-import 'package:uado/screens/trips.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,9 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    return
-      MultiProvider(
+    return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => GarageProvider()),
       ],
@@ -40,7 +30,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home:  const InitialLoginPage(),
+        home: const InitialLoginPage(),
         // home: const Trips(),
       ),
     );

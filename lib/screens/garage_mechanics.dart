@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+
 class GarageMechanics extends StatefulWidget {
   const GarageMechanics({Key? key}) : super(key: key);
 
@@ -19,17 +20,60 @@ class _GarageMechanicsState extends State<GarageMechanics> {
         title: const Text("Mechanics"),
       ),
       body: SafeArea(
-        child: Card(
-          child: Container(
-            height: 70,
-            child: const GFListTile(
-                avatar:CircleAvatar(
-                  minRadius: 20,
-                  backgroundImage: AssetImage("assets/images/avatar.jpg"),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              //Convert to a dynamically generated list
+              Card(
+                child: Container(
+                  height: 70,
+                  child: const GFListTile(
+                      avatar: CircleAvatar(
+                        minRadius: 20,
+                        backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                      ),
+                      titleText: 'John Doe',
+                      subTitleText: '45 repair tasks'),
                 ),
-                titleText:'John Doe',
-                subTitleText:'45 repair tasks'
-            ),
+              ),
+              Card(
+                child: Container(
+                  height: 70,
+                  child: const GFListTile(
+                      avatar: CircleAvatar(
+                        minRadius: 20,
+                        backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                      ),
+                      titleText: 'John Doe',
+                      subTitleText: '45 repair tasks'),
+                ),
+              ),
+              Card(
+                child: Container(
+                  height: 70,
+                  child: const GFListTile(
+                      avatar: CircleAvatar(
+                        minRadius: 20,
+                        backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                      ),
+                      titleText: 'John Doe',
+                      subTitleText: '45 repair tasks'),
+                ),
+              ),
+              Card(
+                child: Container(
+                  height: 70,
+                  child: const GFListTile(
+                      avatar: CircleAvatar(
+                        minRadius: 20,
+                        backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                      ),
+                      titleText: 'John Doe',
+                      subTitleText: '45 repair tasks'),
+                ),
+              ),
+            ],
           ),
         ),
       ),

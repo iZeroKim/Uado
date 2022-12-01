@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:uado/main.dart';
+
 import 'email_login_page.dart';
 import 'register_page.dart';
 
@@ -47,7 +47,6 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 height: 20.0,
               ),
 
-
               const SizedBox(
                 height: 20.0,
               ),
@@ -63,16 +62,26 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                         print("tapped");
                       },
                       child: Container(
-                        padding: EdgeInsets.all(5.0),
+                          padding: EdgeInsets.all(5.0),
                           width: double.infinity,
                           child: Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: const [
-                                Text("f ", style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w900)),
-                                Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
-                                Text(" Facebook ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                                Text("f ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 26,
+                                        fontWeight: FontWeight.w900)),
+                                Text(" Sign in with ",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 18)),
+                                Text(" Facebook ",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold)),
                               ],
                             ),
                           )),
@@ -88,16 +97,26 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                         print("tapped");
                       },
                       child: Container(
-                        alignment: Alignment.center,
+                          alignment: Alignment.center,
                           padding: EdgeInsets.all(5.0),
                           width: double.infinity,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: const [
-                              Text("G ", style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900)),
-                              Text(" Sign in with ", style: TextStyle(color: Colors.white, fontSize: 18)),
-                              Text(" Google ", style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                              Text("G ",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w900)),
+                              Text(" Sign in with ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18)),
+                              Text(" Google ",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold)),
                             ],
                           )),
                     ),
@@ -123,29 +142,35 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 elevation: 10.0,
                 child: InkWell(
                   onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => EmailLoginPage()));
-
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => EmailLoginPage()));
                   },
-
                   child: Container(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Center(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Icon(Icons.email, size: 28, color: Colors.white,),
-                              Text("  Sign in With ", style: TextStyle(color: Colors.white, fontSize: 18)),
-                              Text(
-                        "Email",
-                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                            ],
-                          )
-                      ),
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.email,
+                            size: 28,
+                            color: Colors.white,
+                          ),
+                          Text("  Sign in With ",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 18)),
+                          Text(
+                            "Email",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      )),
                     ),
                   ),
                 ),
@@ -159,7 +184,6 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                   const Text(
                     'Don\'t have an account? ',
                     style: TextStyle(color: Colors.black, fontSize: 18),
-
                   ),
                   TextButton(
                     child: Text(

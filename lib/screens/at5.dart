@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'at6.dart';
 
 class At5Page extends StatefulWidget {
@@ -10,22 +11,23 @@ class At5Page extends StatefulWidget {
 
 class _At5PageState extends State<At5Page> {
   List<DropdownMenuItem<int>> yoms = [
-    DropdownMenuItem(child: Text("2010"),value: 2010),
-    DropdownMenuItem(child: Text("2011"),value: 2011),
-    DropdownMenuItem(child: Text("2012"),value: 2012),
-    DropdownMenuItem(child: Text("2013"),value: 2013),
-    DropdownMenuItem(child: Text("2014"),value: 2014),
-    DropdownMenuItem(child: Text("2015"),value: 2015),
-    DropdownMenuItem(child: Text("2016"),value: 2016),
-    DropdownMenuItem(child: Text("2017"),value: 2017),
+    DropdownMenuItem(child: Text("2010"), value: 2010),
+    DropdownMenuItem(child: Text("2011"), value: 2011),
+    DropdownMenuItem(child: Text("2012"), value: 2012),
+    DropdownMenuItem(child: Text("2013"), value: 2013),
+    DropdownMenuItem(child: Text("2014"), value: 2014),
+    DropdownMenuItem(child: Text("2015"), value: 2015),
+    DropdownMenuItem(child: Text("2016"), value: 2016),
+    DropdownMenuItem(child: Text("2017"), value: 2017),
   ];
 
   List<DropdownMenuItem<String>> units = [
-    DropdownMenuItem(child: Text("Miles"),value: "miles"),
-    DropdownMenuItem(child: Text("Kilometers"),value: "kms"),
+    DropdownMenuItem(child: Text("Miles"), value: "miles"),
+    DropdownMenuItem(child: Text("Kilometers"), value: "kms"),
   ];
   int selectedYom = 2010;
   String selectedUnit = "kms";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,7 +151,6 @@ class _At5PageState extends State<At5Page> {
                           borderRadius: BorderRadius.circular(2),
                         ),
                         border: InputBorder.none,
-
                         filled: true,
                       ),
                       value: selectedYom,
@@ -200,11 +201,11 @@ class _At5PageState extends State<At5Page> {
                           child: DropdownButtonFormField(
                               decoration: InputDecoration(
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(color: Colors.black, width: 2),
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 2),
                                   borderRadius: BorderRadius.circular(2),
                                 ),
                                 border: InputBorder.none,
-
                                 filled: true,
                               ),
                               value: selectedUnit,
@@ -270,20 +271,24 @@ class _At5PageState extends State<At5Page> {
               width: 120.0,
               //Wrap with inkwell and navigate to next
               child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => At6Page()));
-
-                  },
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => At6Page()));
+                },
                 child: Card(
                     shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(200),)),
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(200),
+                    )),
                     color: Color.fromRGBO(78, 199, 50, 1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
-                      child: Icon(Icons.navigate_next, size: 70, color: Colors.white,),
-                    )
-                ),
+                      child: Icon(
+                        Icons.navigate_next,
+                        size: 70,
+                        color: Colors.white,
+                      ),
+                    )),
               ),
             ),
           ],
