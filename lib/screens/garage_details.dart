@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'garage_review.dart';
+import 'package:flutter_dash/flutter_dash.dart';
 
 class GarageDetails extends StatelessWidget {
   GarageDetails({super.key});
