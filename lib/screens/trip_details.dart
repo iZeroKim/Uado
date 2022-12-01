@@ -21,7 +21,7 @@ class _TripDetailsState extends State<TripDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("Trips Details"),
-            const Text("22, November 2022", style: TextStyle(fontSize: 10),)
+            const Text("22, November 2022", style: TextStyle(fontSize: 13),)
           ],
         ),
 

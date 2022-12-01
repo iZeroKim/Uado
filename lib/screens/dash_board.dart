@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/AppService.dart';
 import '../screens/garage_list.dart';
 import '../screens/services.dart';
+import '../screens/trips.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -18,13 +19,13 @@ class _DashBoardState extends State<DashBoard> {
     AppService garages = AppService(name: "Garages", imagePath: "assets/images/garage.jpg", link: GarageList());
     AppService records = AppService(name: "Service records", imagePath: "assets/images/repairs.jpg", link: Services());
     AppService chat = AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
-    AppService trips = AppService(name: "Trips", imagePath: "assets/images/mechanic.png");
+    AppService trips = AppService(name: "Trips", imagePath: "assets/images/trip.jpg", link: Trips());
     AppService insurance = AppService(name: "Insurance", imagePath: "assets/images/car.jpg");
     AppService parts = AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
     AppService clubs = AppService(name: "Join car club", imagePath: "assets/images/mechanic.png");
     AppService buy = AppService(name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records];
+    List<AppService> services = [garages, records, trips];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
