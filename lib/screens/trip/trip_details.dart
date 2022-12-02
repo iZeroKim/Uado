@@ -9,8 +9,12 @@ class TripDetails extends StatefulWidget {
 }
 
 class _TripDetailsState extends State<TripDetails> {
+
   @override
   Widget build(BuildContext context) {
+    List<String> icons = ["assets/images/distance.png", "assets/images/time.png", "assets/images/speed.png", "assets/images/fuel.png"];
+    List<String> titles =["Distance", "Duration", "Avg Speed", "Fuel Economy"];
+    const List<String> values = ["100 km", "5 hrs", "40 km/h", "30km/l"];
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
@@ -35,10 +39,15 @@ class _TripDetailsState extends State<TripDetails> {
                 Column(
                   children: [
                     Container(
-                        height: 150,
+                        height: 250,
                         width: double.infinity,
                         color: Colors.white54,
-                        child: Text("Map goes here")),
+                        child:  Image.asset(
+                          'assets/images/mapplaceholder.jfif',
+                          height: 250.0,
+                          //width: 105.0,
+                          fit: BoxFit.cover,
+                        )),
                     Container(
                       color: Colors.white,
                       child: Padding(
@@ -73,7 +82,7 @@ class _TripDetailsState extends State<TripDetails> {
                               ),
                               SizedBox(height: 5.0),
                               Text(
-                                "Elgon Court, Ralphe Burch Road, Nairobi",
+                                "Elgon Court, Ralphe Bunche Road, Nairobi",
                                 style: TextStyle(
                                   color: Colors.grey,
                                 ),
@@ -102,7 +111,7 @@ class _TripDetailsState extends State<TripDetails> {
                       child: Padding(
                         padding: EdgeInsets.all(30),
                         child: GridView.builder(
-                          itemCount: 4,
+                          itemCount: values.length,
                           shrinkWrap: true,
                           physics: ScrollPhysics(),
                           gridDelegate:
@@ -135,16 +144,16 @@ class _TripDetailsState extends State<TripDetails> {
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
-                                              children: const [
-                                                const Icon(
-                                                  Icons.directions_car_sharp,
-                                                  size: 52,
-                                                  color: Color.fromRGBO(
-                                                      255, 191, 27, 1),
+                                              children:  [
+                                                Image.asset(
+                                                  icons[index],
+                                                  height: 250.0,
+                                                  //width: 105.0,
+                                                  fit: BoxFit.cover,
                                                 ),
                                                 SizedBox(height: 10.0),
                                                 Text(
-                                                  "10000 km",
+                                                  values[index],
                                                   style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 16,
@@ -153,7 +162,7 @@ class _TripDetailsState extends State<TripDetails> {
                                                 ),
                                                 SizedBox(height: 10.0),
                                                 Text(
-                                                  "Distance",
+                                                  titles[index],
                                                   style: TextStyle(
                                                       color: Colors.grey),
                                                 ),
