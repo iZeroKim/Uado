@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import 'garage_review.dart';
-import 'garage_mechanics.dart';
+import 'mechanic_review.dart';
 
 class MechanicDetails extends StatelessWidget {
   MechanicDetails({super.key});
@@ -31,7 +30,7 @@ class MechanicDetails extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => AddGarageReview()));
+                    MaterialPageRoute(builder: (context) => AddMechanicReview()));
               },
               child: Center(
                   child: Text("Write Review",
