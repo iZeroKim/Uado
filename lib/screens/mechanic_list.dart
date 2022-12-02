@@ -60,232 +60,6 @@ class _MechanicListState extends State<MechanicList> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Card(
-                //   elevation: 1.0,
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //     children: [
-                //       InkWell(
-                //         onTap: () {
-                //           showModalBottomSheet<void>(
-                //             context: context,
-                //             builder: (BuildContext context) {
-                //               return const SizedBox(
-                //                 child: Center(
-                //                   child: Text("Show all items"),
-                //                 ),
-                //               );
-                //             },
-                //           );
-                //         },
-                //         child: Card(
-                //           color: const Color.fromRGBO(78, 199, 50, 1),
-                //           shape: const StadiumBorder(),
-                //           child: Container(
-                //             width: 40.0,
-                //             height: 40.0,
-                //             child: const Center(
-                //               child: Center(
-                //                   child: Icon(
-                //                 Icons.menu,
-                //                 color: Colors.white,
-                //               )),
-                //             ),
-                //           ),
-                //         ),
-                //       ),
-                //       InkWell(
-                //         onTap: () {
-                //           showModalBottomSheet<void>(
-                //             context: context,
-                //             builder: (BuildContext context) {
-                //               return const SizedBox(
-                //                 child: Center(
-                //                   child: Text("Show nearest items"),
-                //                 ),
-                //               );
-                //             },
-                //           );
-                //         },
-                //         child: Card(
-                //           color: Colors.white,
-                //           shape: const StadiumBorder(),
-                //           elevation: 0.0,
-                //           child: Container(
-                //             width: 60.0,
-                //             height: 60.0,
-                //             child: const Center(
-                //               child: Center(
-                //                   child: Icon(
-                //                 Icons.pin_drop_rounded,
-                //                 color: Color.fromRGBO(78, 199, 50, 1),
-                //                 size: 40,
-                //               )),
-                //             ),
-                //           ),
-                //         ),
-                //       ),
-                //       InkWell(
-                //         onTap: () {
-                //           showModalBottomSheet<void>(
-                //             // context and builder are
-                //             // required properties in this widget
-                //             context: context,
-                //             builder: (BuildContext context) {
-                //               // we set up a container inside which
-                //               // we create center column and display text
-                //
-                //               // Returning SizedBox instead of a Container
-                //               return SizedBox(
-                //                 child: Center(
-                //                   child: Padding(
-                //                     padding: const EdgeInsets.all(20.0),
-                //                     child: Column(
-                //                       crossAxisAlignment:
-                //                           CrossAxisAlignment.start,
-                //                       children: [
-                //                         const Text(
-                //                           '  SORT BY',
-                //                           style: TextStyle(
-                //                               color: Colors.grey,
-                //                               fontWeight: FontWeight.bold),
-                //                         ),
-                //                         const SizedBox(
-                //                           height: 10,
-                //                         ),
-                //                         Padding(
-                //                           padding: const EdgeInsets.only(
-                //                             left: 5.0,
-                //                             right: 5.0,
-                //                           ),
-                //                           child: Container(
-                //                             width: double.infinity,
-                //                             height: 0.5,
-                //                             padding: const EdgeInsets.only(
-                //                               left: 5.0,
-                //                               right: 20.0,
-                //                             ),
-                //                             decoration: const BoxDecoration(
-                //                                 border: Border(
-                //                               bottom: BorderSide(
-                //                                   width: 1.0,
-                //                                   color: Colors.grey),
-                //                             )),
-                //                           ),
-                //                         ),
-                //                         const SizedBox(
-                //                           height: 10,
-                //                         ),
-                //                         SizedBox(
-                //                           width: double.infinity,
-                //                           child: ListTile(
-                //                             title: const Text('Popularity',
-                //                                 style: TextStyle(fontSize: 14)),
-                //                             leading: Radio(
-                //                               activeColor: const Color.fromRGBO(
-                //                                   78, 199, 50, 1),
-                //                               value: "popularity",
-                //                               groupValue: selected_sort_value,
-                //                               onChanged: (String? value) {
-                //                                 setState(() {
-                //                                   selected_sort_value = value;
-                //                                   print(selected_sort_value);
-                //                                 });
-                //                               },
-                //                             ),
-                //                           ),
-                //                         ),
-                //                         SizedBox(
-                //                           width: double.infinity,
-                //                           child: ListTile(
-                //                             title: const Text(
-                //                                 'Price - Low to High',
-                //                                 style: TextStyle(fontSize: 14)),
-                //                             leading: Radio(
-                //                               activeColor: const Color.fromRGBO(
-                //                                   78, 199, 50, 1),
-                //                               value: "cheapest",
-                //                               groupValue: selected_sort_value,
-                //                               onChanged: (String? value) {
-                //                                 setState(() {
-                //                                   selected_sort_value = value;
-                //                                   print(selected_sort_value);
-                //                                 });
-                //                               },
-                //                             ),
-                //                           ),
-                //                         ),
-                //                         SizedBox(
-                //                           width: double.infinity,
-                //                           child: ListTile(
-                //                             title: const Text(
-                //                                 'Price - High to Low',
-                //                                 style: TextStyle(fontSize: 14)),
-                //                             leading: Radio(
-                //                               activeColor: const Color.fromRGBO(
-                //                                   78, 199, 50, 1),
-                //                               value: "expensive",
-                //                               groupValue: selected_sort_value,
-                //                               onChanged: (String? value) {
-                //                                 setState(() {
-                //                                   selected_sort_value = value;
-                //                                   print(selected_sort_value);
-                //                                 });
-                //                               },
-                //                             ),
-                //                           ),
-                //                         ),
-                //                         SizedBox(
-                //                           width: double.infinity,
-                //                           child: ListTile(
-                //                             title: const Text('Newest First',
-                //                                 style: TextStyle(fontSize: 14)),
-                //                             leading: Radio(
-                //                               activeColor: const Color.fromRGBO(
-                //                                   78, 199, 50, 1),
-                //                               value: "cheapest",
-                //                               groupValue: selected_sort_value,
-                //                               onChanged: (String? value) {
-                //                                 setState(() {
-                //                                   selected_sort_value = value;
-                //                                   print(selected_sort_value);
-                //                                 });
-                //                               },
-                //                             ),
-                //                           ),
-                //                         ),
-                //                       ],
-                //                     ),
-                //                   ),
-                //                 ),
-                //               );
-                //             },
-                //           );
-                //         },
-                //         child: Card(
-                //           color: Colors.white,
-                //           shape: const StadiumBorder(),
-                //           elevation: 0.0,
-                //           child: Container(
-                //             width: 60.0,
-                //             height: 60.0,
-                //             child: const Center(
-                //               child: Center(
-                //                   child: Icon(
-                //                 Icons.compare_arrows_sharp,
-                //                 color: Color.fromRGBO(78, 199, 50, 1),
-                //                 size: 40,
-                //               )),
-                //             ),
-                //           ),
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-
-                // Mechanic List builder
-                // single List item
 
                 const SizedBox(
                   height: 10.0,
@@ -306,16 +80,70 @@ class _MechanicListState extends State<MechanicList> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Card(
-                                child: Container(
-                                  height: 70,
-                                  child: Row(
-                                    children: [
-                                      Row(
-                                        //Avatar
-                                        //Name, location and rating
-                                        //Est charge
-                                      )
-                                    ],
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Container(
+                                    height: 80,
+                                    width: double.infinity,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            CircleAvatar(
+                                              minRadius: 38,
+                                              backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                                            ),
+                                            SizedBox(width: 15.0,),
+                                            //Name, location and rating
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Text(garage.name, style: TextStyle(color: Colors.black, fontSize: 18)),
+                                                SizedBox(height: 5,width: 100,),
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  children: [
+                                                    Icon(Icons.location_on, size: 18,color: Colors.grey,),
+                                                    SizedBox(width: 5.0,),
+                                                    Text(garage.address, style: TextStyle(color: Colors.grey),),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 5,),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                                  children: [
+                                                    GFRating(
+                                                      color: Color.fromRGBO(78, 199, 50, 1),
+                                                      borderColor: Color.fromRGBO(78, 199, 50, 1),
+                                                      size: 20,
+                                                      value: 4,
+                                                      onChanged: (value) {
+                                                        // setState(() {
+                                                        //   _rating = value;
+                                                        // });
+                                                      },
+                                                    ),
+                                                    Text(
+                                                      "(213)",
+                                                      style: TextStyle(
+                                                          color: Colors.grey),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          children: [
+                                          Text("Last Charge", style: TextStyle(color: Colors.grey, fontSize: 13)),
+                                          Text("Ksh 3500", style: TextStyle(color: Colors.black, fontSize: 16)),
+                                        ],)
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
