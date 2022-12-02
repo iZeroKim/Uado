@@ -79,8 +79,8 @@ class _DashBoardState extends State<DashBoard> {
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          const ListTile(
+                        children: const <Widget>[
+                          ListTile(
                             title: Padding(
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Specifications',
@@ -90,32 +90,32 @@ class _DashBoardState extends State<DashBoard> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             subtitle: Text(
-                              '2010 Model \nRecently services',
+                              '   2010 Model \n   Recently services',
                               style: TextStyle(color: Colors.white, fontSize: 18),
                             ),
                           ),
-                          ButtonBar(
-                            children: <Widget>[
-                              SizedBox(
-                                  width: 60,
-                                  child: Center(
-                                    child: ElevatedButton(
-                                      onPressed: () {},
-                                      child: const Icon(
-                                        Icons.navigate_next,
-                                        color: Color.fromRGBO(78, 199, 50, 1),
-                                      ),
-                                      style: ElevatedButton.styleFrom(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            //border radius equal to or more than 50% of width
-                                          ),
-                                          backgroundColor: Colors.white),
-                                    ),
-                                  ))
-                            ],
-                          ),
+                          // ButtonBar(
+                          //   children: <Widget>[
+                          //     SizedBox(
+                          //         width: 60,
+                          //         child: Center(
+                          //           child: ElevatedButton(
+                          //             onPressed: () {},
+                          //             child: const Icon(
+                          //               Icons.navigate_next,
+                          //               color: Color.fromRGBO(78, 199, 50, 1),
+                          //             ),
+                          //             style: ElevatedButton.styleFrom(
+                          //                 shape: RoundedRectangleBorder(
+                          //                   borderRadius:
+                          //                       BorderRadius.circular(50),
+                          //                   //border radius equal to or more than 50% of width
+                          //                 ),
+                          //                 backgroundColor: Colors.white),
+                          //           ),
+                          //         ))
+                          //   ],
+                          // ),
                         ],
                       ),
                     ),

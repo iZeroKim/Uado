@@ -109,7 +109,7 @@ class _TripDetailsState extends State<TripDetails> {
                     ),
                     Container(
                       child: Padding(
-                        padding: EdgeInsets.all(30),
+                        padding: EdgeInsets.all(20),
                         child: GridView.builder(
                           itemCount: values.length,
                           shrinkWrap: true,
@@ -147,11 +147,11 @@ class _TripDetailsState extends State<TripDetails> {
                                               children:  [
                                                 Image.asset(
                                                   icons[index],
-                                                  height: 250.0,
+                                                  height: 85.0,
                                                   //width: 105.0,
                                                   fit: BoxFit.cover,
                                                 ),
-                                                SizedBox(height: 10.0),
+                                                SizedBox(height: 5.0),
                                                 Text(
                                                   values[index],
                                                   style: TextStyle(
@@ -160,7 +160,7 @@ class _TripDetailsState extends State<TripDetails> {
                                                       fontWeight:
                                                           FontWeight.bold),
                                                 ),
-                                                SizedBox(height: 10.0),
+                                                SizedBox(height: 5.0),
                                                 Text(
                                                   titles[index],
                                                   style: TextStyle(
