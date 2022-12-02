@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:uado/screens/service_details.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);
@@ -211,29 +212,36 @@ class _ServicesState extends State<Services> {
                               const SizedBox(
                                 height: 15.0,
                               ),
+
+
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "21,Nov 2022",
                                     style: TextStyle(color: Colors.black),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5.0,
                                   ),
                                   Row(
                                     children: [
-                                      Text(
-                                        "Ksh 1500",
+                                      const Text(
+                                        "Ksh 7000",
                                         style: TextStyle(color: Colors.black),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5.0,
                                       ),
-                                      Icon(
-                                        Icons.navigate_next,
-                                        color: Colors.grey,
+                                      InkWell(
+                                        onTap:(){
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ServiceDetails()));
+                                        },
+                                        child: const Icon(
+                                          Icons.navigate_next,
+                                          color: Colors.grey,
+                                        ),
                                       )
                                     ],
                                   ),
@@ -250,60 +258,30 @@ class _ServicesState extends State<Services> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "21,Nov 2022",
                                     style: TextStyle(color: Colors.black),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5.0,
                                   ),
                                   Row(
                                     children: [
-                                      Text(
-                                        "Ksh 1500",
+                                      const Text(
+                                        "Ksh 7000",
                                         style: TextStyle(color: Colors.black),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5.0,
                                       ),
-                                      Icon(
-                                        Icons.navigate_next,
-                                        color: Colors.grey,
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              const Divider(
-                                height: 20,
-                                thickness: 0.5,
-                                indent: 0,
-                                endIndent: 0,
-                                color: Colors.grey,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "21,Nov 2022",
-                                    style: TextStyle(color: Colors.black),
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "Ksh 1500",
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                      SizedBox(
-                                        height: 5.0,
-                                      ),
-                                      Icon(
-                                        Icons.navigate_next,
-                                        color: Colors.grey,
+                                      InkWell(
+                                        onTap:(){
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ServiceDetails()));
+                                        },
+                                        child: const Icon(
+                                          Icons.navigate_next,
+                                          color: Colors.grey,
+                                        ),
                                       )
                                     ],
                                   ),
