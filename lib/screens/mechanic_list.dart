@@ -310,7 +310,11 @@ class _MechanicListState extends State<MechanicList> {
                                   height: 70,
                                   child: Row(
                                     children: [
-
+                                      Row(
+                                        //Avatar
+                                        //Name, location and rating
+                                        //Est charge
+                                      )
                                     ],
                                   ),
                                 ),
