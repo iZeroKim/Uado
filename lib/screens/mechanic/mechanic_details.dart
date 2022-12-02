@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
-import '../mechanic_review.dart';
+import 'package:uado/screens/mechanic/mechanic_review.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MechanicDetails extends StatelessWidget {

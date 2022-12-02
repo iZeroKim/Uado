@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../at6.dart';
+import 'at6.dart';
 
 class At5Page extends StatefulWidget {
   const At5Page({Key? key}) : super(key: key);

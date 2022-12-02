@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:uado/screens/service_details.dart';
+import 'package:uado/screens/services/service_details.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);

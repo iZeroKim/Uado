@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
-import 'add_garage.dart';
-import 'garage/garage_details.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:uado/screens/garage/add_garage.dart';
+import 'package:uado/screens/garage/garage_details.dart';
 
 class GarageList extends StatefulWidget {
   const GarageList({Key? key}) : super(key: key);

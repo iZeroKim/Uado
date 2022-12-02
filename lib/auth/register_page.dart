@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../screens/garage_list.dart';
+import 'package:uado/screens/dash_board.dart';
 import 'login_initial_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -175,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const GarageList()));
+                            builder: (context) => const DashBoard()));
                       },
                       child: Container(
                         width: double.infinity,

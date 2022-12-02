@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:uado/screens/garage/garage_list.dart';
+import 'package:uado/screens/services/services.dart';
 
 import '../models/AppService.dart';
-import '../screens/garage/garage_list.dart';
-import '../screens/services.dart';
 import '../screens/trip/trips.dart';
 import 'mechanic/mechanic_list.dart';
 

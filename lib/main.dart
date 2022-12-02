@@ -4,8 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/garage_provider.dart';
-import 'package:uado/screens/mechanic_list.dart';
-import 'package:uado/screens/services.dart';
 
 void main() {
   runApp(const MyApp());
