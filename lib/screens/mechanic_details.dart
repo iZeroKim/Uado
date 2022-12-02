@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'mechanic_review.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MechanicDetails extends StatelessWidget {
   MechanicDetails({super.key});
@@ -8,6 +9,14 @@ class MechanicDetails extends StatelessWidget {
 
   double _rating = 4;
 
+  _callMechanic() async {
+    var url = Uri.parse("tel:+254701609514");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -80,7 +89,10 @@ class MechanicDetails extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       child:InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          print("Calling mechanic");
+                          _callMechanic();
+                        },
                         child:  Card(
                           color: Colors.white,
                           shape: StadiumBorder(
