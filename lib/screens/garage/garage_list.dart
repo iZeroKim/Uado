@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'add_garage.dart';
-import 'garage_details.dart';
+import 'garage/garage_details.dart';
 import 'package:getwidget/getwidget.dart';
 
 class GarageList extends StatefulWidget {

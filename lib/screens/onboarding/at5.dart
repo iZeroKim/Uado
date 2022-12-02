@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
 
-import 'at5.dart';
+import '../at6.dart';
 
-class At4Page extends StatefulWidget {
-  const At4Page({Key? key}) : super(key: key);
+class At5Page extends StatefulWidget {
+  const At5Page({Key? key}) : super(key: key);
 
   @override
-  State<At4Page> createState() => _At4PageState();
+  State<At5Page> createState() => _At5PageState();
 }
 
-class _At4PageState extends State<At4Page> {
-  List<DropdownMenuItem<String>> makers = const [
-    DropdownMenuItem(child: Text("BMW"), value: "bmw"),
-    DropdownMenuItem(child: Text("Mercedes"), value: "mercedes"),
-    DropdownMenuItem(child: Text("Audi"), value: "audi"),
-    DropdownMenuItem(child: Text("Jeep"), value: "jeep"),
+class _At5PageState extends State<At5Page> {
+  List<DropdownMenuItem<int>> yoms = [
+    DropdownMenuItem(child: Text("2010"), value: 2010),
+    DropdownMenuItem(child: Text("2011"), value: 2011),
+    DropdownMenuItem(child: Text("2012"), value: 2012),
+    DropdownMenuItem(child: Text("2013"), value: 2013),
+    DropdownMenuItem(child: Text("2014"), value: 2014),
+    DropdownMenuItem(child: Text("2015"), value: 2015),
+    DropdownMenuItem(child: Text("2016"), value: 2016),
+    DropdownMenuItem(child: Text("2017"), value: 2017),
   ];
-  List<DropdownMenuItem<String>> models = const [
-    DropdownMenuItem(child: Text("C180"), value: "c180"),
-    DropdownMenuItem(child: Text("C200"), value: "c200"),
-    DropdownMenuItem(child: Text("RS"), value: "rs"),
-    DropdownMenuItem(child: Text("G63"), value: "g63"),
+
+  List<DropdownMenuItem<String>> units = [
+    DropdownMenuItem(child: Text("Miles"), value: "miles"),
+    DropdownMenuItem(child: Text("Kilometers"), value: "kms"),
   ];
-  String selectedMaker = "mercedes";
-  String selectedModel = "g63";
+  int selectedYom = 2010;
+  String selectedUnit = "kms";
 
   @override
   Widget build(BuildContext context) {
@@ -76,24 +79,17 @@ class _At4PageState extends State<At4Page> {
                             color: Color.fromRGBO(78, 199, 50, 1)),
                       ),
                       Card(
-                        color: Colors.white,
+                        color: const Color.fromRGBO(78, 199, 50, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
                           height: 50.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: const Color.fromRGBO(78, 199, 50, 1),
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
                           child: const Center(
                             child: Center(
                                 child: Text(
                               "2",
                               style: TextStyle(
-                                  color: Color.fromRGBO(78, 199, 50, 1),
+                                  color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             )),
@@ -138,34 +134,7 @@ class _At4PageState extends State<At4Page> {
                     height: 40.0,
                   ),
 
-                  const Text("CarMaker : ",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold)),
-                  // Input dropdown
-                  DropdownButtonFormField(
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black, width: 2),
-                          borderRadius: BorderRadius.circular(2),
-                        ),
-                        border: InputBorder.none,
-                        filled: true,
-                      ),
-                      value: selectedMaker,
-                      onChanged: (String? newMaker) {
-                        setState(() {
-                          selectedMaker = newMaker!;
-                        });
-                      },
-                      items: makers),
-
-                  const SizedBox(
-                    height: 30.0,
-                  ),
-
-                  const Text("Car Model : ",
+                  const Text("YOM : ",
                       style: TextStyle(
                           color: Colors.blue,
                           fontSize: 14,
@@ -184,34 +153,82 @@ class _At4PageState extends State<At4Page> {
                         border: InputBorder.none,
                         filled: true,
                       ),
-                      value: selectedModel,
-                      onChanged: (String? newModel) {
+                      value: selectedYom,
+                      onChanged: (int? newYom) {
                         setState(() {
-                          selectedModel = newModel!;
+                          selectedYom = newYom!;
                         });
                       },
-                      items: models),
+                      items: yoms),
 
                   const SizedBox(
                     height: 30.0,
                   ),
 
-                  Row(
-                    children: const [
-                      Text("Registration no ",
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold)),
-                      Text(
-                        "(optional)",
-                        style: TextStyle(
-                          color: Colors.grey,
+                  const Text("Odometer Reading : ",
+                      style: TextStyle(
+                          color: Colors.blue,
                           fontSize: 14,
+                          fontWeight: FontWeight.bold)),
+                  // Input dropdown
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      const Flexible(
+                        child: Padding(
+                          padding: EdgeInsets.only(right: 20.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: "Eg 25000",
+                              hintStyle: TextStyle(color: Colors.black),
+                              filled: true,
+                              border: InputBorder.none,
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.black, width: 2.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: DropdownButtonFormField(
+                              decoration: InputDecoration(
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 2),
+                                  borderRadius: BorderRadius.circular(2),
+                                ),
+                                border: InputBorder.none,
+                                filled: true,
+                              ),
+                              value: selectedUnit,
+                              onChanged: (String? newUnit) {
+                                setState(() {
+                                  selectedUnit = newUnit!;
+                                });
+                              },
+                              items: units),
                         ),
                       ),
                     ],
                   ),
+
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+
+                  const Text("Engine Capacity : ",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold)),
                   // Input dropdown
                   const SizedBox(
                     height: 20.0,
@@ -219,8 +236,12 @@ class _At4PageState extends State<At4Page> {
 
                   const TextField(
                     decoration: InputDecoration(
-                      hintText: "KDD 314T",
+                      hintText: "Eg 2500",
                       hintStyle: TextStyle(color: Colors.black),
+                      suffix: Text(
+                        'CC',
+                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                      ),
                       filled: true,
                       border: InputBorder.none,
                       focusedBorder: OutlineInputBorder(
@@ -248,12 +269,11 @@ class _At4PageState extends State<At4Page> {
             SizedBox(
               height: 120.0,
               width: 120.0,
-
               //Wrap with inkwell and navigate to next
               child: InkWell(
                 onTap: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => At5Page()));
+                      .push(MaterialPageRoute(builder: (context) => At6Page()));
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(

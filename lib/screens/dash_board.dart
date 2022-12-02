@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../models/AppService.dart';
-import '../screens/garage_list.dart';
+import '../screens/garage/garage_list.dart';
 import '../screens/services.dart';
-import '../screens/trips.dart';
-import '../screens/mechanic_list.dart';
+import '../screens/trip/trips.dart';
+import 'mechanic/mechanic_list.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);

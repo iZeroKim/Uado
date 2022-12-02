@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 
-import 'dash_board.dart';
+import '../at5.dart';
 
-class At6Page extends StatefulWidget {
-  const At6Page({Key? key}) : super(key: key);
+class At4Page extends StatefulWidget {
+  const At4Page({Key? key}) : super(key: key);
 
   @override
-  State<At6Page> createState() => _At6PageState();
+  State<At4Page> createState() => _At4PageState();
 }
 
-class _At6PageState extends State<At6Page> {
-  List<DropdownMenuItem<String>> insuranceCompanies = const [
-    DropdownMenuItem(child: Text("UAP insurance"), value: "uap"),
-    DropdownMenuItem(child: Text("Directline"), value: "directline"),
-    DropdownMenuItem(child: Text("CIC"), value: "cic"),
-    DropdownMenuItem(child: Text("ICEA Lion"), value: "icea"),
-    DropdownMenuItem(child: Text("Madison"), value: "madison"),
+class _At4PageState extends State<At4Page> {
+  List<DropdownMenuItem<String>> makers = const [
+    DropdownMenuItem(child: Text("BMW"), value: "bmw"),
+    DropdownMenuItem(child: Text("Mercedes"), value: "mercedes"),
+    DropdownMenuItem(child: Text("Audi"), value: "audi"),
+    DropdownMenuItem(child: Text("Jeep"), value: "jeep"),
   ];
-  int selectedYom = 2010;
-  String selectedIC = "uap";
+  List<DropdownMenuItem<String>> models = const [
+    DropdownMenuItem(child: Text("C180"), value: "c180"),
+    DropdownMenuItem(child: Text("C200"), value: "c200"),
+    DropdownMenuItem(child: Text("RS"), value: "rs"),
+    DropdownMenuItem(child: Text("G63"), value: "g63"),
+  ];
+  String selectedMaker = "mercedes";
+  String selectedModel = "g63";
 
   @override
   Widget build(BuildContext context) {
@@ -71,17 +76,24 @@ class _At6PageState extends State<At6Page> {
                             color: Color.fromRGBO(78, 199, 50, 1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(78, 199, 50, 1),
+                        color: Colors.white,
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
                           height: 50.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: const Color.fromRGBO(78, 199, 50, 1),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                           child: const Center(
                             child: Center(
                                 child: Text(
                               "2",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromRGBO(78, 199, 50, 1),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             )),
@@ -95,17 +107,24 @@ class _At6PageState extends State<At6Page> {
                             color: Color.fromRGBO(78, 199, 50, 1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(78, 199, 50, 1),
+                        color: Colors.white,
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
                           height: 50.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: const Color.fromRGBO(78, 199, 50, 1),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                           child: const Center(
                             child: Center(
                                 child: Text(
                               "3",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromRGBO(78, 199, 50, 1),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             )),
@@ -119,7 +138,34 @@ class _At6PageState extends State<At6Page> {
                     height: 40.0,
                   ),
 
-                  const Text("Car Insurance : ",
+                  const Text("CarMaker : ",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold)),
+                  // Input dropdown
+                  DropdownButtonFormField(
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black, width: 2),
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        border: InputBorder.none,
+                        filled: true,
+                      ),
+                      value: selectedMaker,
+                      onChanged: (String? newMaker) {
+                        setState(() {
+                          selectedMaker = newMaker!;
+                        });
+                      },
+                      items: makers),
+
+                  const SizedBox(
+                    height: 30.0,
+                  ),
+
+                  const Text("Car Model : ",
                       style: TextStyle(
                           color: Colors.blue,
                           fontSize: 14,
@@ -138,120 +184,53 @@ class _At6PageState extends State<At6Page> {
                         border: InputBorder.none,
                         filled: true,
                       ),
-                      value: selectedIC,
-                      onChanged: (String? newIC) {
+                      value: selectedModel,
+                      onChanged: (String? newModel) {
                         setState(() {
-                          selectedIC = newIC!;
+                          selectedModel = newModel!;
                         });
                       },
-                      items: insuranceCompanies),
+                      items: models),
 
                   const SizedBox(
                     height: 30.0,
                   ),
 
-                  const Text("Insurance Validity : ",
-                      style: TextStyle(
-                          color: Colors.blue,
+                  Row(
+                    children: const [
+                      Text("Registration no ",
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold)),
+                      Text(
+                        "(optional)",
+                        style: TextStyle(
+                          color: Colors.grey,
                           fontSize: 14,
-                          fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ],
+                  ),
                   // Input dropdown
                   const SizedBox(
                     height: 20.0,
                   ),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(right: 20.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Eg 11 Jan 2017",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
-                              ),
-                            ),
-                          ),
-                        ),
+                  const TextField(
+                    decoration: InputDecoration(
+                      hintText: "KDD 314T",
+                      hintStyle: TextStyle(color: Colors.black),
+                      filled: true,
+                      border: InputBorder.none,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black, width: 2.0),
                       ),
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Eg 10 Jan 2018",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
 
-                  const SizedBox(
-                    height: 30.0,
-                  ),
-
-                  const Text("Broker Details : ",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold)),
-                  // Input dropdown
                   const SizedBox(
                     height: 20.0,
-                  ),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(right: 20.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Eg Kimani brokers",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Eg 0722111887",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               )
@@ -269,11 +248,12 @@ class _At6PageState extends State<At6Page> {
             SizedBox(
               height: 120.0,
               width: 120.0,
-              // Wrap with inkwell and navigate to next
+
+              //Wrap with inkwell and navigate to next
               child: InkWell(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => DashBoard()));
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => At5Page()));
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'trip_details.dart';
+import 'trip/trip_details.dart';
 
 class Trips extends StatefulWidget {
   const Trips({Key? key}) : super(key: key);
