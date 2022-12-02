@@ -16,6 +16,9 @@ class MechanicDetails extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        elevation: 1.0,
+        title: const Text("Mechanic Elion"),
       ),
       bottomNavigationBar: BottomAppBar(
         elevation: 10.0,
@@ -43,6 +46,79 @@ class MechanicDetails extends StatelessWidget {
           children: [
             Container(
               color: Colors.white,
+              child: Column(
+                children: [
+                  //Row
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, top:30, right: 20, bottom: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.location_on, size: 18,color: Colors.grey,),
+                            SizedBox(width: 5.0,),
+                            Text("123 Abc place", style: TextStyle(color: Colors.grey, fontSize: 16),),
+                          ],
+                        ),
+                        CircleAvatar(
+                          minRadius: 55,
+                          backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Last Charge", style: TextStyle(color: Colors.grey, fontSize: 13)),
+                            Text("Ksh 3500", style: TextStyle(color: Colors.black, fontSize: 16)),
+                          ],)
+                      ],
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.all(20),
+                    child: Container(
+                      width: double.infinity,
+                      child:InkWell(
+                        onTap: () {},
+                        child:  Card(
+                          color: Colors.white,
+                          shape: StadiumBorder(
+                            side: BorderSide(
+                              color: Color.fromRGBO(78, 199, 50, 1),
+                            ),
+                          ),
+                           child: Center(
+                             child: Padding(
+                               padding: const EdgeInsets.all(10.0),
+                               child: Row(
+                                 mainAxisAlignment: MainAxisAlignment.center,
+                                 children: [
+                                   Icon(
+                                     Icons.call,
+                                     color: Color.fromRGBO(78, 199, 50, 1), size: 28,
+                                   ),
+                                   SizedBox(width: 10),
+                                   Text(
+                                     "Call",
+                                     style: TextStyle(
+                                         color: Color.fromRGBO(78, 199, 50, 1),
+                                       fontSize: 18
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+                           ),
+                        ),
+                      ),
+                    ),
+                  )
+                  //Row
+
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
