@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
-import 'add_garage.dart';
-import 'garage_details.dart';
+import 'add_mechanic.dart';
+import 'mechanic_details.dart';
 import 'package:getwidget/getwidget.dart';
 
 class MechanicList extends StatefulWidget {
@@ -48,8 +48,8 @@ class _MechanicListState extends State<MechanicList> {
             tooltip: 'Add Mechanic',
             onPressed: () {
               print("Add mechanic");
-              // Navigator.of(context).push(
-              //     MaterialPageRoute(builder: (context) => const AddGarage()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const AddMechanic()));
             },
           ),
         ],
@@ -80,69 +80,74 @@ class _MechanicListState extends State<MechanicList> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(15.0),
-                                  child: Container(
-                                    height: 80,
-                                    width: double.infinity,
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            CircleAvatar(
-                                              minRadius: 38,
-                                              backgroundImage: AssetImage("assets/images/avatar.jpg"),
-                                            ),
-                                            SizedBox(width: 15.0,),
-                                            //Name, location and rating
-                                            Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(garage.name, style: TextStyle(color: Colors.black, fontSize: 18)),
-                                                SizedBox(height: 5,width: 100,),
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                  children: [
-                                                    Icon(Icons.location_on, size: 18,color: Colors.grey,),
-                                                    SizedBox(width: 5.0,),
-                                                    Text(garage.address, style: TextStyle(color: Colors.grey),),
-                                                  ],
-                                                ),
-                                                SizedBox(height: 5,),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                                  children: [
-                                                    GFRating(
-                                                      color: Color.fromRGBO(78, 199, 50, 1),
-                                                      borderColor: Color.fromRGBO(78, 199, 50, 1),
-                                                      size: 20,
-                                                      value: 4,
-                                                      onChanged: (value) {
-                                                        // setState(() {
-                                                        //   _rating = value;
-                                                        // });
-                                                      },
-                                                    ),
-                                                    Text(
-                                                      "(213)",
-                                                      style: TextStyle(
-                                                          color: Colors.grey),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        Column(
-                                          crossAxisAlignment: CrossAxisAlignment.end,
-                                          children: [
-                                          Text("Last Charge", style: TextStyle(color: Colors.grey, fontSize: 13)),
-                                          Text("Ksh 3500", style: TextStyle(color: Colors.black, fontSize: 16)),
-                                        ],)
-                                      ],
+                                child: InkWell(
+                                  onTap: (){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => MechanicDetails()));
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Container(
+                                      height: 80,
+                                      width: double.infinity,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                minRadius: 38,
+                                                backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                                              ),
+                                              SizedBox(width: 15.0,),
+                                              //Name, location and rating
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(garage.name, style: TextStyle(color: Colors.black, fontSize: 18)),
+                                                  SizedBox(height: 5,width: 100,),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                    children: [
+                                                      Icon(Icons.location_on, size: 18,color: Colors.grey,),
+                                                      SizedBox(width: 5.0,),
+                                                      Text(garage.address, style: TextStyle(color: Colors.grey),),
+                                                    ],
+                                                  ),
+                                                  SizedBox(height: 5,),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                    children: [
+                                                      GFRating(
+                                                        color: Color.fromRGBO(78, 199, 50, 1),
+                                                        borderColor: Color.fromRGBO(78, 199, 50, 1),
+                                                        size: 20,
+                                                        value: 4,
+                                                        onChanged: (value) {
+                                                          // setState(() {
+                                                          //   _rating = value;
+                                                          // });
+                                                        },
+                                                      ),
+                                                      Text(
+                                                        "(213)",
+                                                        style: TextStyle(
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                            children: [
+                                            Text("Last Charge", style: TextStyle(color: Colors.grey, fontSize: 13)),
+                                            Text("Ksh 3500", style: TextStyle(color: Colors.black, fontSize: 16)),
+                                          ],)
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
