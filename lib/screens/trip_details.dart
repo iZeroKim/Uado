@@ -115,7 +115,7 @@ class _TripDetailsState extends State<TripDetails> {
                                 padding: const EdgeInsets.all(5),
                                 child: InkWell(
                                   onTap: () {
-                                    print("Null");
+                                    print("Trip details card");
                                   },
                                   child: Card(
                                       semanticContainer: true,

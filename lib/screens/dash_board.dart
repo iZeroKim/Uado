@@ -4,6 +4,7 @@ import '../models/AppService.dart';
 import '../screens/garage_list.dart';
 import '../screens/services.dart';
 import '../screens/trips.dart';
+import '../screens/mechanic_list.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -23,6 +24,10 @@ class _DashBoardState extends State<DashBoard> {
         name: "Service records",
         imagePath: "assets/images/repairs.jpg",
         link: Services());
+    AppService freelancers = AppService(
+        name: "Freelance Mechanics",
+        imagePath: "assets/images/onemechanic.jfif",
+        link: MechanicList());
     AppService chat =
         AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
     AppService trips = AppService(
@@ -36,7 +41,7 @@ class _DashBoardState extends State<DashBoard> {
     AppService buy = AppService(
         name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records, trips];
+    List<AppService> services = [garages, records, trips, freelancers];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -58,7 +63,7 @@ class _DashBoardState extends State<DashBoard> {
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 34),
+                        fontSize: 28),
                   ),
                   const SizedBox(height: 15.0),
                   Card(
@@ -81,12 +86,12 @@ class _DashBoardState extends State<DashBoard> {
                               child: Text('Specifications',
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18.0,
+                                      fontSize: 20.0,
                                       fontWeight: FontWeight.bold)),
                             ),
                             subtitle: Text(
                               '2010 Model \nRecently services',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white, fontSize: 18),
                             ),
                           ),
                           ButtonBar(

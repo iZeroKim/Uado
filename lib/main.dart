@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/garage_provider.dart';
+import 'package:uado/screens/mechanic_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home: const InitialLoginPage(),
-        // home: const Trips(),
+        // home: const InitialLoginPage(),
+        home: const MechanicList(),
       ),
     );
   }
