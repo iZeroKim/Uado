@@ -98,7 +98,7 @@ class _MechanicListState extends State<MechanicList> {
                                                 minRadius: 38,
                                                 backgroundImage: AssetImage("assets/images/avatar.jpg"),
                                               ),
-                                              SizedBox(width: 15.0,),
+                                              SizedBox(width: 10.0,),
                                               //Name, location and rating
                                               Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
