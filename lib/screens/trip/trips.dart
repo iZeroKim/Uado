@@ -164,8 +164,7 @@ class _TripsState extends State<Trips> {
                                                         const Icon(
                                                           Icons.timer_outlined,
                                                           size: 32,
-                                                          color: Color.fromRGBO(
-                                                              255, 191, 27, 1),
+                                                          color: Color.fromRGBO(78, 199, 50, 1),
                                                         ),
                                                         const SizedBox(
                                                             width: 5.0),
