@@ -25,7 +25,7 @@ class _AddMechanicState extends State<AddMechanic> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
         title: const Text("Add Mechanic"),
       ),
@@ -86,7 +86,8 @@ class _AddMechanicState extends State<AddMechanic> {
                                     print("Add tapped: END");
                                   },
                                   child: Card(
-                                    color: const Color.fromRGBO(24,158,138,1),
+                                    color:
+                                        const Color.fromRGBO(24, 158, 138, 1),
                                     shape: const StadiumBorder(),
                                     child: Container(
                                       width: 40.0,
@@ -199,7 +200,7 @@ class _AddMechanicState extends State<AddMechanic> {
                                     style: TextStyle(fontSize: 14)),
                                 leading: Radio(
                                   activeColor:
-                                      const Color.fromRGBO(24,158,138,1),
+                                      const Color.fromRGBO(24, 158, 138, 1),
                                   value: "Female",
                                   groupValue: _gender,
                                   onChanged: (String? value) {
@@ -218,7 +219,7 @@ class _AddMechanicState extends State<AddMechanic> {
                                     style: TextStyle(fontSize: 14)),
                                 leading: Radio(
                                   activeColor:
-                                      const Color.fromRGBO(24,158,138,1),
+                                      const Color.fromRGBO(24, 158, 138, 1),
                                   value: "Male",
                                   groupValue: _gender,
                                   onChanged: (String? value) {
@@ -262,7 +263,7 @@ class _AddMechanicState extends State<AddMechanic> {
                         const Text(
                           "Details:",
                           style: TextStyle(
-                            color: Color.fromRGBO(24,158,138,1),
+                            color: Color.fromRGBO(24, 158, 138, 1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -296,7 +297,7 @@ class _AddMechanicState extends State<AddMechanic> {
                             children: const [
                               Icon(Icons.add_location_alt_outlined,
                                   size: 28,
-                                  color: Color.fromRGBO(24,158,138,1)),
+                                  color: Color.fromRGBO(24, 158, 138, 1)),
                               Text(" Add location on map"),
                             ],
                           ),
@@ -334,7 +335,7 @@ class _AddMechanicState extends State<AddMechanic> {
                         const Text(
                           "Hours of Operation:",
                           style: TextStyle(
-                            color: Color.fromRGBO(24,158,138,1),
+                            color: Color.fromRGBO(24, 158, 138, 1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -501,7 +502,7 @@ class _AddMechanicState extends State<AddMechanic> {
                         const Text(
                           "Add Tags:",
                           style: TextStyle(
-                            color: Color.fromRGBO(24,158,138,1),
+                            color: Color.fromRGBO(24, 158, 138, 1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -578,17 +579,17 @@ class _AddMechanicState extends State<AddMechanic> {
                             backgroundColor: Colors.white,
                             shape: StadiumBorder(
                               side: BorderSide(
-                                color: Color.fromRGBO(24,158,138,1),
+                                color: Color.fromRGBO(24, 158, 138, 1),
                               ),
                             ),
                             avatar: Icon(
                               Icons.add,
-                              color: Color.fromRGBO(24,158,138,1),
+                              color: Color.fromRGBO(24, 158, 138, 1),
                             ),
                             label: Text(
                               "Add",
                               style: TextStyle(
-                                  color: Color.fromRGBO(24,158,138,1)),
+                                  color: Color.fromRGBO(24, 158, 138, 1)),
                             ),
                           ),
                         ),
@@ -625,7 +626,7 @@ class _AddMechanicState extends State<AddMechanic> {
                         const Text(
                           "Link Social Media:",
                           style: TextStyle(
-                            color: Color.fromRGBO(24,158,138,1),
+                            color: Color.fromRGBO(24, 158, 138, 1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -670,7 +671,7 @@ class _AddMechanicState extends State<AddMechanic> {
       ),
       bottomNavigationBar: const BottomAppBar(
         elevation: 0.0,
-        color: Color.fromRGBO(24,158,138,1),
+        color: Color.fromRGBO(24, 158, 138, 1),
         child: SizedBox(
             height: 55.0,
             width: double.infinity,

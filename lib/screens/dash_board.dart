@@ -46,7 +46,7 @@ class _DashBoardState extends State<DashBoard> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Hello Kim"),
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
       ),
       body: ListView(
@@ -57,12 +57,11 @@ class _DashBoardState extends State<DashBoard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    color: const Color.fromRGBO(254,225,132,1),
+                    color: const Color.fromRGBO(254, 225, 132, 1),
                     elevation: 2,
                     child: Padding(
                       padding: const EdgeInsets.only(
@@ -72,7 +71,8 @@ class _DashBoardState extends State<DashBoard> {
                         children: [
                           const SizedBox(height: 10.0),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
                             child: const Text(
                               " Mercedes C200",
                               style: TextStyle(
@@ -85,7 +85,6 @@ class _DashBoardState extends State<DashBoard> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-
                               Column(
                                 children: [
                                   Text('Specifications',
@@ -94,10 +93,12 @@ class _DashBoardState extends State<DashBoard> {
                                           fontSize: 20.0,
                                           fontWeight: FontWeight.bold)),
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20.0),
                                     child: Text(
                                       '   2010 Model \n   Recently services',
-                                      style: TextStyle(color: Colors.black, fontSize: 18),
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 18),
                                     ),
                                   )
                                 ],
@@ -106,8 +107,7 @@ class _DashBoardState extends State<DashBoard> {
                                 height: 80,
                                 width: 80,
                                 child: Image(
-                                  image: AssetImage(
-                                      "assets/images/logo.png"),
+                                  image: AssetImage("assets/images/logo.png"),
                                   fit: BoxFit.fill,
                                 ),
                               ),

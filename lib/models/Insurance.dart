@@ -5,7 +5,10 @@ class Insurance {
   final brokerName;
   final brokerNumber;
 
-  Insurance({required this.insuranceProvider, required this.validFrom, required this.validTo, required this.brokerName, required this.brokerNumber});
-
-
+  Insurance(
+      {required this.insuranceProvider,
+      required this.validFrom,
+      required this.validTo,
+      required this.brokerName,
+      required this.brokerNumber});
 }

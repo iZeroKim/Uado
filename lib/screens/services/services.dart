@@ -18,7 +18,7 @@ class _ServicesState extends State<Services> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
         title: const Text("Service History"),
       ),
@@ -174,13 +174,13 @@ class _ServicesState extends State<Services> {
                           children: const [
                             Icon(
                               Icons.calendar_month_outlined,
-                              color: Color.fromRGBO(24,158,138,1),
+                              color: Color.fromRGBO(24, 158, 138, 1),
                             ),
                             SizedBox(width: 10.0),
                             Text(
                               "Schedule Service Date",
                               style: TextStyle(
-                                  color: Color.fromRGBO(24,158,138,1),
+                                  color: Color.fromRGBO(24, 158, 138, 1),
                                   fontSize: 18),
                             ),
                           ],
@@ -212,11 +212,9 @@ class _ServicesState extends State<Services> {
                               const SizedBox(
                                 height: 15.0,
                               ),
-
-
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   const Text(
                                     "21,Nov 2022",
@@ -235,8 +233,11 @@ class _ServicesState extends State<Services> {
                                         height: 5.0,
                                       ),
                                       InkWell(
-                                        onTap:(){
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ServiceDetails()));
+                                        onTap: () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const ServiceDetails()));
                                         },
                                         child: const Icon(
                                           Icons.navigate_next,
@@ -275,8 +276,11 @@ class _ServicesState extends State<Services> {
                                         height: 5.0,
                                       ),
                                       InkWell(
-                                        onTap:(){
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ServiceDetails()));
+                                        onTap: () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const ServiceDetails()));
                                         },
                                         child: const Icon(
                                           Icons.navigate_next,

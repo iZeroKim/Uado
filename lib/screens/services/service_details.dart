@@ -13,7 +13,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
         title: const Text("Service Details"),
       ),
@@ -38,8 +38,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         children: [
                           const Text(
                             "Mercedes C200",
-                            style: TextStyle(
-                                color: Colors.black, fontSize: 18),
+                            style: TextStyle(color: Colors.black, fontSize: 18),
                           ),
                           const SizedBox(
                             height: 15.0,
@@ -47,8 +46,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                           Row(
                             children: [
                               Column(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
                                     "Date :",
@@ -70,25 +68,22 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                               Padding(
                                 padding: const EdgeInsets.only(right: 20),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: const [
                                     Text(
                                       "29, Nov 2022",
-                                      style: TextStyle(
-                                          fontSize: 15),
+                                      style: TextStyle(fontSize: 15),
                                     ),
                                     Text("Ksh 7000",
-                                        style: TextStyle( fontSize: 15)),
+                                        style: TextStyle(fontSize: 15)),
                                     Text("Mechanic Elion",
-                                        style: TextStyle( fontSize: 18)),
+                                        style: TextStyle(fontSize: 18)),
                                   ],
                                 ),
                               ),
                               const SizedBox(
                                 height: 15,
                               ),
-
                             ],
                           )
                         ],
@@ -112,17 +107,13 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                         children: [
                           const Text(
                             "SERVICE PROVIDED",
-                            style:
-                            TextStyle(color: Colors.grey, fontSize: 16),
+                            style: TextStyle(color: Colors.grey, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 15.0,
                           ),
-
-
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text(
                                 "Engine Checkup",
@@ -152,8 +143,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                             color: Colors.grey,
                           ),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text(
                                 "Oil Change",
@@ -183,8 +173,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                             color: Colors.grey,
                           ),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text(
                                 "Changed AC Filter",
@@ -206,15 +195,18 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                               ),
                             ],
                           ),
-
-                          SizedBox(height: 20,),
+                          SizedBox(
+                            height: 20,
+                          ),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text(
                                 "TOTAL PAID : ",
-                                style: TextStyle(color:  Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
                               ),
                               const SizedBox(
                                 height: 5.0,
@@ -223,7 +215,9 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                 children: const [
                                   Text(
                                     "Ksh 7000",
-                                    style: TextStyle(color: Color.fromRGBO(24,158,138,1), fontSize: 18),
+                                    style: TextStyle(
+                                        color: Color.fromRGBO(24, 158, 138, 1),
+                                        fontSize: 18),
                                   ),
                                   SizedBox(
                                     height: 5.0,
@@ -232,7 +226,6 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     )
@@ -242,7 +235,6 @@ class _ServiceDetailsState extends State<ServiceDetails> {
             ),
           ],
         ),
-
       ),
     );
   }

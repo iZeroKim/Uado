@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
+
 import 'add_mechanic.dart';
 import 'mechanic_details.dart';
-import 'package:getwidget/getwidget.dart';
 
 class MechanicList extends StatefulWidget {
   const MechanicList({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _MechanicListState extends State<MechanicList> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
         title: const Text("Freelance Mechanics"),
         actions: [
@@ -60,11 +61,9 @@ class _MechanicListState extends State<MechanicList> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 const SizedBox(
                   height: 10.0,
                 ),
-
                 Consumer<GarageProvider>(builder: (context, value, child) {
                   if (value.isLoading) {
                     return const Center(
@@ -81,8 +80,11 @@ class _MechanicListState extends State<MechanicList> {
                                   const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Card(
                                 child: InkWell(
-                                  onTap: (){
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => MechanicDetails()));
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MechanicDetails()));
                                   },
                                   child: Padding(
                                     padding: const EdgeInsets.all(15.0),
@@ -90,37 +92,64 @@ class _MechanicListState extends State<MechanicList> {
                                       height: 80,
                                       width: double.infinity,
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Row(
                                             children: [
                                               CircleAvatar(
                                                 minRadius: 38,
-                                                backgroundImage: AssetImage("assets/images/avatar.jpg"),
+                                                backgroundImage: AssetImage(
+                                                    "assets/images/avatar.jpg"),
                                               ),
-                                              SizedBox(width: 10.0,),
+                                              SizedBox(
+                                                width: 10.0,
+                                              ),
                                               //Name, location and rating
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(garage.name, style: TextStyle(color: Colors.black, fontSize: 18)),
-                                                  SizedBox(height: 5,width: 100,),
-                                                  Row(
-                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                    children: [
-                                                      Icon(Icons.location_on, size: 18,color: Colors.grey,),
-                                                      SizedBox(width: 5.0,),
-                                                      Text(garage.address, style: TextStyle(color: Colors.grey),),
-                                                    ],
+                                                  Text(garage.name,
+                                                      style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 18)),
+                                                  SizedBox(
+                                                    height: 5,
+                                                    width: 100,
                                                   ),
-                                                  SizedBox(height: 5,),
                                                   Row(
                                                     mainAxisAlignment:
-                                                    MainAxisAlignment.start,
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Icon(
+                                                        Icons.location_on,
+                                                        size: 18,
+                                                        color: Colors.grey,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 5.0,
+                                                      ),
+                                                      Text(
+                                                        garage.address,
+                                                        style: TextStyle(
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
                                                     children: [
                                                       GFRating(
-                                                        color: Color.fromRGBO(24,158,138,1),
-                                                        borderColor: Color.fromRGBO(24,158,138,1),
+                                                        color: Color.fromRGBO(
+                                                            24, 158, 138, 1),
+                                                        borderColor:
+                                                            Color.fromRGBO(24,
+                                                                158, 138, 1),
                                                         size: 20,
                                                         value: 4,
                                                         onChanged: (value) {
@@ -141,11 +170,19 @@ class _MechanicListState extends State<MechanicList> {
                                             ],
                                           ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
                                             children: [
-                                            Text("Last Charge", style: TextStyle(color: Colors.grey, fontSize: 13)),
-                                            Text("Ksh 3500", style: TextStyle(color: Colors.black, fontSize: 16)),
-                                          ],)
+                                              Text("Last Charge",
+                                                  style: TextStyle(
+                                                      color: Colors.grey,
+                                                      fontSize: 13)),
+                                              Text("Ksh 3500",
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 16)),
+                                            ],
+                                          )
                                         ],
                                       ),
                                     ),
@@ -179,7 +216,7 @@ class _MechanicListState extends State<MechanicList> {
                   child: Center(
                       child: Icon(
                     Icons.filter_alt,
-                    color: Color.fromRGBO(24,158,138,1),
+                    color: Color.fromRGBO(24, 158, 138, 1),
                     size: 40,
                   )),
                 ),

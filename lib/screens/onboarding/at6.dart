@@ -26,7 +26,7 @@ class _At6PageState extends State<At6Page> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
         title: const Text("Add Car"),
       ),
@@ -47,7 +47,7 @@ class _At6PageState extends State<At6Page> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Card(
-                        color: const Color.fromRGBO(24,158,138,1),
+                        color: const Color.fromRGBO(24, 158, 138, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -68,10 +68,10 @@ class _At6PageState extends State<At6Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(24,158,138,1)),
+                            color: Color.fromRGBO(24, 158, 138, 1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(24,158,138,1),
+                        color: const Color.fromRGBO(24, 158, 138, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -92,10 +92,10 @@ class _At6PageState extends State<At6Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(24,158,138,1)),
+                            color: Color.fromRGBO(24, 158, 138, 1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(24,158,138,1),
+                        color: const Color.fromRGBO(24, 158, 138, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -280,7 +280,7 @@ class _At6PageState extends State<At6Page> {
                         borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(200),
                     )),
-                    color: Color.fromRGBO(24,158,138,1),
+                    color: Color.fromRGBO(24, 158, 138, 1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
                       child: Icon(

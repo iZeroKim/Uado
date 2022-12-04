@@ -9,16 +9,20 @@ class TripDetails extends StatefulWidget {
 }
 
 class _TripDetailsState extends State<TripDetails> {
-
   @override
   Widget build(BuildContext context) {
-    List<String> icons = ["assets/images/distance.png", "assets/images/time.png", "assets/images/speed.png", "assets/images/fuel.png"];
-    List<String> titles =["Distance", "Duration", "Avg Speed", "Fuel Economy"];
+    List<String> icons = [
+      "assets/images/distance.png",
+      "assets/images/time.png",
+      "assets/images/speed.png",
+      "assets/images/fuel.png"
+    ];
+    List<String> titles = ["Distance", "Duration", "Avg Speed", "Fuel Economy"];
     const List<String> values = ["100 km", "5 hrs", "40 km/h", "30km/l"];
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24,158,138,1),
+        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +46,7 @@ class _TripDetailsState extends State<TripDetails> {
                         height: 250,
                         width: double.infinity,
                         color: Colors.white54,
-                        child:  Image.asset(
+                        child: Image.asset(
                           'assets/images/mapplaceholder.jfif',
                           height: 250.0,
                           //width: 105.0,
@@ -57,7 +61,7 @@ class _TripDetailsState extends State<TripDetails> {
                             Padding(
                               padding: const EdgeInsets.only(top: 25.0),
                               child: Icon(Icons.location_on,
-                                  color: Color.fromRGBO(24,158,138,1)),
+                                  color: Color.fromRGBO(24, 158, 138, 1)),
                             ),
                             Dash(
                                 direction: Axis.vertical,
@@ -144,7 +148,7 @@ class _TripDetailsState extends State<TripDetails> {
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
-                                              children:  [
+                                              children: [
                                                 Image.asset(
                                                   icons[index],
                                                   height: 85.0,
