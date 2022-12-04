@@ -53,19 +53,11 @@ class _DashBoardState extends State<DashBoard> {
         children: [
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 50.0),
-                  const Text(
-                    " Mercedes C200",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28),
-                  ),
-                  const SizedBox(height: 15.0),
+
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
@@ -76,46 +68,51 @@ class _DashBoardState extends State<DashBoard> {
                       padding: const EdgeInsets.only(
                           top: 20.0, bottom: 20.0, right: 10.0),
                       child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const <Widget>[
-                          ListTile(
-                            title: Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text('Specifications',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold)),
-                            ),
-                            subtitle: Text(
-                              '   2010 Model \n   Recently services',
-                              style: TextStyle(color: Colors.black, fontSize: 18),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 10.0),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: const Text(
+                              " Mercedes C200",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25),
                             ),
                           ),
-                          // ButtonBar(
-                          //   children: <Widget>[
-                          //     SizedBox(
-                          //         width: 60,
-                          //         child: Center(
-                          //           child: ElevatedButton(
-                          //             onPressed: () {},
-                          //             child: const Icon(
-                          //               Icons.navigate_next,
-                          //               color: Color.fromRGBO(24,158,138,1),
-                          //             ),
-                          //             style: ElevatedButton.styleFrom(
-                          //                 shape: RoundedRectangleBorder(
-                          //                   borderRadius:
-                          //                       BorderRadius.circular(50),
-                          //                   //border radius equal to or more than 50% of width
-                          //                 ),
-                          //                 backgroundColor: Colors.white),
-                          //           ),
-                          //         ))
-                          //   ],
-                          // ),
+                          const SizedBox(height: 15.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+
+                              Column(
+                                children: [
+                                  Text('Specifications',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold)),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                    child: Text(
+                                      '   2010 Model \n   Recently services',
+                                      style: TextStyle(color: Colors.black, fontSize: 18),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 80,
+                                width: 80,
+                                child: Image(
+                                  image: AssetImage(
+                                      "assets/images/logo.png"),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
