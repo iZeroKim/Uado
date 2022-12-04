@@ -18,7 +18,7 @@ class _TripDetailsState extends State<TripDetails> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +57,7 @@ class _TripDetailsState extends State<TripDetails> {
                             Padding(
                               padding: const EdgeInsets.only(top: 25.0),
                               child: Icon(Icons.location_on,
-                                  color: Color.fromRGBO(78, 199, 50, 1)),
+                                  color: Color.fromRGBO(24,158,138,1)),
                             ),
                             Dash(
                                 direction: Axis.vertical,

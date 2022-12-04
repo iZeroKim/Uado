@@ -34,7 +34,7 @@ class _At5PageState extends State<At5Page> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
         title: const Text("Add Car"),
       ),
@@ -55,7 +55,7 @@ class _At5PageState extends State<At5Page> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Card(
-                        color: const Color.fromRGBO(78, 199, 50, 1),
+                        color: const Color.fromRGBO(24,158,138,1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -76,10 +76,10 @@ class _At5PageState extends State<At5Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(78, 199, 50, 1)),
+                            color: Color.fromRGBO(24,158,138,1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(78, 199, 50, 1),
+                        color: const Color.fromRGBO(24,158,138,1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -100,7 +100,7 @@ class _At5PageState extends State<At5Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(78, 199, 50, 1)),
+                            color: Color.fromRGBO(24,158,138,1)),
                       ),
                       Card(
                         color: Colors.white,
@@ -110,7 +110,7 @@ class _At5PageState extends State<At5Page> {
                           height: 50.0,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromRGBO(78, 199, 50, 1),
+                              color: const Color.fromRGBO(24,158,138,1),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(30),
@@ -120,7 +120,7 @@ class _At5PageState extends State<At5Page> {
                                 child: Text(
                               "3",
                               style: TextStyle(
-                                  color: Color.fromRGBO(78, 199, 50, 1),
+                                  color: Color.fromRGBO(24,158,138,1),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             )),
@@ -280,7 +280,7 @@ class _At5PageState extends State<At5Page> {
                         borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(200),
                     )),
-                    color: Color.fromRGBO(78, 199, 50, 1),
+                    color: Color.fromRGBO(24,158,138,1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
                       child: Icon(

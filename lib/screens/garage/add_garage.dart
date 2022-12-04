@@ -25,7 +25,7 @@ class _AddGarageState extends State<AddGarage> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
         title: const Text("Add Garage"),
       ),
@@ -86,7 +86,7 @@ class _AddGarageState extends State<AddGarage> {
                                     print("Add tapped: END");
                                   },
                                   child: Card(
-                                    color: const Color.fromRGBO(78, 199, 50, 1),
+                                    color: const Color.fromRGBO(24,158,138,1),
                                     shape: const StadiumBorder(),
                                     child: Container(
                                       width: 40.0,
@@ -210,7 +210,7 @@ class _AddGarageState extends State<AddGarage> {
                         const Text(
                           "Details:",
                           style: TextStyle(
-                            color: Color.fromRGBO(78, 199, 50, 1),
+                            color: Color.fromRGBO(24,158,138,1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -244,7 +244,7 @@ class _AddGarageState extends State<AddGarage> {
                             children: const [
                               Icon(Icons.add_location_alt_outlined,
                                   size: 28,
-                                  color: Color.fromRGBO(78, 199, 50, 1)),
+                                  color: Color.fromRGBO(24,158,138,1)),
                               Text(" Add location on map"),
                             ],
                           ),
@@ -282,7 +282,7 @@ class _AddGarageState extends State<AddGarage> {
                         const Text(
                           "Hours of Operation:",
                           style: TextStyle(
-                            color: Color.fromRGBO(78, 199, 50, 1),
+                            color: Color.fromRGBO(24,158,138,1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -449,7 +449,7 @@ class _AddGarageState extends State<AddGarage> {
                         const Text(
                           "Add Tags:",
                           style: TextStyle(
-                            color: Color.fromRGBO(78, 199, 50, 1),
+                            color: Color.fromRGBO(24,158,138,1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -526,17 +526,17 @@ class _AddGarageState extends State<AddGarage> {
                             backgroundColor: Colors.white,
                             shape: StadiumBorder(
                               side: BorderSide(
-                                color: Color.fromRGBO(78, 199, 50, 1),
+                                color: Color.fromRGBO(24,158,138,1),
                               ),
                             ),
                             avatar: Icon(
                               Icons.add,
-                              color: Color.fromRGBO(78, 199, 50, 1),
+                              color: Color.fromRGBO(24,158,138,1),
                             ),
                             label: Text(
                               "Add",
                               style: TextStyle(
-                                  color: Color.fromRGBO(78, 199, 50, 1)),
+                                  color: Color.fromRGBO(24,158,138,1)),
                             ),
                           ),
                         ),
@@ -573,7 +573,7 @@ class _AddGarageState extends State<AddGarage> {
                         const Text(
                           "Link Social Media:",
                           style: TextStyle(
-                            color: Color.fromRGBO(78, 199, 50, 1),
+                            color: Color.fromRGBO(24,158,138,1),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -618,7 +618,7 @@ class _AddGarageState extends State<AddGarage> {
       ),
       bottomNavigationBar: const BottomAppBar(
         elevation: 0.0,
-        color: Color.fromRGBO(78, 199, 50, 1),
+        color: Color.fromRGBO(24,158,138,1),
         child: SizedBox(
             height: 55.0,
             width: double.infinity,

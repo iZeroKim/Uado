@@ -20,7 +20,7 @@ class _AddMechanicReviewState extends State<AddMechanicReview> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
         title: const Text("Review and Rating"),
       ),
@@ -36,7 +36,7 @@ class _AddMechanicReviewState extends State<AddMechanicReview> {
                     const Text(
                       "Thank You!",
                       style: TextStyle(
-                        color: Color.fromRGBO(78, 199, 50, 1),
+                        color: Color.fromRGBO(24,158,138,1),
                         fontSize: 32,
                       ),
                     ),
@@ -46,7 +46,7 @@ class _AddMechanicReviewState extends State<AddMechanicReview> {
                     const Text(
                       "for using our services.",
                       style: TextStyle(
-                        color: Color.fromRGBO(78, 199, 50, 1),
+                        color: Color.fromRGBO(24,158,138,1),
                         fontSize: 18,
                       ),
                     ),
@@ -68,7 +68,7 @@ class _AddMechanicReviewState extends State<AddMechanicReview> {
                                       Container(
                                         height: 50,
                                         color:
-                                            const Color.fromRGBO(78, 199, 50, 1),
+                                            const Color.fromRGBO(24,158,138,1),
                                       ),
                                       const SizedBox(height: 50),
                                       const Text(

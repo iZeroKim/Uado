@@ -169,7 +169,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   //Email login button
                   Card(
-                    color: const Color.fromRGBO(78, 199, 50, 1),
+                    color: const Color.fromRGBO(24,158,138,1),
                     shape: const StadiumBorder(),
                     child: InkWell(
                       onTap: () {
@@ -206,7 +206,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           " Login",
                           style: TextStyle(
                               fontSize: 18,
-                              color: Color.fromRGBO(78, 199, 50, 1)),
+                              color: Color.fromRGBO(24,158,138,1)),
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(

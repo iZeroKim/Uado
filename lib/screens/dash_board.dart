@@ -46,7 +46,7 @@ class _DashBoardState extends State<DashBoard> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Hello Kim"),
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
       ),
       body: ListView(
@@ -70,7 +70,7 @@ class _DashBoardState extends State<DashBoard> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    color: const Color.fromRGBO(78, 199, 50, 1),
+                    color: const Color.fromRGBO(254,225,132,1),
                     elevation: 2,
                     child: Padding(
                       padding: const EdgeInsets.only(
@@ -85,13 +85,13 @@ class _DashBoardState extends State<DashBoard> {
                               padding: EdgeInsets.only(bottom: 8.0),
                               child: Text('Specifications',
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold)),
                             ),
                             subtitle: Text(
                               '   2010 Model \n   Recently services',
-                              style: TextStyle(color: Colors.white, fontSize: 18),
+                              style: TextStyle(color: Colors.black, fontSize: 18),
                             ),
                           ),
                           // ButtonBar(
@@ -103,7 +103,7 @@ class _DashBoardState extends State<DashBoard> {
                           //             onPressed: () {},
                           //             child: const Icon(
                           //               Icons.navigate_next,
-                          //               color: Color.fromRGBO(78, 199, 50, 1),
+                          //               color: Color.fromRGBO(24,158,138,1),
                           //             ),
                           //             style: ElevatedButton.styleFrom(
                           //                 shape: RoundedRectangleBorder(

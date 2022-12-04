@@ -24,7 +24,7 @@ class MechanicDetails extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
         title: const Text("Mechanic Elion"),
       ),
@@ -44,7 +44,7 @@ class MechanicDetails extends StatelessWidget {
               child: Center(
                   child: Text("Write Review",
                       style: TextStyle(
-                          color: Color.fromRGBO(78, 199, 50, 1),
+                          color: Color.fromRGBO(24,158,138,1),
                           fontSize: 18))),
             )),
       ),
@@ -97,7 +97,7 @@ class MechanicDetails extends StatelessWidget {
                           color: Colors.white,
                           shape: StadiumBorder(
                             side: BorderSide(
-                              color: Color.fromRGBO(78, 199, 50, 1),
+                              color: Color.fromRGBO(24,158,138,1),
                             ),
                           ),
                            child: Center(
@@ -108,13 +108,13 @@ class MechanicDetails extends StatelessWidget {
                                  children: [
                                    Icon(
                                      Icons.call,
-                                     color: Color.fromRGBO(78, 199, 50, 1), size: 28,
+                                     color: Color.fromRGBO(24,158,138,1), size: 28,
                                    ),
                                    SizedBox(width: 10),
                                    Text(
                                      "Call",
                                      style: TextStyle(
-                                         color: Color.fromRGBO(78, 199, 50, 1),
+                                         color: Color.fromRGBO(24,158,138,1),
                                        fontSize: 18
                                      ),
                                    ),

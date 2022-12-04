@@ -34,7 +34,7 @@ class _MechanicListState extends State<MechanicList> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(78, 199, 50, 1),
+        backgroundColor: const Color.fromRGBO(24,158,138,1),
         elevation: 1.0,
         title: const Text("Freelance Mechanics"),
         actions: [
@@ -119,8 +119,8 @@ class _MechanicListState extends State<MechanicList> {
                                                     MainAxisAlignment.start,
                                                     children: [
                                                       GFRating(
-                                                        color: Color.fromRGBO(78, 199, 50, 1),
-                                                        borderColor: Color.fromRGBO(78, 199, 50, 1),
+                                                        color: Color.fromRGBO(24,158,138,1),
+                                                        borderColor: Color.fromRGBO(24,158,138,1),
                                                         size: 20,
                                                         value: 4,
                                                         onChanged: (value) {
@@ -179,7 +179,7 @@ class _MechanicListState extends State<MechanicList> {
                   child: Center(
                       child: Icon(
                     Icons.filter_alt,
-                    color: Color.fromRGBO(78, 199, 50, 1),
+                    color: Color.fromRGBO(24,158,138,1),
                     size: 40,
                   )),
                 ),
