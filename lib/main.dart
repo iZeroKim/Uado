@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/providers/mechanic_provider.dart';
+import 'package:uado/providers/trips_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => GarageProvider()),
-        ChangeNotifierProvider(create: (_) => MechanicProvider())
+        ChangeNotifierProvider(create: (_) => MechanicProvider()),
+        ChangeNotifierProvider(create: (_)=> TripProvider())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
