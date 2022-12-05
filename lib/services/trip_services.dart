@@ -2,9 +2,10 @@ import '../models/Trip.dart';
 import '../models/DayTrips.dart';
 
 class TripServices {
+
+  List<DayTrip> dayTrips = [];
   //Get Trips from Api
   Future<List<DayTrip>> getAllTrips() async {
-    List<DayTrip> dayTrips = [];
     List<Trip> trips = [];
     List<Trip> trips2 = [];
 
@@ -20,5 +21,8 @@ class TripServices {
     dayTrips.add(dayTrip1);
     dayTrips.add(dayTrip2);
     return dayTrips;
+  }
+  Future<void> addTrip(DateTime date, List<Trip> trips) async {
+    dayTrips.add(DayTrip(date, trips));
   }
 }

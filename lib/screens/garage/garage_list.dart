@@ -290,199 +290,7 @@ class _GarageListState extends State<GarageList> {
                   height: 10.0,
                 ),
 
-                Consumer<GarageProvider>(builder: (context, value, child) {
-                  if (value.isLoading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  return Expanded(
-                      child: ListView.builder(
-                          itemCount: value.garages.length,
-                          itemBuilder: (context, index) {
-                            var garage = value.garages[index];
-                            return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
-                              child: Card(
-                                elevation: 6.0,
-                                child: Column(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    GarageDetails()));
-                                      },
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              const SizedBox(
-                                                width: 10.0,
-                                              ),
-                                              Card(
-                                                child: Container(
-                                                  width: 105.0,
-                                                  height: 80.0,
-                                                  padding:
-                                                      const EdgeInsets.all(0.0),
-                                                  child: Center(
-                                                    child: Image.asset(
-                                                      'assets/images/mechanic.png',
-                                                      height: 80.0,
-                                                      width: 105.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              const SizedBox(
-                                                width: 5.0,
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    garage.name,
-                                                    style: const TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Text(
-                                                    garage.address,
-                                                    style: const TextStyle(
-                                                        color: Colors.grey),
-                                                  )
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(
-                                            height: 10.0,
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              const Text(
-                                                "20 Km Away",
-                                                style: TextStyle(
-                                                    color: Colors.grey),
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: const [
-                                                  Icon(
-                                                      Icons
-                                                          .arrow_circle_up_rounded,
-                                                      size: 18,
-                                                      color: Color.fromRGBO(
-                                                          255, 191, 27, 1)),
-                                                  Text(" Provide Pickup"),
-                                                ],
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: const [
-                                                  Icon(Icons.star,
-                                                      size: 18,
-                                                      color: Color.fromRGBO(
-                                                          255, 191, 27, 1)),
-                                                  Text(" 4.5 "),
-                                                  Text(
-                                                    "(213)",
-                                                    style: TextStyle(
-                                                        color: Colors.grey),
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    const Divider(
-                                      height: 20,
-                                      thickness: 0.5,
-                                      indent: 5,
-                                      endIndent: 5,
-                                      color: Colors.grey,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        vertical: 10.0,
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          InkWell(
-                                            onTap: () {
-                                              print("Message");
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: const [
-                                                Icon(Icons.mail,
-                                                    size: 28,
-                                                    color: Color.fromRGBO(
-                                                        78, 199, 50, 1)),
-                                                Text(" Message"),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                              left: 2.0,
-                                              right: 2.0,
-                                            ),
-                                            child: Container(
-                                              height: 30,
-                                              padding: const EdgeInsets.only(
-                                                top: 2.0,
-                                                bottom: 2.0,
-                                              ),
-                                              decoration: const BoxDecoration(
-                                                  border: Border(
-                                                left: BorderSide(
-                                                    width: 1.1,
-                                                    color: Colors.grey),
-                                              )),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              print("Call");
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: const [
-                                                Icon(Icons.call,
-                                                    size: 28,
-                                                    color: Color.fromRGBO(
-                                                        78, 199, 50, 1)),
-                                                Text(" Call"),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          }));
-                })
+                GarageListView()
               ],
             )),
       ),
@@ -610,5 +418,208 @@ class _GarageListState extends State<GarageList> {
                 : _controller.showBottomSheet();
           }),
     );
+  }
+}
+
+class GarageListView extends StatelessWidget {
+  const GarageListView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<GarageProvider>(builder: (context, value, child) {
+      if (value.isLoading) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      }
+      return Expanded(
+          child: ListView.builder(
+              itemCount: value.garages.length,
+              itemBuilder: (context, index) {
+                var garage = value.garages[index];
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Card(
+                    elevation: 6.0,
+                    child: Column(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        GarageDetails()));
+                          },
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.start,
+                                children: [
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Card(
+                                    child: Container(
+                                      width: 105.0,
+                                      height: 80.0,
+                                      padding:
+                                          const EdgeInsets.all(0.0),
+                                      child: Center(
+                                        child: Image.asset(
+                                          'assets/images/mechanic.png',
+                                          height: 80.0,
+                                          width: 105.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 5.0,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        garage.name,
+                                        style: const TextStyle(
+                                            fontWeight:
+                                                FontWeight.bold),
+                                      ),
+                                      Text(
+                                        garage.address,
+                                        style: const TextStyle(
+                                            color: Colors.grey),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10.0,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  const Text(
+                                    "20 Km Away",
+                                    style: TextStyle(
+                                        color: Colors.grey),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                    children: const [
+                                      Icon(
+                                          Icons
+                                              .arrow_circle_up_rounded,
+                                          size: 18,
+                                          color: Color.fromRGBO(
+                                              255, 191, 27, 1)),
+                                      Text(" Provide Pickup"),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                    children: const [
+                                      Icon(Icons.star,
+                                          size: 18,
+                                          color: Color.fromRGBO(
+                                              255, 191, 27, 1)),
+                                      Text(" 4.5 "),
+                                      Text(
+                                        "(213)",
+                                        style: TextStyle(
+                                            color: Colors.grey),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Divider(
+                          height: 20,
+                          thickness: 0.5,
+                          indent: 5,
+                          endIndent: 5,
+                          color: Colors.grey,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 10.0,
+                          ),
+                          child: Row(
+                            mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  print("Message");
+                                },
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                  children: const [
+                                    Icon(Icons.mail,
+                                        size: 28,
+                                        color: Color.fromRGBO(
+                                            78, 199, 50, 1)),
+                                    Text(" Message"),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 2.0,
+                                  right: 2.0,
+                                ),
+                                child: Container(
+                                  height: 30,
+                                  padding: const EdgeInsets.only(
+                                    top: 2.0,
+                                    bottom: 2.0,
+                                  ),
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                    left: BorderSide(
+                                        width: 1.1,
+                                        color: Colors.grey),
+                                  )),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  print("Call");
+                                },
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                  children: const [
+                                    Icon(Icons.call,
+                                        size: 28,
+                                        color: Color.fromRGBO(
+                                            78, 199, 50, 1)),
+                                    Text(" Call"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }));
+    });
   }
 }

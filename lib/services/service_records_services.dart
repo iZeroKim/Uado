@@ -23,4 +23,8 @@ class ServiceRecordsServices{
     records.add(record2);
     return records;
   }
+
+  Future<void> addRecord(ServiceRecord record) async {
+    records.add(record);
+  }
 }

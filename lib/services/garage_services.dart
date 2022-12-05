@@ -1,9 +1,9 @@
 import '../models/Garage.dart';
 
 class GarageServices {
+  List<Garage> garages = [];
   //Get garages from Api
   Future<List<Garage>> getAllGarages() async {
-    List<Garage> garages = [];
     Garage garage1 = Garage(["Wheel balancing", "Painting"], "garage1@fb.com",
         "garage1@tw.com", "garage1@li.com",
         garageId: "mch1",
@@ -47,5 +47,9 @@ class GarageServices {
     garages.add(garage4);
 
     return garages;
+  }
+
+  Future<void> addGarage(Garage garage) async {
+    garages.add(garage);
   }
 }

@@ -20,4 +20,12 @@ class GarageProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
+
+  Future<void> addGarage(Garage garage) async {
+    _garageServices.addGarage(garage);
+    _garages.add(garage);
+    notifyListeners();
+  }
+
+
 }
