@@ -1,9 +1,10 @@
 import '../models/Mechanic.dart';
 
 class FreelancerServices {
+  List<Mechanic> mechanics = [];
+
   //Get Mechanics from Api
   Future<List<Mechanic>> getAllMechanics() async {
-    List<Mechanic> mechanics = [];
     Mechanic mechanic1 = Mechanic(["Wheel balancing", "Painting"], "Mechanic1@fb.com",
         "Mechanic1@tw.com", "Mechanic1@li.com",
         mechanicId: "mch1",
@@ -47,5 +48,10 @@ class FreelancerServices {
     mechanics.add(mechanic4);
 
     return mechanics;
+  }
+
+  //Add mechanic
+  void addMechanic(Mechanic mechanic) async{
+    mechanics.add(mechanic);
   }
 }

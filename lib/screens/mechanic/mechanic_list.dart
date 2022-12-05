@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
+import 'package:uado/models/Mechanic.dart';
 import 'package:uado/providers/mechanic_provider.dart';
 
 import 'add_mechanic.dart';
@@ -39,20 +40,39 @@ class _MechanicListState extends State<MechanicList> {
         elevation: 1.0,
         title: const Text("Freelance Mechanics"),
         actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.add_circle_outline_rounded,
-              color: Colors.white,
-              size: 30,
-            ),
-            padding: const EdgeInsets.only(right: 15.0),
-            tooltip: 'Add Mechanic',
-            onPressed: () {
-              print("Add mechanic");
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const AddMechanic()));
-            },
-          ),
+          Consumer<MechanicProvider>(builder: (context, value,child){
+            return IconButton(
+              icon: const Icon(
+                Icons.add_circle_outline_rounded,
+                color: Colors.white,
+                size: 30,
+              ),
+              padding: const EdgeInsets.only(right: 15.0),
+              tooltip: 'Add Mechanic',
+              onPressed: () {
+                print("Add mechanic");
+
+                print(value.mechanics.length);
+                WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                  Provider.of<MechanicProvider>(context, listen: false).addMechanic(
+                      Mechanic(["Wheel balancing", "Painting"], "Mechanic1@fb.com",
+                          "Mechanic1@tw.com", "Mechanic1@li.com",
+                          mechanicId: "mch1",
+                          name: "Added Mechanic",
+                          mobile: "+254701606010",
+                          gender: "Female",
+                          address: "123 Abc place",
+                          open: "08:00 am",
+                          close: "05:00 pm")
+                  );
+                });
+
+
+                // Navigator.of(context).push(
+                //     MaterialPageRoute(builder: (context) => const AddMechanic()));
+              },
+            );
+          }),
         ],
       ),
       body: SafeArea(

@@ -12,6 +12,7 @@ class Car {
   final bool accidents;
   final Insurance insurance;
 
+
   Car(
       {required this.regNumber,
       required this.make,

@@ -19,7 +19,6 @@ class TripServices {
 
     dayTrips.add(dayTrip1);
     dayTrips.add(dayTrip2);
-    dayTrips.add(dayTrip1);
     return dayTrips;
   }
 }

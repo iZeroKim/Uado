@@ -20,4 +20,9 @@ class MechanicProvider extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
+
+  Future<void> addMechanic(Mechanic mechanic) async{
+    _mechanics.add(mechanic);
+    notifyListeners();
+  }
 }
