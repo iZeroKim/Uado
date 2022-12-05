@@ -12,7 +12,15 @@ class ServiceRecordsServices{
         garage: null,
         mechanic: Mechanic(["Oil"], "Mechanic@fb", "Mechanic@twitter", "Mechanic@linkedIn", mechanicId: "mechanic05", name: "Allan Allan", mobile: "+254701609514", gender: "Male", address: "Millimani annex, 4th street, S. Fransisco", open: "08:00", close: "19:00")
     );
+    ServiceRecord record2 = ServiceRecord(
+        dateTime: DateTime(2022, 12, 4),
+        service: "Engine Wash",
+        cost: 1500,
+        garage: null,
+        mechanic: Mechanic(["Oil"], "Mechanic@fb", "Mechanic@twitter", "Mechanic@linkedIn", mechanicId: "mechanic05", name: "Allan Allan", mobile: "+254701609514", gender: "Male", address: "Millimani annex, 4th street, S. Fransisco", open: "08:00", close: "19:00")
+    );
     records.add(record1);
+    records.add(record2);
     return records;
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
-import 'package:uado/providers/garage_provider.dart';
+import 'package:uado/providers/mechanic_provider.dart';
 
 import 'add_mechanic.dart';
 import 'mechanic_details.dart';
@@ -25,7 +25,7 @@ class _MechanicListState extends State<MechanicList> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<GarageProvider>(context, listen: false).getAllGarages();
+      Provider.of<MechanicProvider>(context, listen: false).getAllMechanics();
     });
   }
 
@@ -64,7 +64,7 @@ class _MechanicListState extends State<MechanicList> {
                 const SizedBox(
                   height: 10.0,
                 ),
-                Consumer<GarageProvider>(builder: (context, value, child) {
+                Consumer<MechanicProvider>(builder: (context, value, child) {
                   if (value.isLoading) {
                     return const Center(
                       child: CircularProgressIndicator(),
@@ -72,9 +72,9 @@ class _MechanicListState extends State<MechanicList> {
                   }
                   return Expanded(
                       child: ListView.builder(
-                          itemCount: value.garages.length,
+                          itemCount: value.mechanics.length,
                           itemBuilder: (context, index) {
-                            var garage = value.garages[index];
+                            var  mechanic = value.mechanics[index];
                             return Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10.0),
@@ -110,7 +110,7 @@ class _MechanicListState extends State<MechanicList> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(garage.name,
+                                                  Text( mechanic.name,
                                                       style: TextStyle(
                                                           color: Colors.black,
                                                           fontSize: 18)),
@@ -131,7 +131,7 @@ class _MechanicListState extends State<MechanicList> {
                                                         width: 5.0,
                                                       ),
                                                       Text(
-                                                        garage.address,
+                                                         mechanic.address,
                                                         style: TextStyle(
                                                             color: Colors.grey),
                                                       ),
