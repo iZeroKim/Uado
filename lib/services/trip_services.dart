@@ -12,6 +12,8 @@ class TripServices {
 
     trips.add(trip1);
     trips.add(trip2);
+    DayTrip dayTrip1 = DayTrip(DateTime(2022), trips);
+    dayTrips.add(dayTrip1);
 
     return dayTrips;
   }
