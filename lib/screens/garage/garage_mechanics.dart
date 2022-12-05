@@ -51,7 +51,7 @@ class _GarageMechanicsState extends State<GarageMechanics> {
               ),
               Card(
                 child: Container(
-                  height: 70,
+                  height: 80,
                   child: const GFListTile(
                       avatar: CircleAvatar(
                         minRadius: 20,
@@ -63,7 +63,7 @@ class _GarageMechanicsState extends State<GarageMechanics> {
               ),
               Card(
                 child: Container(
-                  height: 70,
+                  height: 80,
                   child: const GFListTile(
                       avatar: CircleAvatar(
                         minRadius: 20,

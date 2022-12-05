@@ -3,10 +3,10 @@ import 'dart:core';
 class Mechanic {
   final String name, mobile, gender, address, open, close;
   final List<String> tags;
-  final String? facebook, twitter, linkedin, garageId;
+  final String? facebook, twitter, linkedin, mechanicId;
 
   Mechanic(this.tags, this.facebook, this.twitter, this.linkedin,
-      {required this.garageId,
+      {required this.mechanicId,
       required this.name,
       required this.mobile,
       required this.gender,
