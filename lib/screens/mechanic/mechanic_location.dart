@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
 
 class MechanicLocation extends StatefulWidget {
@@ -9,8 +10,14 @@ class MechanicLocation extends StatefulWidget {
 }
 
 class _MechanicLocationState extends State<MechanicLocation> {
+
+
   @override
   Widget build(BuildContext context) {
+    MapController mapController = MapController(
+      initMapWithUserPosition: false,
+      initPosition: GeoPoint(latitude: 47.4358055, longitude: 8.4737324),
+    );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
@@ -23,8 +30,8 @@ class _MechanicLocationState extends State<MechanicLocation> {
             Column(
               children: [
         OSMFlutter(
-        controler:mapController,
-          currentLocation: false,
+        controller:mapController,
+          //currentLocation: false,
           road: Road(
             startIcon: MarkerIcon(
               icon: Icon(
@@ -42,8 +49,8 @@ class _MechanicLocationState extends State<MechanicLocation> {
               size: 56,
             ),
           ),
-          initPosition: GeoPoint(latitude: 47.35387, longitude: 8.43609),
-        );
+          //initPosition: GeoPoint(latitude: 47.35387, longitude: 8.43609),
+        )
               ],
             )
           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:uado/screens/mechanic/mechanic_location.dart';
 import 'package:uado/screens/mechanic/mechanic_review.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -63,23 +64,28 @@ class MechanicDetails extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                size: 18,
-                                color: Colors.grey,
-                              ),
-                              SizedBox(
-                                width: 5.0,
-                              ),
-                              Text(
-                                "123 Abc place",
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 16),
-                              ),
-                            ],
+                          InkWell(
+                            onTap:(){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => MechanicLocation()));
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                Icon(
+                                  Icons.location_on,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text(
+                                  "123 Abc place",
+                                  style:
+                                      TextStyle(color: Colors.grey, fontSize: 16),
+                                ),
+                              ],
+                            ),
                           ),
                           CircleAvatar(
                             minRadius: 55,
@@ -89,7 +95,7 @@ class MechanicDetails extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               Text("Last Charge",
                                   style: TextStyle(
                                       color: Colors.grey, fontSize: 13)),
@@ -122,7 +128,7 @@ class MechanicDetails extends StatelessWidget {
                                 padding: const EdgeInsets.all(10.0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
+                                  children: const [
                                     Icon(
                                       Icons.call,
                                       color: Color.fromRGBO(24, 158, 138, 1),
