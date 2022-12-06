@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/clubs_provider.dart';
 
@@ -81,7 +80,7 @@ class ClubListView extends StatelessWidget {
                 var club = value.clubs[index];
                 return Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 10.0),
+                      const EdgeInsets.symmetric(horizontal: 5.0),
                   child: Card(
                     elevation: 6.0,
                     child: InkWell(
@@ -129,7 +128,7 @@ class ClubListView extends StatelessWidget {
                                           ),
                                           child: Center(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(5.0),
+                                              padding: const EdgeInsets.all(3.0),
                                               child: Row(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: const [
@@ -151,6 +150,16 @@ class ClubListView extends StatelessWidget {
                                     ],
                                   ),
                                 ),
+                                Column(
+                                  children: [
+                                    Image(
+                                      height: 130,
+                                      width: 200,
+                                      image: AssetImage(club.imagePath),
+                                      fit: BoxFit.fill,
+                                    )
+                                  ],
+                                )
                               ],
                             ),
                           ],

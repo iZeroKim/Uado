@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Uado',
         theme: ThemeData(
-          primarySwatch: Colors.lightGreen,
+          primarySwatch: Colors.green,
           appBarTheme: const AppBarTheme(
             backwardsCompatibility: false, // 1
             systemOverlayStyle: SystemUiOverlayStyle.light, // 2
