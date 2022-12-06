@@ -37,7 +37,7 @@ class _DashBoardState extends State<DashBoard> {
     AppService parts =
         AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
     AppService clubs = AppService(
-        name: "Join car club", imagePath: "assets/images/mechanic.png");
+        name: "Join car club", imagePath: "assets/images/clubs.png");
     AppService buy = AppService(
         name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
@@ -57,66 +57,66 @@ class _DashBoardState extends State<DashBoard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    color: const Color.fromRGBO(254, 225, 132, 1),
-                    elevation: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 20.0, bottom: 20.0, right: 10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 10.0),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
-                            child: const Text(
-                              " Mercedes C200",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25),
-                            ),
-                          ),
-                          const SizedBox(height: 15.0),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  Text('Specifications',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.bold)),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0),
-                                    child: Text(
-                                      '   2010 Model \n   Recently services',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 18),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 80,
-                                width: 80,
-                                child: Image(
-                                  image: AssetImage("assets/images/logo.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  // Card(
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(15.0),
+                  //   ),
+                  //   color: const Color.fromRGBO(254, 225, 132, 1),
+                  //   elevation: 2,
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.only(
+                  //         top: 20.0, bottom: 20.0, right: 10.0),
+                  //     child: Column(
+                  //       crossAxisAlignment: CrossAxisAlignment.start,
+                  //       children: [
+                  //         const SizedBox(height: 10.0),
+                  //         Padding(
+                  //           padding:
+                  //               const EdgeInsets.symmetric(horizontal: 20.0),
+                  //           child: const Text(
+                  //             " Mercedes C200",
+                  //             style: TextStyle(
+                  //                 color: Colors.black,
+                  //                 fontWeight: FontWeight.bold,
+                  //                 fontSize: 25),
+                  //           ),
+                  //         ),
+                  //         const SizedBox(height: 15.0),
+                  //         Row(
+                  //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //           children: [
+                  //             Column(
+                  //               children: [
+                  //                 Text('Specifications',
+                  //                     style: TextStyle(
+                  //                         color: Colors.black,
+                  //                         fontSize: 20.0,
+                  //                         fontWeight: FontWeight.bold)),
+                  //                 Padding(
+                  //                   padding: const EdgeInsets.symmetric(
+                  //                       horizontal: 20.0),
+                  //                   child: Text(
+                  //                     '   2010 Model \n   Recently services',
+                  //                     style: TextStyle(
+                  //                         color: Colors.black, fontSize: 18),
+                  //                   ),
+                  //                 )
+                  //               ],
+                  //             ),
+                  //             SizedBox(
+                  //               height: 80,
+                  //               width: 80,
+                  //               child: Image(
+                  //                 image: AssetImage("assets/images/logo.png"),
+                  //                 fit: BoxFit.fill,
+                  //               ),
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 30.0,
                   ),
