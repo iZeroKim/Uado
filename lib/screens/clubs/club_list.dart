@@ -65,6 +65,7 @@ class ClubListView extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Consumer<ClubProvider>(builder: (context, value, child) {
@@ -100,24 +101,31 @@ class ClubListView extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                  SizedBox(
-                                      height: 40,
-                                                width: 40,
-                                                child: Image(
-                                                  image: AssetImage(club.logo),
-                                                  fit: BoxFit.fill,
-                                                )),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5.0),
+                                    child: SizedBox(
+                                      height: 45,
+                                      width: 45,
+                                      child: Image(
+                                                    image: AssetImage(club.logo),
+                                                    fit: BoxFit.fill,
+                                                  ),
+                                    ),
+                                  ),
                                       const SizedBox(height: 10.0,),
 
-                                      Text(
-                                        club.name.toUpperCase(),
-                                        style: const TextStyle(
-                                            fontWeight:
-                                                FontWeight.bold, fontSize: 30),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 5.0),
+                                        child: Text(
+                                          club.name.toUpperCase(),
+                                          style: const TextStyle(
+                                              fontWeight:
+                                                  FontWeight.bold, fontSize: 30),
+                                        ),
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          print("Join club");
+                                          print(" Join club");
                                         },
                                         child: Card(
                                           color: Colors.white,
@@ -132,7 +140,7 @@ class ClubListView extends StatelessWidget {
                                               child: Row(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: const [
-                                                  SizedBox(width: 10),
+                                                  SizedBox(width: 20),
                                                   Text(
                                                     "JOIN CLUB",
                                                     style: TextStyle(
@@ -140,6 +148,7 @@ class ClubListView extends StatelessWidget {
                                                         Color.fromRGBO(24, 158, 138, 1),
                                                         fontSize: 18),
                                                   ),
+                                                  SizedBox(width: 20),
                                                 ],
                                               ),
                                             ),

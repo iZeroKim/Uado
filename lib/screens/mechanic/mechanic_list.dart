@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:uado/models/Mechanic.dart';
 import 'package:uado/providers/mechanic_provider.dart';
 
-import 'add_mechanic.dart';
 import 'mechanic_details.dart';
 
 class MechanicList extends StatefulWidget {
@@ -118,7 +117,7 @@ class _MechanicListState extends State<MechanicList> {
                                           Row(
                                             children: [
                                               CircleAvatar(
-                                                minRadius: 38,
+                                                minRadius: 35,
                                                 backgroundImage: AssetImage(
                                                     "assets/images/avatar.jpg"),
                                               ),

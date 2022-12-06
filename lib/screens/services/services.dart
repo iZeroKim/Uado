@@ -30,6 +30,7 @@ class _ServicesState extends State<Services> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Card(
+                    elevation: 4.0,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,6 +166,7 @@ class _ServicesState extends State<Services> {
                       }, currentTime: DateTime.now(), locale: LocaleType.en);
                     },
                     child: Card(
+                      elevation: 4.0,
                       color: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -195,6 +197,7 @@ class _ServicesState extends State<Services> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Card(
+                    elevation: 4.0,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -24,6 +24,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
               padding: const EdgeInsets.all(10.0),
               child: Card(
                 color: Colors.white,
+                elevation: 4.0,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -96,6 +97,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Card(
+                elevation: 4.0,
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

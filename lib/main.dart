@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/providers/clubs_provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/providers/mechanic_provider.dart';
 import 'package:uado/providers/trips_provider.dart';
-import 'package:uado/screens/dash_board.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        // home: const InitialLoginPage(),
-        home: DashBoard(),
+        home: const InitialLoginPage(),
+        // home: DashBoard(),
       ),
     );
   }

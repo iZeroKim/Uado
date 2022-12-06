@@ -26,7 +26,7 @@ class FreelancerServices {
     Mechanic mechanic3 = Mechanic(["Wheel balancing", "Painting"], "Mechanic1@fb.com",
         "Mechanic1@tw.com", "Mechanic1@li.com",
         mechanicId: "mch3",
-        name: "Bikes Kenya Mechanics",
+        name: "Bikes Kenya",
         mobile: "+254701606010",
         gender: "Female",
         address: "465 Abc place",

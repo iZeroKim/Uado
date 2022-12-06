@@ -149,7 +149,7 @@ class _AddMechanicReviewState extends State<AddMechanicReview> {
                                     top: 10,
                                     left: avatar_left,
                                     child: Card(
-                                      elevation: 8.0,
+                                      elevation: 4.0,
                                       child: Padding(
                                         padding: const EdgeInsets.all(0.0),
                                         child: Row(
