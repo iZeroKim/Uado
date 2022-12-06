@@ -43,7 +43,7 @@ class _DashBoardState extends State<DashBoard> {
 
         name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records, trips, freelancers];
+    List<AppService> services = [garages, records, trips, freelancers, clubs];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

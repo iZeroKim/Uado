@@ -11,13 +11,6 @@ class ClubList extends StatefulWidget {
 }
 
 class _ClubListState extends State<ClubList> {
-  String? selected_sort_value = "popularity";
-  final GFBottomSheetController _controller = GFBottomSheetController();
-
-  var dropList = ["Wheels", "Rims", "Engine"];
-
-  List list = [];
-
   @override
   void initState() {
     super.initState();
@@ -55,10 +48,8 @@ class _ClubListState extends State<ClubList> {
             padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Club List builder
-                // single List item
-                const SizedBox(
+              children: const [
+                SizedBox(
                   height: 10.0,
                 ),
 
@@ -87,64 +78,84 @@ class ClubListView extends StatelessWidget {
           child: ListView.builder(
               itemCount: value.clubs.length,
               itemBuilder: (context, index) {
-                var Club = value.clubs[index];
+                var club = value.clubs[index];
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Card(
                     elevation: 6.0,
-                    child: Column(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => ClubDetails()));
-                          },
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.start,
-                                children: [
-                                  const SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  Card(
-                                    child: Container(
-                                      width: 105.0,
-                                      height: 80.0,
-                                      padding:
-                                          const EdgeInsets.all(0.0),
-                                      child: Center(
-                                        child: Image.asset(
-                                          'assets/images/clubs.png',
-                                          height: 80.0,
-                                          width: 105.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  Column(
+                    child: InkWell(
+                      onTap: () {
+                        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => ClubDetails()));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 20.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
+                                  SizedBox(
+                                      height: 40,
+                                                width: 40,
+                                                child: Image(
+                                                  image: AssetImage(club.logo),
+                                                  fit: BoxFit.fill,
+                                                )),
+                                      const SizedBox(height: 10.0,),
+
                                       Text(
-                                        Club.name,
+                                        club.name.toUpperCase(),
                                         style: const TextStyle(
                                             fontWeight:
-                                                FontWeight.bold),
+                                                FontWeight.bold, fontSize: 30),
                                       ),
+                                      InkWell(
+                                        onTap: () {
+                                          print("Join club");
+                                        },
+                                        child: Card(
+                                          color: Colors.white,
+                                          shape: const StadiumBorder(
+                                            side: BorderSide(
+                                              color: Color.fromRGBO(24, 158, 138, 1),
+                                            ),
+                                          ),
+                                          child: Center(
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(5.0),
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: const [
+                                                  SizedBox(width: 10),
+                                                  Text(
+                                                    "JOIN CLUB",
+                                                    style: TextStyle(
+                                                        color:
+                                                        Color.fromRGBO(24, 158, 138, 1),
+                                                        fontSize: 18),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+
                                     ],
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 );
