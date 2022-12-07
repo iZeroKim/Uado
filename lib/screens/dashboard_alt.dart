@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:uado/screens/mechanic/mechanic_location.dart';
 
+import 'package:uado/screens/clubs/club_list.dart';
+import 'package:uado/screens/garage/garage_list.dart';
+import 'package:uado/screens/services/services.dart';
+
+import '../models/AppService.dart';
+import '../screens/trip/trips.dart';
+import 'mechanic/mechanic_list.dart';
+
 class DashboardAlt extends StatefulWidget {
   const DashboardAlt({Key? key}) : super(key: key);
 
@@ -9,8 +17,36 @@ class DashboardAlt extends StatefulWidget {
 }
 
 class _DashboardAltState extends State<DashboardAlt> {
+
   @override
   Widget build(BuildContext context) {
+    AppService garages = AppService(
+        name: "Garages",
+        imagePath: "assets/images/garage.jpg",
+        link: GarageList());
+    AppService records = AppService(
+        name: "Services",
+        imagePath: "assets/images/repairs.jpg",
+        link: Services());
+    AppService freelancers = AppService(
+        name: "Freelancers",
+        imagePath: "assets/images/onemechanic.jfif",
+        link: MechanicList());
+    AppService chat =
+    AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
+    AppService trips = AppService(
+        name: "Trips", imagePath: "assets/images/trip.jpg", link: Trips());
+    AppService insurance =
+    AppService(name: "Insurance", imagePath: "assets/images/car.jpg");
+    AppService parts =
+    AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
+    AppService clubs = AppService(
+        name: "Clubs", imagePath: "assets/images/clubs.png", link: ClubList());
+    AppService buy = AppService(
+
+        name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
+
+    List<AppService> services = [garages, records, trips, freelancers, clubs];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -59,10 +95,11 @@ class _DashboardAltState extends State<DashboardAlt> {
                                   children: const [
                                     Text('Primary Car :',
                                         style: TextStyle(
-                                            color: Colors.black,
+                                            color: Color.fromRGBO(254, 225, 132, 1),
+                                          fontWeight: FontWeight.bold,
                                             fontSize: 16.0,)),
                                     Padding(
-                                      padding: EdgeInsets.only( top:5.0, bottom: 10.0),
+                                      padding: EdgeInsets.only( top:3.0, bottom: 10.0),
                                       child: Text(
                                         'Mercedes W205',
                                         style: TextStyle(
@@ -73,49 +110,92 @@ class _DashboardAltState extends State<DashboardAlt> {
                                   ],
                                 ),
                               ),
-                              const SizedBox(
-                                height: 50,
-                                width: 50,
-                                child: Image(
-                                  image: AssetImage("assets/images/logo.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
+                              // const SizedBox(
+                              //   height: 50,
+                              //   width: 50,
+                              //   child: Image(
+                              //     image: AssetImage("assets/images/logo.png"),
+                              //     fit: BoxFit.fill,
+                              //   ),
+                              // ),
                             ],
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 10.0),
-                                child: Text('Last Service : ',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 18.0,)),
-                              ),
-                              Text('04/12/2022',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18.0,)),
-                            ],
-                          ),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     Padding(
+                          //       padding: const EdgeInsets.only(left: 10.0),
+                          //       child: Text('Last Service : ',
+                          //           style: TextStyle(
+                          //             color: Color.fromRGBO(254, 225, 132, 1),
+                          //             fontSize: 18.0,
+                          //           fontWeight: FontWeight.bold)),
+                          //     ),
+                          //     Text('04/12/2022',
+                          //         style: TextStyle(
+                          //           color: Color.fromRGBO(254, 225, 132, 1),
+                          //           fontSize: 18.0,
+                          //             fontWeight: FontWeight.bold)),
+                          //   ],
+                          // ),
                         ],
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 20.0, left: 20,bottom: 10),
-                    child: Text("Shortcuts", style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),),
+                  Padding(padding: EdgeInsets.only(top: 20.0, left: 20),
+                    child: Text("Shortcuts", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),),
                   )
                 ],
               ),
             ),
-
-            InkWell(
-              onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MechanicLocation()));
-              },
-              child: Text("Link to map"),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Container(
+                height: 100,
+                child: Expanded(
+                  child: ListView.builder(
+                    itemCount: services.length,
+                    shrinkWrap: true,
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      var service = services[index];
+                      return Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: InkWell(
+                            onTap: () {
+                              service.link != null
+                                  ? Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => service.link!))
+                                  : print("Null");
+                            },
+                            child: Card(
+                              semanticContainer: true,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                              clipBehavior: Clip.antiAlias,
+                              child: Container(
+                                width: 90,
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Icon(Icons.ac_unit_sharp, color: Color.fromRGBO(24, 158, 138, 1), size: 32,),
+                                      Text(
+                                        service.name,
+                                      ),
+                                    ],
+                                  ),
+                              ),
+                            ),
+                          ));
+                    },
+                  ),
+                ),
+              ),
             )
+
+
 
           ],
 
