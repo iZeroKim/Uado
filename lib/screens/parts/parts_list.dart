@@ -125,7 +125,7 @@ class _PartsListState extends State<PartsList> {
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => PartDetails())
+                              MaterialPageRoute(builder: (context) => PartDetails(part: part,))
                             );
                           },
                           child: Card(

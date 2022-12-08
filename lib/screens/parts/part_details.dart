@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:uado/models/Part.dart';
 
 
 class PartDetails extends StatefulWidget {
-  const PartDetails({Key? key}) : super(key: key);
+  const PartDetails( {Key? key, required this.part}) : super(key: key);
+  final Part part;
 
   @override
-  State<PartDetails> createState() => _PartDetailsState();
+  State<PartDetails> createState() => _PartDetailsState(part: part);
 }
 
 class _PartDetailsState extends State<PartDetails> {
   var _rating = 4.0;
+
+  Part part;
+
+  _PartDetailsState({required Part this.part});
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +61,10 @@ class _PartDetailsState extends State<PartDetails> {
                 height: 350,
                 width: double.infinity,
                 child: Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
                         image:
-                        AssetImage("assets/images/headlight.jfif"),
+                        AssetImage(part.thumbnail),
                         fit: BoxFit.fill),
                   ),
                 ),
@@ -129,14 +135,14 @@ class _PartDetailsState extends State<PartDetails> {
                   padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
-                        "Subaru Headlights",
+                        part.name,
                         style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
                         maxLines: 2,
                       ),
                       Text(
-                        "Ksh. 3500",
+                        "Ksh. ${part.cost}",
                         style: TextStyle(fontSize: 16, color: Color.fromRGBO(24, 158, 138, 1), fontWeight: FontWeight.bold),
                         maxLines: 1,
                       ),
