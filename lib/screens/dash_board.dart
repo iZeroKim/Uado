@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uado/screens/clubs/club_list.dart';
 import 'package:uado/screens/garage/garage_list.dart';
+import 'package:uado/screens/parts/parts_list.dart';
 import 'package:uado/screens/services/services.dart';
 
 import '../models/AppService.dart';
@@ -36,14 +37,14 @@ class _DashBoardState extends State<DashBoard> {
     AppService insurance =
         AppService(name: "Insurance", imagePath: "assets/images/car.jpg");
     AppService parts =
-        AppService(name: "Buy part", imagePath: "assets/images/mechanic.png");
+        AppService(name: "Buy part", imagePath: "assets/images/mechanic.png", link: PartsList());
     AppService clubs = AppService(
         name: "Join car club", imagePath: "assets/images/clubs.png", link: ClubList());
     AppService buy = AppService(
 
         name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records, trips, freelancers, clubs];
+    List<AppService> services = [garages, records, trips, freelancers, clubs, parts];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
