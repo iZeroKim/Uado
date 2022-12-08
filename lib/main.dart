@@ -5,7 +5,7 @@ import 'package:uado/providers/clubs_provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/providers/mechanic_provider.dart';
 import 'package:uado/providers/trips_provider.dart';
-import 'package:uado/screens/dash_board.dart';
+import 'package:uado/screens/parts/parts_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         ),
 
         // home: const InitialLoginPage(),
-        home: const DashBoard(),
+        home: const PartsList(),
 
       ),
     );

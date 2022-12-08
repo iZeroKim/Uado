@@ -169,6 +169,7 @@ class _DashBoardState extends State<DashBoard> {
                                             fit: BoxFit.fill),
                                       ),
                                     )),
+
                                     Padding(
                                         padding: EdgeInsets.all(10.0),
                                         child: Text(

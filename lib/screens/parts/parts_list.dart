@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uado/models/Part.dart';
 
 class PartsList extends StatefulWidget {
   const PartsList({Key? key}) : super(key: key);
@@ -10,6 +11,20 @@ class PartsList extends StatefulWidget {
 class _PartsListState extends State<PartsList> {
   @override
   Widget build(BuildContext context) {
+    List<Part> parts = [];
+    Part part1 = Part(null, name: "Rims", brand: "Maxxies Rims", seller: "Elion garage", cost: 3500, part_description: {"Color": "Black"}, thumbnail: "assets/images/rim.jfif");
+    Part part2 = Part(null, name: "Brake pad", brand: "Brakes KE", seller: "Brakes KE", cost: 1200, part_description: {"Width": "14 mm"}, thumbnail: "assets/images/brakepad.jfif");
+    Part part3 = Part(null, name: "Head lights", brand: "Subaru levorg", seller: "Subaru ke", cost: 25000, part_description:  {"Lumen": "26"}, thumbnail: "assets/images/headlight.jfif");
+    Part part4 = Part(null, name: "Gas pedal", brand: "Cal customs", seller: "Big foot pedals", cost: 5000, part_description: {"" : ""}, thumbnail: "assets/images/gaspedal.jfif");
+    parts.add(part1);
+    parts.add(part2);
+    parts.add(part3);
+    parts.add(part4);
+    parts.add(part1);
+    parts.add(part2);
+    parts.add(part3);
+    parts.add(part4);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
@@ -53,7 +68,7 @@ class _PartsListState extends State<PartsList> {
                         InkWell(
                           onTap: () {},
                           child: Row(
-                            children: [
+                            children: const [
                               Icon(Icons.sort, color: Colors.black, size: 30,),
                               SizedBox(width: 10,),
                               Text("Sort by", style: TextStyle(color: Colors.black, fontSize: 16),)
@@ -82,7 +97,7 @@ class _PartsListState extends State<PartsList> {
                         InkWell(
                           onTap: () {},
                           child: Row(
-                            children: [
+                            children: const [
                               Icon(Icons.filter_alt_outlined, color: Colors.black, size: 30,),
                               SizedBox(width: 10,),
                               Text("Filter", style: TextStyle(color: Colors.black, fontSize: 16),)
@@ -93,9 +108,69 @@ class _PartsListState extends State<PartsList> {
                     ),
                   ),
                 ),
-                Center(
-                child: Text("Buy Items")
-              )],
+                GridView.builder(
+                  itemCount: parts.length,
+                  shrinkWrap: true,
+                  physics: const ScrollPhysics(),
+                  gridDelegate:
+                  const SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 10.0 / 12.5,
+                    crossAxisCount: 2,
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    var part = parts[index];
+                    return Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Card(
+                              semanticContainer: true,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              clipBehavior: Clip.antiAlias,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Expanded(
+                                      child: SizedBox(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image:
+                                                AssetImage(part.thumbnail),
+                                                fit: BoxFit.fill),
+                                          ),
+                                        ),
+                                      )),
+                                  Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            "${part.name}\n",
+                                            style: const TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+                                            maxLines: 2,
+                                          ),
+                                          Text(
+                                            part.brand,
+                                            style: const TextStyle(color: Colors.grey,),
+                                            maxLines: 1,
+                                          ),
+                                          Text(
+                                            "Ksh. ${part.cost}",
+                                            style: const TextStyle(fontSize: 16, color: Color.fromRGBO(24, 158, 138, 1), fontWeight: FontWeight.bold),
+                                            maxLines: 1,
+                                          ),
+                                        ],
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                      )),
+                                ],
+                              )),
+                        ));
+                  },
+                ),
+              ],
             )
           ],
         ),
