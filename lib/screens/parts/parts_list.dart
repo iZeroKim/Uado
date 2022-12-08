@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uado/models/Part.dart';
+import 'package:uado/screens/parts/part_details.dart';
 
 class PartsList extends StatefulWidget {
   const PartsList({Key? key}) : super(key: key);
@@ -29,15 +30,15 @@ class _PartsListState extends State<PartsList> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
-        title: const Text("Buy parts"),
+        title: const Text("Buy parts", style: TextStyle(color: Colors.white),),
         actions: [
           IconButton(
             icon: const Icon(
               Icons.search_outlined,
               color: Colors.white,
-              size: 30,
+              size: 25,
             ),
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 5.0),
             tooltip: 'Search',
             onPressed: () {},
           ),
@@ -45,7 +46,7 @@ class _PartsListState extends State<PartsList> {
             icon: const Icon(
               Icons.shopping_cart_outlined,
               color: Colors.white,
-              size: 30,
+              size: 25,
             ),
             padding: const EdgeInsets.only(right: 15.0),
             tooltip: 'Shopping cart',
@@ -122,7 +123,11 @@ class _PartsListState extends State<PartsList> {
                     return Padding(
                         padding: const EdgeInsets.all(5),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => PartDetails())
+                            );
+                          },
                           child: Card(
                               semanticContainer: true,
                               shape: RoundedRectangleBorder(
