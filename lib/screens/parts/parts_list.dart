@@ -1,5 +1,8 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uado/models/Part.dart';
+import 'package:uado/providers/cart_provider.dart';
 import 'package:uado/screens/parts/part_details.dart';
 
 class PartsList extends StatefulWidget {
@@ -42,16 +45,30 @@ class _PartsListState extends State<PartsList> {
             tooltip: 'Search',
             onPressed: () {},
           ),
-          IconButton(
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-              color: Colors.white,
-              size: 25,
+          Badge(
+            badgeContent: Consumer<CartProvider>(
+              builder: (context, value, child) {
+                return Text(
+                  value.items.length.toString(),
+                  style: const TextStyle(
+                      color: Color.fromRGBO(24, 158, 138, 1), fontWeight: FontWeight.bold),
+                );
+              },
             ),
-            padding: const EdgeInsets.only(right: 15.0),
-            tooltip: 'Shopping cart',
-            onPressed: () {},
+            badgeColor: Colors.white,
+            position: const BadgePosition(start: 30, bottom: 30),
+            child: IconButton(
+              icon: const Icon(
+                Icons.shopping_cart_outlined,
+                color: Colors.white,
+                size: 25,
+              ),
+              padding: const EdgeInsets.only(right: 0.0),
+              tooltip: 'Shopping cart',
+              onPressed: () {},
+            ),
           ),
+          SizedBox(width: 20,)
         ],
       ),
       body:SafeArea(

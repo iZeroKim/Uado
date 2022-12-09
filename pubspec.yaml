@@ -24,7 +24,7 @@ dependencies:
   google_maps_flutter:
 #  flutter_osm_plugin: ^0.42.0
   shared_preferences: ^2.0.15
-  badges: ^2.0.2
+  badges: ^2.0.3
 
 dev_dependencies:
   flutter_test:

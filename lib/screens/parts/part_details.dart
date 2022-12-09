@@ -1,6 +1,9 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:provider/provider.dart';
 import 'package:uado/models/Part.dart';
+import 'package:uado/providers/cart_provider.dart';
 
 class PartDetails extends StatefulWidget {
   const PartDetails({Key? key, required this.part}) : super(key: key);
@@ -38,16 +41,31 @@ class _PartDetailsState extends State<PartDetails> {
               tooltip: 'Search',
               onPressed: () {},
             ),
-            IconButton(
-              icon: const Icon(
-                Icons.shopping_cart_outlined,
-                color: Colors.black,
-                size: 25,
+            Badge(
+              badgeContent: Consumer<CartProvider>(
+                builder: (context, value, child) {
+                  return Text(
+                    value.items.length.toString(),
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  );
+                },
               ),
-              padding: const EdgeInsets.only(right: 15.0),
-              tooltip: 'Shopping cart',
-              onPressed: () {},
+              badgeColor: Color.fromRGBO(24, 158, 138, 1),
+              position: const BadgePosition(start: 30, bottom: 30),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.shopping_cart_outlined,
+                  color: Colors.black,
+                  size: 25,
+                ),
+                padding: const EdgeInsets.only(right: 15.0),
+                tooltip: 'Shopping cart',
+                onPressed: () {},
+              ),
             ),
+            SizedBox(width: 20.0,)
+
           ],
         ),
         body: ListView(
@@ -600,6 +618,7 @@ class _PartDetailsState extends State<PartDetails> {
               child: InkWell(
                 onTap: () {
                   print("Add to cart");
+                  Provider.of<CartProvider>(context, listen: false).add(part);
                 },
                 child: const Center(
                     child: Text("Add to cart",
