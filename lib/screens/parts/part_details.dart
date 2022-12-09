@@ -300,6 +300,53 @@ class _PartDetailsState extends State<PartDetails> {
                   height: 10.0,
                   width: double.infinity,
                 ),
+
+                Container(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Item Details",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 10.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Column(
+                              children: [
+                                Text("Width", style : TextStyle(color: Colors.grey))
+                              ],
+                            ),
+                            SizedBox(width:40.0),
+                            Column(
+                              children: [
+                                Text("25 mm", style : TextStyle(color: Colors.black))
+                              ],
+                            ),
+
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  color: const Color.fromRGBO(246, 248, 250, 1),
+                  height: 10.0,
+                  width: double.infinity,
+                ),
                 const Padding(
                   padding:
                       EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
