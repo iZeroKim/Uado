@@ -4,6 +4,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/models/Part.dart';
 import 'package:uado/providers/cart_provider.dart';
+import 'package:uado/screens/cart/cart.dart';
 
 class PartDetails extends StatefulWidget {
   const PartDetails({Key? key, required this.part}) : super(key: key);
@@ -61,7 +62,9 @@ class _PartDetailsState extends State<PartDetails> {
                 ),
                 padding: const EdgeInsets.only(right: 15.0),
                 tooltip: 'Shopping cart',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ShoppingList()));
+                },
               ),
             ),
             SizedBox(width: 20.0,)
@@ -626,6 +629,7 @@ class _PartDetailsState extends State<PartDetails> {
                             color: Color.fromRGBO(24, 158, 138, 1),
                             fontSize: 18))),
               )),
-        ));
+        )
+    );
   }
 }
