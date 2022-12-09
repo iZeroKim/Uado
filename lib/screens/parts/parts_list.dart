@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/models/Part.dart';
 import 'package:uado/providers/cart_provider.dart';
+import 'package:uado/screens/cart/cart.dart';
 import 'package:uado/screens/parts/part_details.dart';
 
 class PartsList extends StatefulWidget {
@@ -65,7 +66,10 @@ class _PartsListState extends State<PartsList> {
               ),
               padding: const EdgeInsets.only(right: 0.0),
               tooltip: 'Shopping cart',
-              onPressed: () {},
+              onPressed: () {
+
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ShoppingList()));
+              },
             ),
           ),
           SizedBox(width: 20,)
