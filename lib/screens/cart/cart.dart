@@ -142,6 +142,7 @@ class ShoppingListView extends StatelessWidget {
                                         ),
                                         InkWell(
                                             onTap: (){
+
                                               Provider.of<CartProvider>(context, listen: false).remove(item);
                                             },
                                             child: const Icon(Icons.cancel_outlined, color: Colors.grey, size: 28))

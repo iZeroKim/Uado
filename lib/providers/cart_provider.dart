@@ -23,5 +23,6 @@ class CartProvider extends ChangeNotifier {
 
   void remove(Part part) {
     _items.remove(part);
+    notifyListeners();
   }
 }
