@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/auth/login_initial_page.dart';
+import 'package:uado/providers/cart_provider.dart';
 import 'package:uado/providers/clubs_provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/providers/mechanic_provider.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => GarageProvider()),
         ChangeNotifierProvider(create: (_) => MechanicProvider()),
         ChangeNotifierProvider(create: (_)=> TripProvider()),
-        ChangeNotifierProvider(create: (_)=> ClubProvider())
+        ChangeNotifierProvider(create: (_)=> ClubProvider()),
+        ChangeNotifierProvider(create: (_)=> CartProvider())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
