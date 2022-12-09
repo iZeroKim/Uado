@@ -29,9 +29,18 @@ class _ShoppingListState extends State<ShoppingList> {
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
         elevation: 1.0,
-        title: const Text("Cart"),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Cart"),
+            Consumer<CartProvider>(builder: (context, value, child) {
+              return Text("Items : ${value.items.length}", style: const TextStyle(color: Colors.white),);
+            },)
+          ],
+        ),
+
         actions: [
-          Text("Items count : ${list.length}", style: const TextStyle(color: Colors.white),),
+
         ],
       ),
       body: SafeArea(
@@ -116,7 +125,7 @@ class ShoppingListView extends StatelessWidget {
                             width:150,
                             child: Container(
                               width: 150,
-                              height: 150,
+                              height: 120,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
