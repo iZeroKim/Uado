@@ -310,7 +310,7 @@ class _PartDetailsState extends State<PartDetails> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text(
                               "Item Details",
                               style: TextStyle(
@@ -325,13 +325,13 @@ class _PartDetailsState extends State<PartDetails> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Column(
-                              children: [
+                              children: const [
                                 Text("Width", style : TextStyle(color: Colors.grey))
                               ],
                             ),
                             SizedBox(width:40.0),
                             Column(
-                              children: [
+                              children: const [
                                 Text("25 mm", style : TextStyle(color: Colors.black))
                               ],
                             ),

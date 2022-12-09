@@ -23,6 +23,10 @@ dependencies:
   url_launcher:
   google_maps_flutter:
 #  flutter_osm_plugin: ^0.42.0
+  shared_preferences: ^2.0.15
+  sqflite: ^2.0.2+1
+  badges: ^2.0.2
+  path_provider: ^2.0.10
 
 dev_dependencies:
   flutter_test:
