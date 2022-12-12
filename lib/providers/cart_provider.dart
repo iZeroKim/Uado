@@ -18,11 +18,17 @@ class CartProvider extends ChangeNotifier {
 
   void clear() {
     _items.clear();
+    _totalPrice = 0;
     notifyListeners();
   }
 
   void remove(Part part) {
     _items.remove(part);
+    _totalPrice -= part.cost;
     notifyListeners();
+  }
+
+  void decrementQnty(Part part) {
+    _totalPrice -= part.quantity;
   }
 }

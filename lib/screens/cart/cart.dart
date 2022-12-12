@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/cart_provider.dart';
+import 'package:uado/screens/cart/add_address.dart';
 
 class ShoppingList extends StatefulWidget {
   const ShoppingList({Key? key}) : super(key: key);
@@ -39,9 +40,6 @@ class _ShoppingListState extends State<ShoppingList> {
           ],
         ),
 
-        actions: [
-
-        ],
       ),
       body: SafeArea(
         child: Padding(
@@ -64,9 +62,12 @@ class _ShoppingListState extends State<ShoppingList> {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       Text("Payable Amount",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                      Text("Ksh. 1000",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
+                      Consumer<CartProvider>(builder: (context, value, child) {
+                        return Text("Ksh. ${value.totalPrice}",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),);
+                      },)
+
                     ],
                   ),
                   const SizedBox(height: 10,),
@@ -80,6 +81,7 @@ class _ShoppingListState extends State<ShoppingList> {
                         child: InkWell(
                           onTap: () {
                             print("Proceed to payment");
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AddAddress()));
                           },
                           child: const Center(
                               child: Text("CONTINUE",
@@ -125,7 +127,7 @@ class ShoppingListView extends StatelessWidget {
                             width:150,
                             child: Container(
                               width: 150,
-                              height: 120,
+                              height: 130,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
@@ -174,7 +176,8 @@ class ShoppingListView extends StatelessWidget {
                                           child: Row(
                                             children: [
                                               InkWell(
-                                                  onTap: () {},
+                                                  onTap: () {
+                                                  },
                                                   child: const Icon(
                                                     Icons.remove,
                                                     color: Colors.white,
@@ -187,8 +190,8 @@ class ShoppingListView extends StatelessWidget {
                                                 decoration: BoxDecoration(
                                                     borderRadius: BorderRadius.circular(3),
                                                     color: Colors.white),
-                                                child: const Text(
-                                                  '3',
+                                                child: Text(
+                                                  item.quantity.toString(),
                                                   style: TextStyle(color: Colors.black, fontSize: 16),
                                                 ),
                                               ),

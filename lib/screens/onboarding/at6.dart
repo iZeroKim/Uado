@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:uado/screens/dash_board.dart';
 
-import '../dash_board.dart';
 
 class At6Page extends StatefulWidget {
   const At6Page({Key? key}) : super(key: key);

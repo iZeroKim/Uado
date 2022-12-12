@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uado/screens/dash_board.dart';
+import 'package:uado/screens/onboarding/at4.dart';
+
 import 'login_initial_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -174,7 +175,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const DashBoard()));
+                            builder: (context) => const At4Page()));
                       },
                       child: Container(
                         width: double.infinity,
