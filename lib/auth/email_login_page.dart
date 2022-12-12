@@ -47,7 +47,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                   Text(
                     "Welcome to Uado",
                     style: TextStyle(
-                        fontSize: 18, color: Color.fromRGBO(24, 158, 138, 1)),
+                        fontSize: 18, color: Color.fromRGBO(128, 0, 15, 1)),
                   ),
 
                   const SizedBox(
@@ -97,7 +97,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                   ),
                   //Email login button
                   Card(
-                    color: Color.fromRGBO(24, 158, 138, 1),
+                    color: Color.fromRGBO(128, 0, 15, 1),
                     shape: StadiumBorder(),
                     child: InkWell(
                       onTap: () {
@@ -134,7 +134,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                           " Sign Up",
                           style: TextStyle(
                               fontSize: 18,
-                              color: Color.fromRGBO(24, 158, 138, 1)),
+                              color: Color.fromRGBO(128, 0, 15, 1)),
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(

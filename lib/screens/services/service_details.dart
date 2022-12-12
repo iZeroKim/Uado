@@ -13,7 +13,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
+        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
         elevation: 1.0,
         title: const Text("Service Details"),
       ),
@@ -218,7 +218,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                   Text(
                                     "Ksh 7000",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(24, 158, 138, 1),
+                                        color: Color.fromRGBO(128, 0, 15, 1),
                                         fontSize: 18),
                                   ),
                                   SizedBox(

@@ -17,7 +17,7 @@ class _AddAddressState extends State<AddAddress> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
+        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
         elevation: 1.0,
         title: const Text("Delivery To"),
       ),
@@ -140,7 +140,7 @@ class _AddAddressState extends State<AddAddress> {
               //           const Text(
               //             "Details:",
               //             style: TextStyle(
-              //               color: Color.fromRGBO(24, 158, 138, 1),
+              //               color: Color.fromRGBO(128, 0, 15, 1),
               //             ),
               //             textAlign: TextAlign.left,
               //           ),
@@ -174,7 +174,7 @@ class _AddAddressState extends State<AddAddress> {
               //               children: const [
               //                 Icon(Icons.add_location_alt_outlined,
               //                     size: 28,
-              //                     color: Color.fromRGBO(24, 158, 138, 1)),
+              //                     color: Color.fromRGBO(128, 0, 15, 1)),
               //                 Text(" Add location on map"),
               //               ],
               //             ),
@@ -212,7 +212,7 @@ class _AddAddressState extends State<AddAddress> {
               //           const Text(
               //             "Hours of Operation:",
               //             style: TextStyle(
-              //               color: Color.fromRGBO(24, 158, 138, 1),
+              //               color: Color.fromRGBO(128, 0, 15, 1),
               //             ),
               //             textAlign: TextAlign.left,
               //           ),
@@ -379,7 +379,7 @@ class _AddAddressState extends State<AddAddress> {
               //           const Text(
               //             "Add Tags:",
               //             style: TextStyle(
-              //               color: Color.fromRGBO(24, 158, 138, 1),
+              //               color: Color.fromRGBO(128, 0, 15, 1),
               //             ),
               //             textAlign: TextAlign.left,
               //           ),
@@ -456,17 +456,17 @@ class _AddAddressState extends State<AddAddress> {
               //               backgroundColor: Colors.white,
               //               shape: StadiumBorder(
               //                 side: BorderSide(
-              //                   color: Color.fromRGBO(24, 158, 138, 1),
+              //                   color: Color.fromRGBO(128, 0, 15, 1),
               //                 ),
               //               ),
               //               avatar: Icon(
               //                 Icons.add,
-              //                 color: Color.fromRGBO(24, 158, 138, 1),
+              //                 color: Color.fromRGBO(128, 0, 15, 1),
               //               ),
               //               label: Text(
               //                 "Add",
               //                 style: TextStyle(
-              //                     color: Color.fromRGBO(24, 158, 138, 1)),
+              //                     color: Color.fromRGBO(128, 0, 15, 1)),
               //               ),
               //             ),
               //           ),
@@ -503,7 +503,7 @@ class _AddAddressState extends State<AddAddress> {
               //           const Text(
               //             "Link Social Media:",
               //             style: TextStyle(
-              //               color: Color.fromRGBO(24, 158, 138, 1),
+              //               color: Color.fromRGBO(128, 0, 15, 1),
               //             ),
               //             textAlign: TextAlign.left,
               //           ),
@@ -549,7 +549,7 @@ class _AddAddressState extends State<AddAddress> {
       ),
       bottomNavigationBar: const BottomAppBar(
         elevation: 0.0,
-        color: Color.fromRGBO(24, 158, 138, 1),
+        color: Color.fromRGBO(128, 0, 15, 1),
         child: SizedBox(
             height: 55.0,
             width: double.infinity,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
-import 'package:getwidget/getwidget.dart';
 import 'package:uado/screens/garage/add_garage.dart';
 import 'package:uado/screens/garage/garage_details.dart';
 
@@ -34,7 +34,7 @@ class _GarageListState extends State<GarageList> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
+        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
         elevation: 1.0,
         title: const Text("Garages"),
         actions: [
@@ -78,7 +78,7 @@ class _GarageListState extends State<GarageList> {
                           );
                         },
                         child: Card(
-                          color: const Color.fromRGBO(24, 158, 138, 1),
+                          color: const Color.fromRGBO(128, 0, 15, 1),
                           shape: const StadiumBorder(),
                           child: Container(
                             width: 40.0,
@@ -117,7 +117,7 @@ class _GarageListState extends State<GarageList> {
                               child: Center(
                                   child: Icon(
                                 Icons.pin_drop_rounded,
-                                color: Color.fromRGBO(24, 158, 138, 1),
+                                color: Color.fromRGBO(128, 0, 15, 1),
                                 size: 40,
                               )),
                             ),
@@ -272,7 +272,7 @@ class _GarageListState extends State<GarageList> {
                               child: Center(
                                   child: Icon(
                                 Icons.compare_arrows_sharp,
-                                color: Color.fromRGBO(24, 158, 138, 1),
+                                color: Color.fromRGBO(128, 0, 15, 1),
                                 size: 40,
                               )),
                             ),
@@ -315,7 +315,7 @@ class _GarageListState extends State<GarageList> {
                   child: Center(
                       child: Icon(
                     Icons.filter_alt,
-                    color: Color.fromRGBO(24, 158, 138, 1),
+                    color: Color.fromRGBO(128, 0, 15, 1),
                     size: 40,
                   )),
                 ),

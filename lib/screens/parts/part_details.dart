@@ -52,7 +52,7 @@ class _PartDetailsState extends State<PartDetails> {
                   );
                 },
               ),
-              badgeColor: Color.fromRGBO(24, 158, 138, 1),
+              badgeColor: Color.fromRGBO(128, 0, 15, 1),
               position: const BadgePosition(start: 30, bottom: 30),
               child: IconButton(
                 icon: const Icon(
@@ -93,7 +93,7 @@ class _PartDetailsState extends State<PartDetails> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Card(
-                        color: const Color.fromRGBO(24, 158, 138, 1),
+                        color: const Color.fromRGBO(128, 0, 15, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 10.0,
@@ -111,7 +111,7 @@ class _PartDetailsState extends State<PartDetails> {
                           height: 10.0,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromRGBO(24, 158, 138, 1),
+                              color: const Color.fromRGBO(128, 0, 15, 1),
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(30),
@@ -129,7 +129,7 @@ class _PartDetailsState extends State<PartDetails> {
                           height: 10.0,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromRGBO(24, 158, 138, 1),
+                              color: const Color.fromRGBO(128, 0, 15, 1),
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(30),
@@ -167,7 +167,7 @@ class _PartDetailsState extends State<PartDetails> {
                           "Ksh. ${part.cost}",
                           style: const TextStyle(
                               fontSize: 16,
-                              color: Color.fromRGBO(24, 158, 138, 1),
+                              color: Color.fromRGBO(128, 0, 15, 1),
                               fontWeight: FontWeight.bold),
                           maxLines: 1,
                         ),
@@ -259,7 +259,7 @@ class _PartDetailsState extends State<PartDetails> {
                           mainAxisAlignment: MainAxisAlignment.start,
                            children: [
                              Card(
-                               color: const Color.fromRGBO(24, 158, 138, 1),
+                               color: const Color.fromRGBO(128, 0, 15, 1),
                                shape: const StadiumBorder(),
                                child: Container(
                                  width: 10.0,
@@ -278,7 +278,7 @@ class _PartDetailsState extends State<PartDetails> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Card(
-                              color: const Color.fromRGBO(24, 158, 138, 1),
+                              color: const Color.fromRGBO(128, 0, 15, 1),
                               shape: const StadiumBorder(),
                               child: Container(
                                 width: 10.0,
@@ -290,7 +290,7 @@ class _PartDetailsState extends State<PartDetails> {
                             ),
                             SizedBox(width: 10,),
                             Text("Delivery Charge : "),
-                            Text("+ KSh 200", style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(24, 158, 138, 1))),
+                            Text("+ KSh 200", style: TextStyle(fontWeight: FontWeight.bold, color: Color.fromRGBO(128, 0, 15, 1))),
                             Text(" (within 5 days)"),
                           ],
                         ),
@@ -298,7 +298,7 @@ class _PartDetailsState extends State<PartDetails> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Card(
-                              color: const Color.fromRGBO(24, 158, 138, 1),
+                              color: const Color.fromRGBO(128, 0, 15, 1),
                               shape: const StadiumBorder(),
                               child: Container(
                                 width: 10.0,
@@ -626,7 +626,7 @@ class _PartDetailsState extends State<PartDetails> {
                 child: const Center(
                     child: Text("Add to cart",
                         style: TextStyle(
-                            color: Color.fromRGBO(24, 158, 138, 1),
+                            color: Color.fromRGBO(128, 0, 15, 1),
                             fontSize: 18))),
               )),
         )

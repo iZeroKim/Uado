@@ -40,7 +40,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
               Text(
                 "Welcome to Uado",
                 style: TextStyle(
-                    fontSize: 16, color: Color.fromRGBO(24, 158, 138, 1)),
+                    fontSize: 16, color: Color.fromRGBO(128, 0, 15, 1)),
               ),
 
               const SizedBox(
@@ -137,7 +137,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
               ),
               //Email login button
               Card(
-                color: Color.fromRGBO(24, 158, 138, 1),
+                color: Color.fromRGBO(128, 0, 15, 1),
                 shape: StadiumBorder(),
                 elevation: 10.0,
                 child: InkWell(
@@ -189,7 +189,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                     child: Text(
                       " Sign Up",
                       style: TextStyle(
-                          fontSize: 18, color: Color.fromRGBO(24, 158, 138, 1)),
+                          fontSize: 18, color: Color.fromRGBO(128, 0, 15, 1)),
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(

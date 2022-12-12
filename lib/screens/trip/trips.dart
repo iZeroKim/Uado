@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:uado/screens/trip/trip_details.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/trips_provider.dart';
+import 'package:uado/screens/trip/trip_details.dart';
 
 class Trips extends StatefulWidget {
   const Trips({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _TripsState extends State<Trips> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
+        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
         elevation: 1.0,
         title: const Text("Trips"),
         actions: [

@@ -28,7 +28,7 @@ class _ShoppingListState extends State<ShoppingList> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(24, 158, 138, 1),
+        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
         elevation: 1.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,7 +72,7 @@ class _ShoppingListState extends State<ShoppingList> {
                   ),
                   const SizedBox(height: 10,),
                   Container(
-                    color: const Color.fromRGBO(24, 158, 138, 1),
+                    color: const Color.fromRGBO(128, 0, 15, 1),
                     child: SizedBox(
                         height: 45.0,
                         width: double.infinity,
@@ -172,7 +172,7 @@ class ShoppingListView extends StatelessWidget {
                                           padding: const EdgeInsets.all(3),
                                           decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(5),
-                                              color: const Color.fromRGBO(24, 158, 138, 1)),
+                                              color: const Color.fromRGBO(128, 0, 15, 1)),
                                           child: Row(
                                             children: [
                                               InkWell(
@@ -210,7 +210,7 @@ class ShoppingListView extends StatelessWidget {
 
                                     Text(
                                       "Ksh. ${item.cost}",
-                                      style: const TextStyle(fontSize: 16, color: Color.fromRGBO(24, 158, 138, 1), fontWeight: FontWeight.bold),
+                                      style: const TextStyle(fontSize: 16, color: Color.fromRGBO(128, 0, 15, 1), fontWeight: FontWeight.bold),
                                       maxLines: 1,
                                     ),
                                   ],
