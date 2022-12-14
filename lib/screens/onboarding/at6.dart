@@ -178,6 +178,9 @@ class _At6PageState extends State<At6Page> {
                                     print('confirm $date');
                                   }, onConfirm: (date) {
                                     _fromdate = date;
+                                    setState(() {
+                                      _fromdate = date;
+                                    });
                                   }, currentTime: DateTime.now(), locale: LocaleType.en);
                             },
                             child: Card(
@@ -186,7 +189,7 @@ class _At6PageState extends State<At6Page> {
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 15.0, horizontal: 10.0),
-                                child: Row(
+                                child:_fromdate == null? Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: const [
                                     Icon(
@@ -200,6 +203,11 @@ class _At6PageState extends State<At6Page> {
                                           color: Color.fromRGBO(88,133,96, 1),
                                           fontSize: 18),
                                     ),
+                                  ],
+                                ) : Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text( "${_fromdate?.year.toString()}-${_fromdate?.month.toString().padLeft(2,'0')}-${_fromdate?.day.toString().padLeft(2,'0')}", style: TextStyle(color: Color.fromRGBO(88,133,96, 1,), fontSize: 18),),
                                   ],
                                 ),
                               ),
@@ -219,6 +227,9 @@ class _At6PageState extends State<At6Page> {
                                     print('confirm $date');
                                   }, onConfirm: (date) {
                                     _todate = date;
+                                    setState(() {
+                                      _todate = date;
+                                    });
                                   }, currentTime: DateTime.now(), locale: LocaleType.en);
                             },
                             child: Card(
@@ -227,7 +238,7 @@ class _At6PageState extends State<At6Page> {
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 15.0, horizontal: 10.0),
-                                child:Row(
+                                child:_todate == null? Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: const [
                                     Icon(
@@ -241,6 +252,11 @@ class _At6PageState extends State<At6Page> {
                                           color: Color.fromRGBO(88,133,96, 1),
                                           fontSize: 18),
                                     ),
+                                  ],
+                                ) : Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text( "${_todate?.year.toString()}-${_todate?.month.toString().padLeft(2,'0')}-${_todate?.day.toString().padLeft(2,'0')}", style: TextStyle(color: Color.fromRGBO(88,133,96, 1,), fontSize: 18),),
                                   ],
                                 ),
                               ),
