@@ -196,13 +196,6 @@ class _PartDetailsState extends State<PartDetails> {
                                 value: 4.0,
                                 onChanged: (double rating) {  },
                               ),
-                              SizedBox(width: 7,),
-                              Text(
-                                "21 Reviews",
-                                style: TextStyle(
-                                    color:
-                                    Colors.black,),
-                              ),
                               SizedBox(width: 10,),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -232,7 +225,28 @@ class _PartDetailsState extends State<PartDetails> {
                                   color:
                                   Colors.black,),
                               ),
-                              SizedBox(width: 7,),
+
+                              SizedBox(width: 10,),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 2.0,
+                                  right: 2.0,
+                                ),
+                                child: Container(
+                                  height: 30,
+                                  padding: const EdgeInsets.only(
+                                    top: 2.0,
+                                    bottom: 2.0,
+                                  ),
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                        left: BorderSide(
+                                            width: 1.1,
+                                            color: Colors.grey),
+                                      )),
+                                ),
+                              ),
+                              SizedBox(width: 10,),
                               Icon(Icons.share_outlined, color: Colors.black,),
                               SizedBox(width: 5,),
                               Text(

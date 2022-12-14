@@ -185,7 +185,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           "SIGN UP",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.w500),
                         )),
                       ),

@@ -112,7 +112,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                           "LOGIN",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.w500),
                         )),
                       ),
