@@ -31,7 +31,7 @@ class _At4PageState extends State<At4Page> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Add Car"),
       ),
@@ -52,7 +52,7 @@ class _At4PageState extends State<At4Page> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Card(
-                        color: const Color.fromRGBO(128, 0, 15, 1),
+                        color: const Color.fromRGBO(88,133,96, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -73,7 +73,7 @@ class _At4PageState extends State<At4Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(128, 0, 15, 1)),
+                            color: Color.fromRGBO(88,133,96, 1)),
                       ),
                       Card(
                         color: Colors.white,
@@ -83,7 +83,7 @@ class _At4PageState extends State<At4Page> {
                           height: 50.0,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromRGBO(128, 0, 15, 1),
+                              color: const Color.fromRGBO(88,133,96, 1),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(30),
@@ -93,7 +93,7 @@ class _At4PageState extends State<At4Page> {
                                 child: Text(
                               "2",
                               style: TextStyle(
-                                  color: Color.fromRGBO(128, 0, 15, 1),
+                                  color: Color.fromRGBO(88,133,96, 1),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             )),
@@ -104,7 +104,7 @@ class _At4PageState extends State<At4Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(128, 0, 15, 1)),
+                            color: Color.fromRGBO(88,133,96, 1)),
                       ),
                       Card(
                         color: Colors.white,
@@ -114,7 +114,7 @@ class _At4PageState extends State<At4Page> {
                           height: 50.0,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromRGBO(128, 0, 15, 1),
+                              color: const Color.fromRGBO(88,133,96, 1),
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(30),
@@ -124,7 +124,7 @@ class _At4PageState extends State<At4Page> {
                                 child: Text(
                               "3",
                               style: TextStyle(
-                                  color: Color.fromRGBO(128, 0, 15, 1),
+                                  color: Color.fromRGBO(88,133,96, 1),
                                   fontSize: 18,
                                   fontWeight: FontWeight.w500),
                             )),
@@ -260,7 +260,7 @@ class _At4PageState extends State<At4Page> {
                         borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(200),
                     )),
-                    color: Color.fromRGBO(128, 0, 15, 1),
+                    color: Color.fromRGBO(88,133,96, 1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
                       child: Icon(

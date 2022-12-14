@@ -15,7 +15,7 @@ class _GarageMechanicsState extends State<GarageMechanics> {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Mechanics"),
       ),

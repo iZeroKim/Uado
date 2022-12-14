@@ -32,7 +32,7 @@ class _PartsListState extends State<PartsList> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Buy parts", style: TextStyle(color: Colors.white),),
         actions: [
@@ -52,7 +52,7 @@ class _PartsListState extends State<PartsList> {
                 return Text(
                   value.items.length.toString(),
                   style: const TextStyle(
-                      color: Color.fromRGBO(128, 0, 15, 1), fontWeight: FontWeight.bold),
+                      color: Color.fromRGBO(88,133,96, 1), fontWeight: FontWeight.bold),
                 );
               },
             ),
@@ -185,7 +185,7 @@ class _PartsListState extends State<PartsList> {
                                           ),
                                           Text(
                                             "Ksh. ${part.cost}",
-                                            style: const TextStyle(fontSize: 16, color: Color.fromRGBO(128, 0, 15, 1), fontWeight: FontWeight.bold),
+                                            style: const TextStyle(fontSize: 16, color: Color.fromRGBO(88,133,96, 1), fontWeight: FontWeight.bold),
                                             maxLines: 1,
                                           ),
                                         ],

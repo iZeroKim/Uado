@@ -62,7 +62,7 @@ class GarageDetails extends StatelessWidget {
               child: Center(
                   child: Text("Write Review",
                       style: TextStyle(
-                          color: Color.fromRGBO(128, 0, 15, 1),
+                          color: Color.fromRGBO(88,133,96, 1),
                           fontSize: 18))),
             )),
       ),
@@ -112,7 +112,7 @@ class GarageDetails extends StatelessWidget {
                                   const Text(
                                     "Location",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(128, 0, 15, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -130,7 +130,7 @@ class GarageDetails extends StatelessWidget {
                                         Icon(
                                           Icons.file_upload_rounded,
                                           color:
-                                              Color.fromRGBO(128, 0, 15, 1),
+                                              Color.fromRGBO(88,133,96, 1),
                                         )
                                       ],
                                     ),
@@ -141,7 +141,7 @@ class GarageDetails extends StatelessWidget {
                                   const Text(
                                     "Operation Time",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(128, 0, 15, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -193,7 +193,7 @@ class GarageDetails extends StatelessWidget {
                                   const Text(
                                     "Our Mechanics",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(128, 0, 15, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                   ),
                                   const SizedBox(
                                     height: 15.0,
@@ -246,7 +246,7 @@ class GarageDetails extends StatelessWidget {
                                   const Text(
                                     "Tags",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(128, 0, 15, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                   ),
                                   const SizedBox(
                                     height: 15.0,
@@ -290,7 +290,7 @@ class GarageDetails extends StatelessWidget {
                                   const Text(
                                     "Connect with us on",
                                     style: TextStyle(
-                                        color: Color.fromRGBO(128, 0, 15, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                   ),
                                   const SizedBox(
                                     height: 15.0,
@@ -454,7 +454,7 @@ class GarageDetails extends StatelessWidget {
                 height: 100,
                 width: 100,
                 child: CircleAvatar(
-                  backgroundColor: Color.fromRGBO(128, 0, 15, 1),
+                  backgroundColor: Color.fromRGBO(88,133,96, 1),
                   child: Text(
                     "K",
                     style: TextStyle(fontSize: 72, color: Colors.white),

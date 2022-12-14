@@ -25,7 +25,7 @@ class _TripsState extends State<Trips> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Trips"),
         actions: [

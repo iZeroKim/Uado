@@ -24,7 +24,7 @@ class MechanicDetails extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Mechanic Elion"),
       ),
@@ -44,7 +44,7 @@ class MechanicDetails extends StatelessWidget {
               child: Center(
                   child: Text("Write Review",
                       style: TextStyle(
-                          color: Color.fromRGBO(128, 0, 15, 1),
+                          color: Color.fromRGBO(88,133,96, 1),
                           fontSize: 18))),
             )),
       ),
@@ -120,7 +120,7 @@ class MechanicDetails extends StatelessWidget {
                             color: Colors.white,
                             shape: StadiumBorder(
                               side: BorderSide(
-                                color: Color.fromRGBO(128, 0, 15, 1),
+                                color: Color.fromRGBO(88,133,96, 1),
                               ),
                             ),
                             child: Center(
@@ -131,7 +131,7 @@ class MechanicDetails extends StatelessWidget {
                                   children: const [
                                     Icon(
                                       Icons.call,
-                                      color: Color.fromRGBO(128, 0, 15, 1),
+                                      color: Color.fromRGBO(88,133,96, 1),
                                       size: 28,
                                     ),
                                     SizedBox(width: 10),
@@ -139,7 +139,7 @@ class MechanicDetails extends StatelessWidget {
                                       "Call",
                                       style: TextStyle(
                                           color:
-                                              Color.fromRGBO(128, 0, 15, 1),
+                                              Color.fromRGBO(88,133,96, 1),
                                           fontSize: 18),
                                     ),
                                   ],

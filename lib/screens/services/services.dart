@@ -18,7 +18,7 @@ class _ServicesState extends State<Services> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Service History"),
       ),
@@ -176,13 +176,13 @@ class _ServicesState extends State<Services> {
                           children: const [
                             Icon(
                               Icons.calendar_month_outlined,
-                              color: Color.fromRGBO(128, 0, 15, 1),
+                              color: Color.fromRGBO(88,133,96, 1),
                             ),
                             SizedBox(width: 10.0),
                             Text(
                               "Schedule Service Date",
                               style: TextStyle(
-                                  color: Color.fromRGBO(128, 0, 15, 1),
+                                  color: Color.fromRGBO(88,133,96, 1),
                                   fontSize: 18),
                             ),
                           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:uado/screens/dash_board.dart';
 
 
@@ -20,13 +21,15 @@ class _At6PageState extends State<At6Page> {
   int selectedYom = 2010;
   String selectedIC = "uap";
 
+  DateTime? _fromdate, _todate;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Add Car"),
       ),
@@ -47,7 +50,7 @@ class _At6PageState extends State<At6Page> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Card(
-                        color: const Color.fromRGBO(128, 0, 15, 1),
+                        color: const Color.fromRGBO(88,133,96, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -68,10 +71,10 @@ class _At6PageState extends State<At6Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(128, 0, 15, 1)),
+                            color: Color.fromRGBO(88,133,96, 1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(128, 0, 15, 1),
+                        color: const Color.fromRGBO(88,133,96, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -92,10 +95,10 @@ class _At6PageState extends State<At6Page> {
                         "--------------",
                         style: TextStyle(
                             fontSize: 20,
-                            color: Color.fromRGBO(128, 0, 15, 1)),
+                            color: Color.fromRGBO(88,133,96, 1)),
                       ),
                       Card(
-                        color: const Color.fromRGBO(128, 0, 15, 1),
+                        color: const Color.fromRGBO(88,133,96, 1),
                         shape: const StadiumBorder(),
                         child: Container(
                           width: 50.0,
@@ -162,19 +165,43 @@ class _At6PageState extends State<At6Page> {
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
+                    children: <Widget>[
                       Flexible(
                         child: Padding(
-                          padding: EdgeInsets.only(right: 20.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Eg 11 Jan 2017",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
+                          padding: const EdgeInsets.only(left: 0, right: 10),
+                          child: InkWell(
+                            onTap: () {
+                              DatePicker.showDatePicker(context,
+                                  showTitleActions: true,
+                                  minTime: DateTime(2022, 1, 1),
+                                  maxTime: DateTime(2030, 1, 1), onChanged: (date) {
+                                    print('confirm $date');
+                                  }, onConfirm: (date) {
+                                    _fromdate = date;
+                                  }, currentTime: DateTime.now(), locale: LocaleType.en);
+                            },
+                            child: Card(
+                              elevation: 4.0,
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 15.0, horizontal: 10.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: const [
+                                    Icon(
+                                      Icons.calendar_month_outlined,
+                                      color: Color.fromRGBO(88,133,96, 1),
+                                    ),
+                                    SizedBox(width: 10.0),
+                                    Text(
+                                      "From date",
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(88,133,96, 1),
+                                          fontSize: 18),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -182,16 +209,40 @@ class _At6PageState extends State<At6Page> {
                       ),
                       Flexible(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 10.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText: "Eg 10 Jan 2018",
-                              hintStyle: TextStyle(color: Colors.black),
-                              filled: true,
-                              border: InputBorder.none,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 2.0),
+                          padding: const EdgeInsets.only(left: 0, right: 0),
+                          child: InkWell(
+                            onTap: () {
+                              DatePicker.showDatePicker(context,
+                                  showTitleActions: true,
+                                  minTime: DateTime(2022, 1, 1),
+                                  maxTime: DateTime(2030, 1, 1), onChanged: (date) {
+                                    print('confirm $date');
+                                  }, onConfirm: (date) {
+                                    _todate = date;
+                                  }, currentTime: DateTime.now(), locale: LocaleType.en);
+                            },
+                            child: Card(
+                              elevation: 4.0,
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 15.0, horizontal: 10.0),
+                                child:Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: const [
+                                    Icon(
+                                      Icons.calendar_month_outlined,
+                                      color: Color.fromRGBO(88,133,96, 1),
+                                    ),
+                                    SizedBox(width: 10.0),
+                                    Text(
+                                      "To date",
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(88,133,96, 1),
+                                          fontSize: 18),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -280,7 +331,7 @@ class _At6PageState extends State<At6Page> {
                         borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(200),
                     )),
-                    color: Color.fromRGBO(128, 0, 15, 1),
+                    color: Color.fromRGBO(88,133,96, 1),
                     child: Padding(
                       padding: EdgeInsets.only(left: 40.0, top: 40.0),
                       child: Icon(

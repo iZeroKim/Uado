@@ -77,7 +77,7 @@ class _DashboardAltState extends State<DashboardAlt> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      color: const Color.fromRGBO(128, 0, 15, 1),
+                      color: const Color.fromRGBO(88,133,96, 1),
                       elevation: 2,
                       child: Padding(
                         padding: const EdgeInsets.only(
@@ -180,7 +180,7 @@ class _DashboardAltState extends State<DashboardAlt> {
                                   child: Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
-                                        const Icon(Icons.ac_unit_sharp, color: Color.fromRGBO(128, 0, 15, 1), size: 32,),
+                                        const Icon(Icons.ac_unit_sharp, color: Color.fromRGBO(88,133,96, 1), size: 32,),
                                         Text(
                                           service.name,
                                         ),

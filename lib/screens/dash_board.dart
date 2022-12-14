@@ -49,7 +49,7 @@ class _DashBoardState extends State<DashBoard> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Hello Kim"),
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
       ),
       body: ListView(

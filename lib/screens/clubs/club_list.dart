@@ -24,7 +24,7 @@ class _ClubListState extends State<ClubList> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(128, 0, 15, 1),
+        backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Car Clubs", style: TextStyle(color: Colors.white),),
         actions: [
@@ -131,7 +131,7 @@ class ClubListView extends StatelessWidget {
                                           color: Colors.white,
                                           shape: const StadiumBorder(
                                             side: BorderSide(
-                                              color: Color.fromRGBO(128, 0, 15, 1),
+                                              color: Color.fromRGBO(88,133,96, 1),
                                             ),
                                           ),
                                           child: Center(
@@ -145,7 +145,7 @@ class ClubListView extends StatelessWidget {
                                                     "JOIN CLUB",
                                                     style: TextStyle(
                                                         color:
-                                                        Color.fromRGBO(128, 0, 15, 1),
+                                                        Color.fromRGBO(88,133,96, 1),
                                                         fontSize: 18),
                                                   ),
                                                   SizedBox(width: 20),
