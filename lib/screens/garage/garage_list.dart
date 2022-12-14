@@ -181,8 +181,7 @@ class _GarageListState extends State<GarageList> {
                                             title: const Text('Popularity',
                                                 style: TextStyle(fontSize: 14)),
                                             leading: Radio(
-                                              activeColor: const Color.fromRGBO(
-                                                  78, 199, 50, 1),
+                                              activeColor: const Color.fromRGBO(88,133,96, 1),
                                               value: "popularity",
                                               groupValue: selected_sort_value,
                                               onChanged: (String? value) {
@@ -201,8 +200,7 @@ class _GarageListState extends State<GarageList> {
                                                 'Price - Low to High',
                                                 style: TextStyle(fontSize: 14)),
                                             leading: Radio(
-                                              activeColor: const Color.fromRGBO(
-                                                  78, 199, 50, 1),
+                                              activeColor: const Color.fromRGBO(88,133,96, 1),
                                               value: "cheapest",
                                               groupValue: selected_sort_value,
                                               onChanged: (String? value) {
@@ -221,8 +219,7 @@ class _GarageListState extends State<GarageList> {
                                                 'Price - High to Low',
                                                 style: TextStyle(fontSize: 14)),
                                             leading: Radio(
-                                              activeColor: const Color.fromRGBO(
-                                                  78, 199, 50, 1),
+                                              activeColor: const Color.fromRGBO(88,133,96, 1),
                                               value: "expensive",
                                               groupValue: selected_sort_value,
                                               onChanged: (String? value) {
@@ -240,8 +237,7 @@ class _GarageListState extends State<GarageList> {
                                             title: const Text('Newest First',
                                                 style: TextStyle(fontSize: 14)),
                                             leading: Radio(
-                                              activeColor: const Color.fromRGBO(
-                                                  78, 199, 50, 1),
+                                              activeColor: const Color.fromRGBO(88,133,96, 1),
                                               value: "cheapest",
                                               groupValue: selected_sort_value,
                                               onChanged: (String? value) {
@@ -370,7 +366,7 @@ class _GarageListState extends State<GarageList> {
           ),
         ),
         stickyFooter: Container(
-          color: GFColors.SUCCESS,
+          color: Color.fromRGBO(88,133,96, 1),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -405,7 +401,7 @@ class _GarageListState extends State<GarageList> {
         stickyFooterHeight: 50,
       ),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: GFColors.SUCCESS,
+          backgroundColor: Color.fromRGBO(88,133,96, 1),
           child: _controller.isBottomSheetOpened
               ? const Icon(Icons.keyboard_arrow_down, color: Colors.white)
               : const Icon(
