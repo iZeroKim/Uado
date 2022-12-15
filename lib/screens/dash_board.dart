@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:uado/screens/clubs/club_list.dart';
 import 'package:uado/screens/garage/garage_list.dart';
 import 'package:uado/screens/parts/parts_list.dart';
@@ -16,6 +17,40 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+  @override
+  Widget build(BuildContext context) => ZoomDrawer(
+    mainScreen: DashBoardInfo(),
+    menuScreen: MenuPage(),
+    borderRadius: 24.0,
+    showShadow: true,
+    angle: 0.0,
+    drawerShadowsBackgroundColor: Colors.grey,
+    slideWidth: MediaQuery.of(context).size.width*.75,
+    openCurve: Curves.fastOutSlowIn,
+    closeCurve: Curves.bounceIn,
+  );
+}
+
+class MenuPage extends StatelessWidget {
+  const MenuPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(88,133,96, 1),
+    );
+  }
+}
+
+
+class DashBoardInfo extends StatefulWidget {
+  const DashBoardInfo({Key? key}) : super(key: key);
+
+  @override
+  State<DashBoardInfo> createState() => _DashBoardInfoState();
+}
+
+class _DashBoardInfoState extends State<DashBoardInfo> {
   @override
   Widget build(BuildContext context) {
     AppService garages = AppService(
@@ -51,6 +86,9 @@ class _DashBoardState extends State<DashBoard> {
         title: const Text("Hello Kim"),
         backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
+        leading: IconButton(
+            onPressed: ()=>ZoomDrawer.of(context)!.toggle(),
+            icon: Icon(Icons.menu, color: Colors.white,)),
       ),
       body: ListView(
         children: [
@@ -192,5 +230,5 @@ class _DashBoardState extends State<DashBoard> {
     );
   }
 
-  _DashBoardState();
+  _DashBoardInfoState();
 }

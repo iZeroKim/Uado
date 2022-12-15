@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/auth/login_initial_page.dart';
+import 'package:uado/auth/provider/auth_provider.dart';
 import 'package:uado/providers/cart_provider.dart';
 import 'package:uado/providers/clubs_provider.dart';
 import 'package:uado/providers/garage_provider.dart';
@@ -14,6 +15,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  static const List<String> MAIN_MENU = [
+    "Home",
+    "Profile",
+  ];
 
   // This widget is the root of your application.
   @override
@@ -25,7 +30,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_)=> TripProvider()),
         ChangeNotifierProvider(create: (_)=> ClubProvider()),
         ChangeNotifierProvider(create: (_)=> CartProvider()),
-        ChangeNotifierProvider(create: (_)=> RegisterProvider()),
+        ChangeNotifierProvider(create: (_)=> AuthProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
