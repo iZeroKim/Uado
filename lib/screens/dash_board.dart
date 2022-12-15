@@ -6,8 +6,10 @@ import 'package:uado/screens/parts/parts_list.dart';
 import 'package:uado/screens/services/services.dart';
 
 import '../models/AppService.dart';
+import '../models/navigation/MenuItem.dart' as App;
 import '../screens/trip/trips.dart';
 import 'mechanic/mechanic_list.dart';
+
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -17,18 +19,22 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+
   @override
-  Widget build(BuildContext context) => ZoomDrawer(
-    mainScreen: DashBoardInfo(),
-    menuScreen: MenuPage(),
-    borderRadius: 24.0,
-    showShadow: true,
-    angle: 0.0,
-    drawerShadowsBackgroundColor: Colors.grey,
-    slideWidth: MediaQuery.of(context).size.width*.75,
-    openCurve: Curves.fastOutSlowIn,
-    closeCurve: Curves.bounceIn,
-  );
+  Widget build(BuildContext context){
+
+    return ZoomDrawer(
+      mainScreen: DashBoardInfo(),
+      menuScreen: MenuPage(),
+      borderRadius: 24.0,
+      showShadow: true,
+      angle: 0.0,
+      slideWidth: MediaQuery.of(context).size.width*.75,
+      openCurve: Curves.fastOutSlowIn,
+      closeCurve: Curves.bounceIn,
+    );
+
+  }
 }
 
 class MenuPage extends StatelessWidget {
@@ -36,8 +42,36 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var home = App.MenuItem(title:"Home",icon: Icons.home) ;
+    var profile =App.MenuItem(title:"Profile", icon: Icons.account_circle_rounded) ;
+
+    List<App.MenuItem> items =  [];
+    items.add(home);
+    items.add(profile);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(88,133,96, 1),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Spacer(),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      var  item = items[index];
+                      return ListTile(
+                        minLeadingWidth: 20,
+                        leading: Icon(item.icon, color: Colors.white,),
+                        title: Text(item.title, style: TextStyle(color: Colors.white),),
+                        onTap: (){
+                          print(item.title);
+                        },
+                      );
+                    })),
+            Spacer(flex: 2,)
+          ],
+        ),
+      ),
     );
   }
 }
