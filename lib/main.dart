@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MechanicProvider()),
         ChangeNotifierProvider(create: (_)=> TripProvider()),
         ChangeNotifierProvider(create: (_)=> ClubProvider()),
-        ChangeNotifierProvider(create: (_)=> CartProvider())
+        ChangeNotifierProvider(create: (_)=> CartProvider()),
+        ChangeNotifierProvider(create: (_)=> RegisterProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
