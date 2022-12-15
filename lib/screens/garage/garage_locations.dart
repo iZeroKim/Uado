@@ -17,6 +17,7 @@ class _GarageLocationsState extends State<GarageLocations> {
         FlutterMap(
           options: MapOptions(
             center: LatLng(-1.292066, 36.821945),
+            zoom: 10.0
           ),
         ),
 
