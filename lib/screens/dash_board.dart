@@ -10,7 +10,6 @@ import '../models/navigation/MenuItem.dart' as App;
 import '../screens/trip/trips.dart';
 import 'mechanic/mechanic_list.dart';
 
-
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
 
@@ -19,63 +18,100 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+  App.MenuItem currentItem = MenuItems.home;
 
   @override
-  Widget build(BuildContext context){
-
+  Widget build(BuildContext context) {
+    Widget getScreen(){
+      Widget screen = DashBoardInfo();
+      switch(currentItem){
+        case MenuItems.profile:
+          screen = PartsList();
+      }
+      return screen;
+    }
     return ZoomDrawer(
-      mainScreen: DashBoardInfo(),
-      menuScreen: MenuPage(),
+      mainScreen: getScreen(),
+      menuScreen: Builder(
+        builder: (context) {
+          return MenuPage(
+            currentItem: currentItem,
+            onSelectedItem: (item) {
+              setState(() => currentItem = item);
+
+              ZoomDrawer.of(context)!.close();
+            },
+
+          );
+        }
+      ),
       borderRadius: 24.0,
       showShadow: true,
+      androidCloseOnBackTap: true,
+      menuBackgroundColor: const Color.fromRGBO(88, 133, 96, 0.9),
       angle: 0.0,
-      slideWidth: MediaQuery.of(context).size.width*.75,
+      slideWidth: MediaQuery.of(context).size.width * .64,
       openCurve: Curves.fastOutSlowIn,
       closeCurve: Curves.bounceIn,
     );
 
+
   }
 }
 
+class MenuItems {
+  static const home = App.MenuItem("Home", Icons.home);
+  static const profile = App.MenuItem("Buy parts", Icons.add_shopping_cart_rounded);
+
+  static const all = <App.MenuItem>[home, profile];
+}
+
 class MenuPage extends StatelessWidget {
-  const MenuPage({Key? key}) : super(key: key);
+  final App.MenuItem currentItem;
+  final ValueChanged<App.MenuItem> onSelectedItem;
+
+  const MenuPage(
+      {Key? key, required this.currentItem, required this.onSelectedItem})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var home = App.MenuItem(title:"Home",icon: Icons.home) ;
-    var profile =App.MenuItem(title:"Profile", icon: Icons.account_circle_rounded) ;
-
-    List<App.MenuItem> items =  [];
-    items.add(home);
-    items.add(profile);
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(88,133,96, 1),
+      backgroundColor: const Color.fromRGBO(88, 133, 96, 0.0),
       body: SafeArea(
         child: Column(
           children: [
             Spacer(),
             Expanded(
                 child: ListView.builder(
-                    itemCount: items.length,
+                    itemCount: MenuItems.all.length,
                     itemBuilder: (context, index) {
-                      var  item = items[index];
+                      var item = MenuItems.all[index];
                       return ListTile(
+                        selected: currentItem == item,
+                        selectedTileColor: Colors.black26,
+                        selectedColor: Colors.white,
                         minLeadingWidth: 20,
-                        leading: Icon(item.icon, color: Colors.white,),
-                        title: Text(item.title, style: TextStyle(color: Colors.white),),
-                        onTap: (){
-                          print(item.title);
-                        },
+                        leading: Icon(
+                          item.icon,
+                          color: Colors.white,
+                        ),
+                        title: Text(
+                          item.title,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onTap: () => onSelectedItem(item),
                       );
                     })),
-            Spacer(flex: 2,)
+            Spacer(
+              flex: 2,
+            )
           ],
         ),
       ),
     );
   }
 }
-
 
 class DashBoardInfo extends StatefulWidget {
   const DashBoardInfo({Key? key}) : super(key: key);
@@ -105,24 +141,37 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
         name: "Trips", imagePath: "assets/images/trip.jpg", link: Trips());
     AppService insurance =
         AppService(name: "Insurance", imagePath: "assets/images/car.jpg");
-    AppService parts =
-        AppService(name: "Buy part", imagePath: "assets/images/mechanic.png", link: PartsList());
+    AppService parts = AppService(
+        name: "Buy part",
+        imagePath: "assets/images/mechanic.png",
+        link: PartsList());
     AppService clubs = AppService(
-        name: "Join car club", imagePath: "assets/images/clubs.png", link: ClubList());
+        name: "Join car club",
+        imagePath: "assets/images/clubs.png",
+        link: ClubList());
     AppService buy = AppService(
-
         name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
-    List<AppService> services = [garages, records, trips, freelancers, clubs, parts];
+    List<AppService> services = [
+      garages,
+      records,
+      trips,
+      freelancers,
+      clubs,
+      parts
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Hello Kim"),
-        backgroundColor: const Color.fromRGBO(88,133,96, 1),
+        backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
         elevation: 1.0,
         leading: IconButton(
-            onPressed: ()=>ZoomDrawer.of(context)!.toggle(),
-            icon: Icon(Icons.menu, color: Colors.white,)),
+            onPressed: () => ZoomDrawer.of(context)!.toggle(),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            )),
       ),
       body: ListView(
         children: [
@@ -241,7 +290,6 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
                                             fit: BoxFit.fill),
                                       ),
                                     )),
-
                                     Padding(
                                         padding: EdgeInsets.all(10.0),
                                         child: Text(

@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/models/Part.dart';
 import 'package:uado/providers/cart_provider.dart';
@@ -35,6 +36,13 @@ class _PartsListState extends State<PartsList> {
         backgroundColor: const Color.fromRGBO(88,133,96, 1),
         elevation: 1.0,
         title: const Text("Buy parts", style: TextStyle(color: Colors.white),),
+
+        leading: IconButton(
+            onPressed: () => ZoomDrawer.of(context)!.toggle(),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            )),
         actions: [
           IconButton(
             icon: const Icon(
