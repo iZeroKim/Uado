@@ -19,6 +19,12 @@ class _GarageLocationsState extends State<GarageLocations> {
             center: LatLng(-1.292066, 36.821945),
             zoom: 10.0
           ),
+          layers: [
+            TileLayerOptions(
+              urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              subdomains: ['a', 'b', 'c'],
+            )
+          ],
         ),
 
       ],
