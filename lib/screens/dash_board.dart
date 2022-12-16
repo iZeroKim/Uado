@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/screens/clubs/club_list.dart';
 import 'package:uado/screens/garage/garage_list.dart';
 import 'package:uado/screens/parts/parts_list.dart';
+import 'package:uado/screens/profile/profile.dart';
 import 'package:uado/screens/services/services.dart';
 
 import '../models/AppService.dart';
@@ -25,8 +27,10 @@ class _DashBoardState extends State<DashBoard> {
     Widget getScreen(){
       Widget screen = DashBoardInfo();
       switch(currentItem){
+        case MenuItems.buyparts:
+          return PartsList();
         case MenuItems.profile:
-          screen = PartsList();
+          return Profile();
       }
       return screen;
     }
@@ -61,9 +65,11 @@ class _DashBoardState extends State<DashBoard> {
 
 class MenuItems {
   static const home = App.MenuItem("Home", Icons.home);
-  static const profile = App.MenuItem("Buy parts", Icons.add_shopping_cart_rounded);
+  static const buyparts = App.MenuItem("Buy parts", Icons.add_shopping_cart_rounded);
+  static const cars = App.MenuItem("My cars", Icons.car_repair_outlined);
+  static const profile = App.MenuItem("Profile", Icons.account_box_rounded);
 
-  static const all = <App.MenuItem>[home, profile];
+  static const all = <App.MenuItem>[home,buyparts, cars ,profile];
 }
 
 class MenuPage extends StatelessWidget {
@@ -80,8 +86,37 @@ class MenuPage extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(88, 133, 96, 0.0),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 80, bottom: 20, left: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CircleAvatar(
+                    radius: 55,
+
+                    backgroundImage:
+                    AssetImage("assets/images/avatar.jpg"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top:20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text("John Doe",
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 19)),
+                        Text("Johndoe@email.com",
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 16)),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
             Expanded(
                 child: ListView.builder(
                     itemCount: MenuItems.all.length,
@@ -91,7 +126,7 @@ class MenuPage extends StatelessWidget {
                         selected: currentItem == item,
                         selectedTileColor: Colors.black26,
                         selectedColor: Colors.white,
-                        minLeadingWidth: 20,
+                        minLeadingWidth: 30,
                         leading: Icon(
                           item.icon,
                           color: Colors.white,
@@ -103,8 +138,75 @@ class MenuPage extends StatelessWidget {
                         onTap: () => onSelectedItem(item),
                       );
                     })),
-            Spacer(
-              flex: 2,
+            Spacer(),
+            InkWell(
+              onTap: (){
+                print("Logout");
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Expanded(
+                      child: AlertDialog(
+                        title: Text('My Car App'),
+                        content: Text('Logout?'),
+                        actions: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('NO'),
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white, backgroundColor: Colors.green, // foreground
+                              )
+
+                          ),
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => InitialLoginPage()), (Route<dynamic> route) => false);
+                              },
+                              child: Text('YES'),
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white, backgroundColor: Colors.red, // foreground
+                              )
+
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+
+
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(bottom:70.0, left:10.0),
+                child: Card(
+                  color: Color.fromRGBO(222, 216, 154, 1),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.logout,
+                            color: Color.fromRGBO(88,133,96, 1),
+                            size: 28,
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "Logout",
+                            style: TextStyle(
+                                color: Color.fromRGBO(88,133,96, 1),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             )
           ],
         ),

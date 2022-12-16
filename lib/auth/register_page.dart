@@ -174,6 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     shape: const StadiumBorder(),
                     child: InkWell(
                       onTap: () {
+
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => const At4Page()));
                       },

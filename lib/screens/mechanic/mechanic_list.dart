@@ -325,7 +325,7 @@ class _MechanicListState extends State<MechanicList> {
         stickyFooterHeight: 50,
       ),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: GFColors.SUCCESS,
+          backgroundColor: Color.fromRGBO(88,133,96, 1),
           child: _controller.isBottomSheetOpened
               ? const Icon(Icons.keyboard_arrow_down, color: Colors.white)
               : const Icon(

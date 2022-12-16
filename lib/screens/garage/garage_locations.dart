@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong/latlong.dart';
+import 'package:latlong2/latlong.dart';
 
 class GarageLocations extends StatefulWidget {
   const GarageLocations({Key? key}) : super(key: key);
@@ -12,22 +12,24 @@ class GarageLocations extends StatefulWidget {
 class _GarageLocationsState extends State<GarageLocations> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        FlutterMap(
-          options: MapOptions(
-            center: LatLng(-1.292066, 36.821945),
-            zoom: 10.0
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+    backgroundColor: const Color.fromRGBO(88,133,96, 1),
+    elevation: 1.0,
+    title: const Text("Garage Locations"),
+    ),
+      body: Stack(
+        children: [
+          FlutterMap(
+            options: MapOptions(
+              center: LatLng(-1.292066, 36.821945),
+              zoom: 10.0
+            ),
           ),
-          layers: [
-            TileLayerOptions(
-              urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-              subdomains: ['a', 'b', 'c'],
-            )
-          ],
-        ),
 
-      ],
+        ],
+      ),
     );
   }
 }

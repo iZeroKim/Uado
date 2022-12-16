@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/screens/garage/add_garage.dart';
 import 'package:uado/screens/garage/garage_details.dart';
+import 'package:uado/screens/garage/garage_locations.dart';
 
 class GarageList extends StatefulWidget {
   const GarageList({Key? key}) : super(key: key);
@@ -95,16 +96,7 @@ class _GarageListState extends State<GarageList> {
                       ),
                       InkWell(
                         onTap: () {
-                          showModalBottomSheet<void>(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return const SizedBox(
-                                child: Center(
-                                  child: Text("Show nearest items"),
-                                ),
-                              );
-                            },
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>GarageLocations()));
                         },
                         child: Card(
                           color: Colors.white,
