@@ -11,9 +11,16 @@ class Car {
   final String colour;
   final bool accidents;
   final Insurance insurance;
+  final int? doors;
+  final  int? seatingCapacity;
+  final int? engineCapacity;
+  final bool? powerSteering;
+  final bool? powerWindows;
+  final bool? workingAC;
+  final String? about;
 
 
-  Car(
+  Car(this.doors, this.seatingCapacity, this.engineCapacity, this.powerSteering, this.powerWindows, this.workingAC, this.about,
       {required this.regNumber,
       required this.make,
       required this.model,

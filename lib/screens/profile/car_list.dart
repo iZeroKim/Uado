@@ -24,17 +24,28 @@ class _CarListState extends State<CarList> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
-        appBar: AppBar(
-          title: const Text("My Cars"),
-          backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
-          elevation: 1.0,
-          leading: IconButton(
-              onPressed: () => ZoomDrawer.of(context)!.toggle(),
-              icon: Icon(
-                Icons.menu,
+      appBar: AppBar(
+        title: const Text("My Cars"),
+        backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
+        elevation: 1.0,
+        leading: IconButton(
+            onPressed: () => ZoomDrawer.of(context)!.toggle(),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            )),
+        actions: [
+          IconButton(
+              icon: const Icon(
+                Icons.add_circle_outline_rounded,
                 color: Colors.white,
-              )),
-        ),
+                size: 30,
+              ),
+              padding: const EdgeInsets.only(right: 15.0),
+              tooltip: 'Add Car',
+              onPressed: () {})
+        ],
+      ),
       body: SafeArea(
         child: Padding(
             padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 10.0),
@@ -44,7 +55,6 @@ class _CarListState extends State<CarList> {
                 SizedBox(
                   height: 10.0,
                 ),
-
                 CarListView()
               ],
             )),
@@ -57,7 +67,6 @@ class CarListView extends StatelessWidget {
   const CarListView({
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +82,7 @@ class CarListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 var club = value.clubs[index];
                 return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
                   child: Card(
                     elevation: 6.0,
                     child: InkWell(
@@ -86,7 +94,7 @@ class CarListView extends StatelessWidget {
                         child: Column(
                           children: [
                             Row(
-                              mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(left: 20.0),
@@ -94,51 +102,57 @@ class CarListView extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 5.0),
-                                    child: SizedBox(
-                                      height: 45,
-                                      width: 45,
-                                      child: Image(
-                                                    image: AssetImage(club.logo),
-                                                    fit: BoxFit.fill,
-                                                  ),
-                                    ),
-                                  ),
-                                      const SizedBox(height: 10.0,),
-
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 5.0),
+                                        padding:
+                                            const EdgeInsets.only(left: 5.0),
+                                        child: SizedBox(
+                                          height: 45,
+                                          width: 45,
+                                          child: Image(
+                                            image: AssetImage(club.logo),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 5.0),
                                         child: Text(
                                           club.name.toUpperCase(),
                                           style: const TextStyle(
-                                              fontWeight:
-                                                  FontWeight.bold, fontSize: 30),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 30),
                                         ),
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          print(" Join club");
+                                          print(" View Car");
                                         },
                                         child: Card(
                                           color: Colors.white,
                                           shape: const StadiumBorder(
                                             side: BorderSide(
-                                              color: Color.fromRGBO(88,133,96, 1),
+                                              color: Color.fromRGBO(
+                                                  88, 133, 96, 1),
                                             ),
                                           ),
                                           child: Center(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(3.0),
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
                                               child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: const [
                                                   SizedBox(width: 20),
                                                   Text(
-                                                    "JOIN CLUB",
+                                                    "VIEW CAR",
                                                     style: TextStyle(
-                                                        color:
-                                                        Color.fromRGBO(88,133,96, 1),
+                                                        color: Color.fromRGBO(
+                                                            88, 133, 96, 1),
                                                         fontSize: 18),
                                                   ),
                                                   SizedBox(width: 20),
@@ -148,7 +162,6 @@ class CarListView extends StatelessWidget {
                                           ),
                                         ),
                                       )
-
                                     ],
                                   ),
                                 ),
