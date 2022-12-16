@@ -263,7 +263,6 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
       trips,
       freelancers,
       clubs,
-      parts
     ];
     return Scaffold(
       backgroundColor: Colors.white,
