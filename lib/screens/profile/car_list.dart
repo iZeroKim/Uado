@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:provider/provider.dart';
 import 'package:uado/providers/clubs_provider.dart';
 
-class ClubList extends StatefulWidget {
-  const ClubList({Key? key}) : super(key: key);
+class CarList extends StatefulWidget {
+  const CarList({Key? key}) : super(key: key);
 
   @override
-  State<ClubList> createState() => _ClubListState();
+  State<CarList> createState() => _CarListState();
 }
 
-class _ClubListState extends State<ClubList> {
+class _CarListState extends State<CarList> {
   @override
   void initState() {
     super.initState();
@@ -23,25 +24,17 @@ class _ClubListState extends State<ClubList> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(88,133,96, 1),
-        elevation: 1.0,
-        title: const Text("Car Clubs", style: TextStyle(color: Colors.white),),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-              size: 30,
-            ),
-            padding: const EdgeInsets.only(right: 15.0),
-            tooltip: 'Search for club',
-            onPressed: () {
-              // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AddClub()));
-            },
-          ),
-        ],
-      ),
+        appBar: AppBar(
+          title: const Text("My Cars"),
+          backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
+          elevation: 1.0,
+          leading: IconButton(
+              onPressed: () => ZoomDrawer.of(context)!.toggle(),
+              icon: Icon(
+                Icons.menu,
+                color: Colors.white,
+              )),
+        ),
       body: SafeArea(
         child: Padding(
             padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 10.0),
@@ -52,7 +45,7 @@ class _ClubListState extends State<ClubList> {
                   height: 10.0,
                 ),
 
-                ClubListView()
+                CarListView()
               ],
             )),
       ),
@@ -60,8 +53,8 @@ class _ClubListState extends State<ClubList> {
   }
 }
 
-class ClubListView extends StatelessWidget {
-  const ClubListView({
+class CarListView extends StatelessWidget {
+  const CarListView({
     Key? key,
   }) : super(key: key);
 

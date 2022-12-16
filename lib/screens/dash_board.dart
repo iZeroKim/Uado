@@ -4,6 +4,7 @@ import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/screens/clubs/club_list.dart';
 import 'package:uado/screens/garage/garage_list.dart';
 import 'package:uado/screens/parts/parts_list.dart';
+import 'package:uado/screens/profile/car_list.dart';
 import 'package:uado/screens/profile/profile.dart';
 import 'package:uado/screens/services/services.dart';
 
@@ -31,6 +32,8 @@ class _DashBoardState extends State<DashBoard> {
           return PartsList();
         case MenuItems.profile:
           return Profile();
+        case MenuItems.cars:
+          return CarList();
       }
       return screen;
     }

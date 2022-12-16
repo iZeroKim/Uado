@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Profile extends StatefulWidget {
@@ -27,11 +28,17 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(88,133,96, 1),
-        elevation: 1.0,
-        title: const Text("Profile"),
-      ),
+        appBar: AppBar(
+          title: const Text("My Profile"),
+          backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
+          elevation: 1.0,
+          leading: IconButton(
+              onPressed: () => ZoomDrawer.of(context)!.toggle(),
+              icon: Icon(
+                Icons.menu,
+                color: Colors.white,
+              )),
+        ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(0.0),
