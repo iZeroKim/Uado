@@ -1,6 +1,7 @@
 import 'Insurance.dart';
 
 class Car {
+  final List<String>? images;
   final String regNumber;
   final String make;
   final String model;
@@ -20,7 +21,7 @@ class Car {
   final String? about;
 
 
-  Car(this.doors, this.seatingCapacity, this.engineCapacity, this.powerSteering, this.powerWindows, this.workingAC, this.about,
+  Car(this.doors, this.seatingCapacity, this.engineCapacity, this.powerSteering, this.powerWindows, this.workingAC, this.about, this.images,
       {required this.regNumber,
       required this.make,
       required this.model,
