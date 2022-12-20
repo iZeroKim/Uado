@@ -559,8 +559,7 @@ class GarageListView extends StatelessWidget {
                                   children: const [
                                     Icon(Icons.mail,
                                         size: 28,
-                                        color: Color.fromRGBO(
-                                            78, 199, 50, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                     Text(" Message"),
                                   ],
                                 ),
@@ -594,8 +593,7 @@ class GarageListView extends StatelessWidget {
                                   children: const [
                                     Icon(Icons.call,
                                         size: 28,
-                                        color: Color.fromRGBO(
-                                            78, 199, 50, 1)),
+                                        color: Color.fromRGBO(88,133,96, 1)),
                                     Text(" Call"),
                                   ],
                                 ),

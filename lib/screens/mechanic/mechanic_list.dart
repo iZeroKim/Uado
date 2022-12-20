@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:provider/provider.dart';
-import 'package:uado/models/Mechanic.dart';
 import 'package:uado/providers/mechanic_provider.dart';
+import 'package:uado/screens/mechanic/add_mechanic.dart';
 
 import 'mechanic_details.dart';
 
@@ -52,23 +52,23 @@ class _MechanicListState extends State<MechanicList> {
                 print("Add mechanic");
 
                 print(value.mechanics.length);
-                WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                  Provider.of<MechanicProvider>(context, listen: false).addMechanic(
-                      Mechanic(["Wheel balancing", "Painting"], "Mechanic1@fb.com",
-                          "Mechanic1@tw.com", "Mechanic1@li.com",
-                          mechanicId: "mch1",
-                          name: "Added Mechanic",
-                          mobile: "+254701606010",
-                          gender: "Female",
-                          address: "123 Abc place",
-                          open: "08:00 am",
-                          close: "05:00 pm")
-                  );
-                });
+                // WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                //   Provider.of<MechanicProvider>(context, listen: false).addMechanic(
+                //       Mechanic(["Wheel balancing", "Painting"], "Mechanic1@fb.com",
+                //           "Mechanic1@tw.com", "Mechanic1@li.com",
+                //           mechanicId: "mch1",
+                //           name: "Added Mechanic",
+                //           mobile: "+254701606010",
+                //           gender: "Female",
+                //           address: "123 Abc place",
+                //           open: "08:00 am",
+                //           close: "05:00 pm")
+                //   );
+                // });
 
 
-                // Navigator.of(context).push(
-                //     MaterialPageRoute(builder: (context) => const AddMechanic()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const AddMechanic()));
               },
             );
           }),

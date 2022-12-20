@@ -27,30 +27,6 @@ class _GarageMechanicsState extends State<GarageMechanics> {
               //Convert to a dynamically generated list
               Card(
                 child: Container(
-                  height: 70,
-                  child: const GFListTile(
-                      avatar: CircleAvatar(
-                        minRadius: 20,
-                        backgroundImage: AssetImage("assets/images/avatar.jpg"),
-                      ),
-                      titleText: 'John Doe',
-                      subTitleText: '45 repair tasks'),
-                ),
-              ),
-              Card(
-                child: Container(
-                  height: 70,
-                  child: const GFListTile(
-                      avatar: CircleAvatar(
-                        minRadius: 20,
-                        backgroundImage: AssetImage("assets/images/avatar.jpg"),
-                      ),
-                      titleText: 'John Doe',
-                      subTitleText: '45 repair tasks'),
-                ),
-              ),
-              Card(
-                child: Container(
                   height: 80,
                   child: const GFListTile(
                       avatar: CircleAvatar(

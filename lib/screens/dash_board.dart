@@ -7,6 +7,7 @@ import 'package:uado/screens/parts/parts_list.dart';
 import 'package:uado/screens/profile/car_list.dart';
 import 'package:uado/screens/profile/profile.dart';
 import 'package:uado/screens/services/services.dart';
+import 'package:uado/screens/settings/Settings.dart';
 
 import '../models/AppService.dart';
 import '../models/navigation/MenuItem.dart' as App;
@@ -26,14 +27,16 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     Widget getScreen(){
-      Widget screen = DashBoardInfo();
+      Widget screen = const DashBoardInfo();
       switch(currentItem){
         case MenuItems.buyparts:
-          return PartsList();
+          return const PartsList();
         case MenuItems.profile:
-          return Profile();
+          return const Profile();
         case MenuItems.cars:
-          return CarList();
+          return const CarList();
+        case MenuItems.settings:
+          return const Settings();
       }
       return screen;
     }
@@ -71,8 +74,9 @@ class MenuItems {
   static const buyparts = App.MenuItem("Buy parts", Icons.add_shopping_cart_rounded);
   static const cars = App.MenuItem("My cars", Icons.car_repair_outlined);
   static const profile = App.MenuItem("Profile", Icons.account_box_rounded);
+  static const settings = App.MenuItem("Settings", Icons.settings);
 
-  static const all = <App.MenuItem>[home,buyparts, cars ,profile];
+  static const all = <App.MenuItem>[home,buyparts, cars ,profile, settings];
 }
 
 class MenuPage extends StatelessWidget {
@@ -136,12 +140,12 @@ class MenuPage extends StatelessWidget {
                         ),
                         title: Text(
                           item.title,
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                         onTap: () => onSelectedItem(item),
                       );
                     })),
-            Spacer(),
+            const SizedBox(height: 30.0,),
             InkWell(
               onTap: (){
                 print("Logout");
@@ -150,14 +154,14 @@ class MenuPage extends StatelessWidget {
                   builder: (BuildContext context) {
                     return Expanded(
                       child: AlertDialog(
-                        title: Text('My Car App'),
-                        content: Text('Logout?'),
+                        title: const Text('My Car App'),
+                        content: const Text('Logout?'),
                         actions: [
                           ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: Text('NO'),
+                            child: const Text('NO'),
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white, backgroundColor: Colors.green, // foreground
                               )
@@ -165,9 +169,9 @@ class MenuPage extends StatelessWidget {
                           ),
                           ElevatedButton(
                               onPressed: () {
-                                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => InitialLoginPage()), (Route<dynamic> route) => false);
+                                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const InitialLoginPage()), (Route<dynamic> route) => false);
                               },
-                              child: Text('YES'),
+                              child: const Text('YES'),
                               style: ElevatedButton.styleFrom(
                                 foregroundColor: Colors.white, backgroundColor: Colors.red, // foreground
                               )
@@ -184,7 +188,7 @@ class MenuPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(bottom:70.0, left:10.0),
                 child: Card(
-                  color: Color.fromRGBO(222, 216, 154, 1),
+                  color: const Color.fromRGBO(222, 216, 154, 1),
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -231,29 +235,29 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
     AppService garages = AppService(
         name: "Garages",
         imagePath: "assets/images/garage.jpg",
-        link: GarageList());
+        link: const GarageList());
     AppService records = AppService(
         name: "Service records",
         imagePath: "assets/images/repairs.jpg",
-        link: Services());
+        link: const Services());
     AppService freelancers = AppService(
         name: "Freelance Mechanics",
         imagePath: "assets/images/onemechanic.jfif",
-        link: MechanicList());
+        link: const MechanicList());
     AppService chat =
         AppService(name: "Chat", imagePath: "assets/images/mechanic.png");
     AppService trips = AppService(
-        name: "Trips", imagePath: "assets/images/trip.jpg", link: Trips());
+        name: "Trips", imagePath: "assets/images/trip.jpg", link: const Trips());
     AppService insurance =
         AppService(name: "Insurance", imagePath: "assets/images/car.jpg");
     AppService parts = AppService(
         name: "Buy part",
         imagePath: "assets/images/mechanic.png",
-        link: PartsList());
+        link: const PartsList());
     AppService clubs = AppService(
         name: "Join car club",
         imagePath: "assets/images/clubs.png",
-        link: ClubList());
+        link: const ClubList());
     AppService buy = AppService(
         name: "Buy/Sell car", imagePath: "assets/images/mechanic.png");
 
@@ -272,7 +276,7 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
         elevation: 1.0,
         leading: IconButton(
             onPressed: () => ZoomDrawer.of(context)!.toggle(),
-            icon: Icon(
+            icon: const Icon(
               Icons.menu,
               color: Colors.white,
             )),
@@ -358,7 +362,7 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
                   GridView.builder(
                     itemCount: services.length,
                     shrinkWrap: true,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 10.0 / 10.0,
@@ -395,7 +399,7 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
                                       ),
                                     )),
                                     Padding(
-                                        padding: EdgeInsets.all(10.0),
+                                        padding: const EdgeInsets.all(10.0),
                                         child: Text(
                                           service.name,
                                         )),
