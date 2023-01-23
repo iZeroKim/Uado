@@ -20,12 +20,10 @@ dependencies:
   flutter_datetime_picker: ^1.5.1
   flutter_dash: ^1.0.0
   url_launcher:
-  google_maps_flutter:
 #  flutter_osm_plugin: ^0.42.0
   shared_preferences: ^2.0.15
   badges: ^2.0.3
   flutter_zoom_drawer: ^3.0.3
-  flutter_map: ^3.0.0
   geocoder2: ^1.4.0
   latlong2: ^0.8.1
   async: ^2.1.0

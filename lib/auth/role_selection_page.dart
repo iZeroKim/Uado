@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uado/auth/login_initial_page.dart';
 
 class RoleSelectionPage extends StatefulWidget {
@@ -63,7 +64,11 @@ class _RoleSelectionPageState extends State<RoleSelectionPage> {
                 color: Color.fromRGBO(88,133,96, 1),
                 shape: StadiumBorder(),
                 child: InkWell(
-                  onTap: () {
+                  onTap: () async {
+
+                    SharedPreferences.setMockInitialValues({});
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setString("role", "user");
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => InitialLoginPage()));
                   },
@@ -88,7 +93,10 @@ class _RoleSelectionPageState extends State<RoleSelectionPage> {
                 color: Color.fromRGBO(88,133,96, 1),
                 shape: StadiumBorder(),
                 child: InkWell(
-                  onTap: () {
+                  onTap: () async {
+                    SharedPreferences.setMockInitialValues({});
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setString("role", "mechanic");
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => InitialLoginPage()));
                   },
@@ -113,7 +121,11 @@ class _RoleSelectionPageState extends State<RoleSelectionPage> {
                 color: Color.fromRGBO(88,133,96, 1),
                 shape: StadiumBorder(),
                 child: InkWell(
-                  onTap: () {
+                  onTap: () async {
+
+                    SharedPreferences.setMockInitialValues({});
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setString("role", "vendor");
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => InitialLoginPage()));
                   },

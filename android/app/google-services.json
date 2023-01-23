@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "66180605879",
+    "project_id": "uado-8ba0a",
+    "storage_bucket": "uado-8ba0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66180605879:android:ed85e1c3bb6a3138312a32",
+        "android_client_info": {
+          "package_name": "com.example.uado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66180605879-pkd5786r2rtqhc1nttp1694gquveje6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBnzrS8KOO2fsCtY_xLmwKVD1WHKReyBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66180605879-pkd5786r2rtqhc1nttp1694gquveje6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
