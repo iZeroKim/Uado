@@ -16,6 +16,11 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        foregroundColor: Color.fromRGBO(88,133,96, 1),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(30.0),
@@ -51,6 +56,7 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                 height: 20.0,
               ),
               //Row to hold facebook and google buttons
+
               Column(
                 children: [
                   Card(
@@ -87,6 +93,47 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                           )),
                     ),
                   ),
+
+                  // Card(
+                  //   color: Color.fromRGBO(88,133,96, 1),
+                  //   shape: StadiumBorder(),
+                  //   child: InkWell(
+                  //     onTap: () {
+                  //       Navigator.of(context).push(MaterialPageRoute(
+                  //           builder: (context) => InitialLoginPage()));
+                  //     },
+                  //     child: Container(
+                  //       width: double.infinity,
+                  //       padding: EdgeInsets.all(10.0),
+                  //       child: Center(
+                  //           child:Row(
+                  //             mainAxisAlignment: MainAxisAlignment.center,
+                  //             crossAxisAlignment: CrossAxisAlignment.center,
+                  //             children: const [
+                  //               Text("f ",
+                  //                   style: TextStyle(
+                  //                       color: Colors.white,
+                  //                       fontSize: 20,
+                  //                       fontWeight: FontWeight.w900)),
+                  //               Text(
+                  //                 "Sign in with",
+                  //                 style: TextStyle(
+                  //                     color: Colors.white,
+                  //                     fontSize: 16,
+                  //                     fontWeight: FontWeight.w500),
+                  //               ),
+                  //               Text(
+                  //             "Facebook",
+                  //             style: TextStyle(
+                  //                 color: Colors.white,
+                  //                 fontSize: 16,
+                  //                 fontWeight: FontWeight.w700)),
+                  //             ],
+                  //           )
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(height: 10),
                   Card(
                     shape: StadiumBorder(),

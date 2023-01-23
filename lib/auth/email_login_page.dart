@@ -109,12 +109,12 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                         padding: EdgeInsets.all(10.0),
                         child: Center(
                             child: Text(
-                          "LOGIN",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500),
-                        )),
+                              "LOGIN",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            )),
                       ),
                     ),
                   ),

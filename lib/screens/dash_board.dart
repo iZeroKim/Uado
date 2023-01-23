@@ -155,7 +155,7 @@ class MenuPage extends StatelessWidget {
                     return Expanded(
                       child: AlertDialog(
                         title: const Text('My Car App'),
-                        content: const Text('Logout?'),
+                        content: const Text('Logout from app?'),
                         actions: [
                           ElevatedButton(
                             onPressed: () {
@@ -163,7 +163,7 @@ class MenuPage extends StatelessWidget {
                             },
                             child: const Text('NO'),
                               style: ElevatedButton.styleFrom(
-                                foregroundColor: Colors.white, backgroundColor: Colors.green, // foreground
+                                foregroundColor: Colors.white, backgroundColor: Colors.green.withOpacity(.7), // foreground
                               )
 
                           ),
@@ -173,7 +173,7 @@ class MenuPage extends StatelessWidget {
                               },
                               child: const Text('YES'),
                               style: ElevatedButton.styleFrom(
-                                foregroundColor: Colors.white, backgroundColor: Colors.red, // foreground
+                                foregroundColor: Colors.white, backgroundColor: Colors.red.withOpacity(.7), // foreground
                               )
 
                           ),
