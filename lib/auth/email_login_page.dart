@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uado/services/auth_services.dart';
 
 import '../screens/dash_board.dart';
 import 'register_page.dart';
@@ -11,6 +12,8 @@ class EmailLoginPage extends StatefulWidget {
 }
 
 class _EmailLoginPageState extends State<EmailLoginPage> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +22,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        foregroundColor: Colors.black,
+        foregroundColor: Color.fromRGBO(88,133,96, 1),
       ),
       body: SafeArea(
         child: Padding(
@@ -64,7 +67,8 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                     ),
                   ),
                   // Note: Same code is applied for the TextFormField as well
-                  const TextField(
+                  TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
@@ -83,8 +87,9 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  const TextField(
+                  TextField(
                     obscureText: true,
+                    controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
@@ -100,9 +105,21 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                     color: Color.fromRGBO(88,133,96, 1),
                     shape: StadiumBorder(),
                     child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DashBoard()));
+                      onTap: () async {
+                        final message = await AuthService().login(
+                          email: _emailController.text,
+                          password: _passwordController.text,
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(message!),
+                          ),
+                        );
+                        if (message!.contains('Success')) {
+                          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const DashBoard()), (Route<dynamic> route) => false);
+                        }
+
+
                       },
                       child: Container(
                         width: double.infinity,

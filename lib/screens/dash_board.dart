@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:uado/auth/login_initial_page.dart';
@@ -111,11 +112,11 @@ class MenuPage extends StatelessWidget {
                     padding: const EdgeInsets.only(top:20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text("John Doe",
+                      children: [
+                        Text("Hi, ${FirebaseAuth.instance.currentUser?.displayName}",
                             style: TextStyle(
-                                color: Colors.white, fontSize: 19)),
-                        Text("Johndoe@email.com",
+                                color: Colors.white, fontSize: 16)),
+                        Text(FirebaseAuth.instance.currentUser!.email!,
                             style: TextStyle(
                                 color: Colors.white, fontSize: 16)),
                       ],
@@ -271,7 +272,7 @@ class _DashBoardInfoState extends State<DashBoardInfo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Hello Kim"),
+        title: Text("Hello ${FirebaseAuth.instance.currentUser?.displayName}"),
         backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
         elevation: 1.0,
         leading: IconButton(

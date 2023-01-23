@@ -16,6 +16,7 @@ class AuthProvider extends ChangeNotifier {
   Future<bool> login(User user) async{
     bool result = false;
     if(_user != null && user == _user ){
+
       result = true;
       notifyListeners();
 

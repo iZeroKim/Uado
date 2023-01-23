@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uado/screens/onboarding/at4.dart';
+import 'package:uado/services/auth_services.dart';
 
 import 'login_initial_page.dart';
 
@@ -11,6 +12,10 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _firstNameController = TextEditingController();
+  TextEditingController _secondNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        foregroundColor: Colors.black,
+        foregroundColor: Color.fromRGBO(88,133,96, 1),
       ),
       body: SafeArea(
         child: Padding(
@@ -118,12 +123,33 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   //Or text
                   const Text(
-                    'USER NAME',
+                    'FIRST NAME',
                     style: TextStyle(color: Colors.grey, fontSize: 14),
                     textAlign: TextAlign.left,
                   ),
                   // Note: Same code is applied for the TextFormField as well
-                  const TextField(
+                  TextField(
+                    controller: _firstNameController,
+                    decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        //<-- SEE HERE
+                        borderSide: BorderSide(width: 1, color: Colors.grey),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+
+                  //Or text
+                  const Text(
+                    'SECOND NAME',
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    textAlign: TextAlign.left,
+                  ),
+                  // Note: Same code is applied for the TextFormField as well
+                  TextField(
+                    controller: _secondNameController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
@@ -140,7 +166,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     textAlign: TextAlign.left,
                   ),
                   // Note: Same code is applied for the TextFormField as well
-                  const TextField(
+                  TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
@@ -156,8 +183,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(color: Colors.grey),
                     textAlign: TextAlign.left,
                   ),
-                  const TextField(
+                  TextField(
                     obscureText: true,
+                    controller: _passwordController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
@@ -173,10 +201,22 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: const Color.fromRGBO(88,133,96, 1),
                     shape: const StadiumBorder(),
                     child: InkWell(
-                      onTap: () {
+                      onTap: () async {
+                        final message = await AuthService().registration(
+                          firstname: _firstNameController.text,
+                          lastname: _secondNameController.text,
+                          email: _emailController.text,
+                          password: _passwordController.text,
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(message!),
+                          ),
+                        );
+                        if (message!.contains('Success')) {
+                          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const At4Page()), (Route<dynamic> route) => false);
+                        }
 
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const At4Page()));
                       },
                       child: Container(
                         width: double.infinity,
