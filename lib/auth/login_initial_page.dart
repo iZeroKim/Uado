@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:uado/screens/dash_board.dart';
+import 'package:uado/services/auth_services.dart';
 
 import 'email_login_page.dart';
 import 'register_page.dart';
@@ -49,50 +51,19 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
               ),
 
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
-
+              Text(
+                "Sign in with",
+                style: TextStyle( color: Colors.black),
+              ),
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               //Row to hold facebook and google buttons
 
               Column(
                 children: [
-                  Card(
-                    shape: StadiumBorder(),
-                    color: Colors.blue,
-                    elevation: 10,
-                    child: InkWell(
-                      onTap: () {
-                        print("tapped");
-                      },
-                      child: Container(
-                          padding: EdgeInsets.all(5.0),
-                          width: double.infinity,
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                Text("f ",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 26,
-                                        fontWeight: FontWeight.w900)),
-                                Text(" Sign in with ",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 18)),
-                                Text(" Facebook ",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold)),
-                              ],
-                            ),
-                          )),
-                    ),
-                  ),
 
                   // Card(
                   //   color: Color.fromRGBO(88,133,96, 1),
@@ -140,8 +111,47 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                     color: Colors.red,
                     elevation: 10,
                     child: InkWell(
-                      onTap: () {
+                      onTap: () async {
                         print("tapped");
+
+                        showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (BuildContext context) {
+                            return Dialog(
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: new Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    new CircularProgressIndicator(
+                                      color: Color.fromRGBO(88,133,96, 1),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    new Text(
+                                        "Logging in..."),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+
+                        var user =
+                            await AuthService.signInWithGoogle(context: context);
+
+
+
+                        if (user != null) {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => DashBoard(),
+                            ),
+                          );
+                        }
+
                       },
                       child: Container(
                           alignment: Alignment.center,
@@ -150,20 +160,15 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text("G ",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w900)),
-                              Text(" Sign in with ",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 18)),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 3.0),
+                                child: Image.asset("assets/images/g.png", height: 15,width: 20,),
+                              ),
+                              SizedBox(width: 10,),
                               Text(" Google ",
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold)),
+                                      color: Colors.white,)),
                             ],
                           )),
                     ),
@@ -172,15 +177,15 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
               ),
               //Or text
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               const Text(
                 'or',
-                style: TextStyle(color: Colors.grey, fontSize: 18),
+                style: TextStyle(color: Colors.black),
                 textAlign: TextAlign.left,
               ),
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               //Email login button
               Card(
@@ -203,18 +208,14 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                         children: const [
                           Icon(
                             Icons.email,
-                            size: 28,
+                            size: 22,
                             color: Colors.white,
                           ),
-                          Text("  Sign in With ",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18)),
+                          SizedBox(width: 10,),
                           Text(
                             "Email",
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
+                                color: Colors.white,),
                           ),
                         ],
                       )),
@@ -222,21 +223,17 @@ class _InitialLoginPageState extends State<InitialLoginPage> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
                     'Don\'t have an account? ',
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    style: TextStyle(color: Colors.black, ),
                   ),
                   TextButton(
                     child: Text(
                       " Sign Up",
-                      style: TextStyle(
-                          fontSize: 18, color: Color.fromRGBO(88,133,96, 1)),
+                      style: TextStyle(color: Color.fromRGBO(88,133,96, 1)),
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(

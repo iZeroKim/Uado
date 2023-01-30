@@ -111,7 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     children: [
                       const Text(
                         'or',
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                        style: TextStyle(color: Colors.grey),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -122,15 +122,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
 
                   //Or text
-                  const Text(
-                    'FIRST NAME',
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
-                    textAlign: TextAlign.left,
-                  ),
+
                   // Note: Same code is applied for the TextFormField as well
                   TextField(
+
                     controller: _firstNameController,
                     decoration: InputDecoration(
+                      label:Text(
+                        'First name',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.left,
+                      ),
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
                         borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -142,15 +144,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
 
                   //Or text
-                  const Text(
-                    'SECOND NAME',
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
-                    textAlign: TextAlign.left,
-                  ),
-                  // Note: Same code is applied for the TextFormField as well
                   TextField(
                     controller: _secondNameController,
                     decoration: InputDecoration(
+                      label: Text(
+                        'Second name',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.left,
+                      ),
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
                         borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -160,15 +161,16 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const Text(
-                    'EMAIL',
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
-                    textAlign: TextAlign.left,
-                  ),
+
                   // Note: Same code is applied for the TextFormField as well
                   TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
+                      label:  Text(
+                        'Email',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.left,
+                      ),
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
                         borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -177,16 +179,16 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const SizedBox(
                     height: 20.0,
-                  ),
-                  const Text(
-                    'PASSWORD',
-                    style: TextStyle(color: Colors.grey),
-                    textAlign: TextAlign.left,
                   ),
                   TextField(
                     obscureText: true,
                     controller: _passwordController,
                     decoration: InputDecoration(
+                      label: Text(
+                        'Password',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.left,
+                      ),
                       enabledBorder: UnderlineInputBorder(
                         //<-- SEE HERE
                         borderSide: BorderSide(width: 1, color: Colors.grey),
@@ -223,10 +225,9 @@ class _RegisterPageState extends State<RegisterPage> {
                         height: 40.0,
                         child: const Center(
                             child: Text(
-                          "SIGN UP",
+                          "Sign up",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
                               fontWeight: FontWeight.w500),
                         )),
                       ),
@@ -240,14 +241,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     children: [
                       const Text(
                         'Already have an account?',
-                        style: TextStyle(color: Colors.black, fontSize: 18),
+                        style: TextStyle(color: Colors.black),
                         textAlign: TextAlign.left,
                       ),
                       TextButton(
                         child: const Text(
                           " Login",
                           style: TextStyle(
-                              fontSize: 18,
                               color: Color.fromRGBO(88,133,96, 1)),
                         ),
                         onPressed: () {

@@ -225,8 +225,7 @@ class MenuPage extends StatelessWidget {
 
 class DashBoardInfo extends StatefulWidget {
   const DashBoardInfo({Key? key}) : super(key: key);
-
-  @override
+ @override
   State<DashBoardInfo> createState() => _DashBoardInfoState();
 }
 
