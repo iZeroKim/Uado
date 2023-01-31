@@ -176,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           */
                         // Register simulation
                         final prefs = await SharedPreferences.getInstance();
-                        prefs.setBool('has_logged_in', true);
+                        prefs.setBool('is_registered', true);
                         final message = await AuthService().registration(
                           firstname: _firstNameController.text,
                           lastname: _secondNameController.text,
@@ -190,7 +190,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         );
                         if (message!.contains('Success')) {
                           final prefs = await SharedPreferences.getInstance();
-                          prefs.setBool('has_logged_in', true);
+                          prefs.setBool('is_registered', true);
                           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const At4Page()), (Route<dynamic> route) => false);
                         }
 

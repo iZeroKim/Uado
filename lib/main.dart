@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
 Future<bool> getRegisterStatus() async {
   final prefs = await SharedPreferences.getInstance();
   bool isRegistered = prefs.getBool('is_registered') ?? false;
+  print("Is registered $isRegistered");
   return isRegistered;
 }
 
