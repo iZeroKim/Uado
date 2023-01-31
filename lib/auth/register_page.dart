@@ -170,6 +170,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     shape: const StadiumBorder(),
                     child: InkWell(
                       onTap: () async {
+
+                        /**
+                         * TODO Remove
+                          */
+                        // Register simulation
+                        final prefs = await SharedPreferences.getInstance();
+                        prefs.setBool('has_logged_in', true);
                         final message = await AuthService().registration(
                           firstname: _firstNameController.text,
                           lastname: _secondNameController.text,
