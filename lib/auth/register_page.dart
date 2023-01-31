@@ -38,84 +38,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   // App logo
                   //Sign up with
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Sign up with',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
 
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  //Row to hold facebook and google buttons
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          shape: const StadiumBorder(),
-                          color: Colors.blue,
-                          elevation: 8,
-                          child: InkWell(
-                            onTap: () {
-                              print("tapped");
-                            },
-                            child: Container(
-                                width: 100.0,
-                                child: const Center(
-                                  child: Text("f",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.w900)),
-                                )),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                          child: Card(
-                        shape: const StadiumBorder(),
-                        color: Colors.white,
-                        elevation: 8,
-                        child: new InkWell(
-                          onTap: () {
-                            print("tapped");
-                          },
-                          child: Container(
-                              child: Center(
-                            child: Image.asset(
-                              'assets/images/google.png',
-                              width: 35.0,
-                              height: 35.0,
-                              fit: BoxFit.cover,
-                            ),
-                          )),
-                        ),
-                      )),
-                    ],
-                  ),
-                  //Or text
-                  const SizedBox(
-                    height: 20.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'or',
-                        style: TextStyle(color: Colors.grey),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
+
 
                   const SizedBox(
                     height: 20.0,
@@ -233,9 +157,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -256,7 +177,83 @@ class _RegisterPageState extends State<RegisterPage> {
                         },
                       ),
                     ],
-                  )
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'or',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'sign up with',
+                        style: TextStyle(
+                            color: Colors.grey,),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  //Row to hold facebook and google buttons
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Card(
+
+                          color: Colors.blue,
+                          elevation: 8,
+                          child: InkWell(
+                            onTap: () {
+                              print("tapped");
+                            },
+                            child: Container(
+                                child: const Center(
+                                  child: Text("f",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.w900)),
+                                )),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      Expanded(
+                          child: Card(
+                            color: Colors.white,
+                            elevation: 8,
+                            child: new InkWell(
+                              onTap: () {
+                                print("tapped");
+                              },
+                              child: Container(
+                                  child: Center(
+                                    child: Image.asset(
+                                      'assets/images/google.png',
+                                      width: 35.0,
+                                      height: 35.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  )),
+                            ),
+                          )),
+                    ],
+                  ),
+                  //Or text
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+
+
                   //Row/ Container for register link
                 ],
               )
