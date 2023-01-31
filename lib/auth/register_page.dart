@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uado/screens/onboarding/at4.dart';
 import 'package:uado/services/auth_services.dart';
 
@@ -39,10 +40,51 @@ class _RegisterPageState extends State<RegisterPage> {
                   // App logo
                   //Sign up with
 
-
-
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Register',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ],
+                  ),
                   const SizedBox(
                     height: 20.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Let\'s Get Started',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 5.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Create an account',
+                        style: TextStyle(
+                          color: Colors.grey,),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(
+                    height: 5.0,
                   ),
 
                   //Or text
@@ -140,6 +182,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                         );
                         if (message!.contains('Success')) {
+                          final prefs = await SharedPreferences.getInstance();
+                          prefs.setBool('has_logged_in', true);
                           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const At4Page()), (Route<dynamic> route) => false);
                         }
 

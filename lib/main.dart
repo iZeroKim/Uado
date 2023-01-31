@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uado/auth/login_initial_page.dart';
 import 'package:uado/auth/provider/auth_provider.dart';
 import 'package:uado/auth/register_page.dart';
 import 'package:uado/providers/cart_provider.dart';
@@ -10,6 +11,7 @@ import 'package:uado/providers/clubs_provider.dart';
 import 'package:uado/providers/garage_provider.dart';
 import 'package:uado/providers/mechanic_provider.dart';
 import 'package:uado/providers/trips_provider.dart';
+import 'package:uado/screens/dash_board.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +52,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        home: isRegistered ? (hasLoggedIn? HomeScreen() :LoginScreen()) :RegisterPage(),
+        home: isRegistered ? (hasLoggedIn? DashBoard() :InitialLoginPage()) :RegisterPage(),
         // home: const CarDetails(),
 
       ),
