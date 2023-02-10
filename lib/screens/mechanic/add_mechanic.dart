@@ -1,7 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:place_picker/entities/location_result.dart';
+import 'package:place_picker/widgets/place_picker.dart';
+import 'package:uado/screens/mechanic/pick_mechanic_location.dart';
 
 class AddMechanic extends StatefulWidget {
   const AddMechanic({Key? key}) : super(key: key);
@@ -281,7 +285,7 @@ class _AddMechanicState extends State<AddMechanic> {
                         const Text(
                           '121 avenue street, 23 block-20134',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.grey,
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -292,14 +296,20 @@ class _AddMechanicState extends State<AddMechanic> {
                           onTap: () {
                             print("Message");
                           },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: const [
-                              Icon(Icons.add_location_alt_outlined,
-                                  size: 28,
-                                  color: Color.fromRGBO(88,133,96, 1)),
-                              Text(" Add location on map"),
-                            ],
+                          child: InkWell(
+                            focusColor: Colors.grey[100],
+                            onTap: (){
+                              showPlacePicker(context, LatLng(-1.2602766270238068, 36.77713317698961), "AIzaSyB68BIJkMeQLuHc2eXW5UOVGnzIPKfs7Hg");
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: const [
+                                Icon(Icons.add_location_alt_outlined,
+                                    size: 28,
+                                    color: Color.fromRGBO(88,133,96, 1)),
+                                Text(" Add location on map"),
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -683,4 +693,15 @@ class _AddMechanicState extends State<AddMechanic> {
       ),
     );
   }
+}
+
+void showPlacePicker(BuildContext context, LatLng customLocation, String key) async {
+  LocationResult result = await Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) =>
+          PlacePicker(key,
+            displayLocation: customLocation,
+          )));
+
+  // Handle the result in your way
+  print(result);
 }

@@ -2,26 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 // import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
-class MechanicLocation extends StatefulWidget {
-  const MechanicLocation({Key? key}) : super(key: key);
+class PickMechanicLocation extends StatefulWidget {
+  const PickMechanicLocation({Key? key}) : super(key: key);
 
   @override
-  State<MechanicLocation> createState() => _MechanicLocationState();
+  State<PickMechanicLocation> createState() => _PickMechanicLocationState();
 }
 
-class _MechanicLocationState extends State<MechanicLocation> {
+class _PickMechanicLocationState extends State<PickMechanicLocation> {
   @override
   Widget build(BuildContext context) {
     late GoogleMapController mapController;
 
-    final LatLng _center = const LatLng(-1.2602766270238068, 36.77713317698961);
+    final LatLng _center = const LatLng(-1.296705, 36.806889);
     final marker = Marker(
       markerId: MarkerId("current"),
       position: LatLng(_center.latitude, _center.longitude),
       infoWindow: InfoWindow(
-        title: "Abc Place",
+        title: "You are here",
       ),
-      zIndex: 1000
     );
 
     void _onMapCreated(GoogleMapController controller) {
@@ -32,7 +31,7 @@ class _MechanicLocationState extends State<MechanicLocation> {
         appBar: AppBar(
           backgroundColor: const Color.fromRGBO(88, 133, 96, 1),
           elevation: 1.0,
-          title: const Text("Located at"),
+          title: const Text("Select mechanic location"),
         ),
         body: SafeArea(
             child: GoogleMap(
@@ -43,6 +42,7 @@ class _MechanicLocationState extends State<MechanicLocation> {
 
           ),
               markers: {marker},
+              mapType: MapType.normal,
         )));
   }
 }
