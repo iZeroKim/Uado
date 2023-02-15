@@ -281,8 +281,8 @@ class _MechanicListState extends State<MechanicList> {
                   padding: const EdgeInsets.all(6),
                   margin: const EdgeInsets.all(6),
                   type: GFCheckboxType.basic,
-                  activeBgColor: GFColors.SUCCESS,
-                  activeBorderColor: GFColors.SUCCESS,
+                  activeBgColor: Color.fromRGBO(88,133,96, 1),
+                  activeBorderColor: Color.fromRGBO(88,133,96, 1),
                   inactiveBorderColor: Colors.grey,
                 ),
               )
@@ -290,7 +290,7 @@ class _MechanicListState extends State<MechanicList> {
           ),
         ),
         stickyFooter: Container(
-          color: GFColors.SUCCESS,
+          color: Color.fromRGBO(88,133,96, 1),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

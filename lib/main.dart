@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,9 +52,21 @@ class MyApp extends StatelessWidget {
             foregroundColor: Colors.white,
           ),
         ),
+    //       return AnimatedSplashScreen(
+    //   splash: Image(image: AssetImage('assets/images/logo_png.png'),),
+    // duration: 3000,
+    // splashTransition: SplashTransition.rotationTransition,
+    // backgroundColor: primaryDarkColor,
+    // nextScreen: newInstall == null ? IntroScreens(): LoginScreen() );
 
-        home: isRegistered ? (hasLoggedIn? DashBoard() :InitialLoginPage()) :RegisterPage(),
-        // home: const CarDetails(),
+        home: AnimatedSplashScreen(
+          curve: Curves.easeIn,
+          splash: Image(image: AssetImage('assets/images/car.png'),height: 100, width: 100,),
+          duration: 1500,
+          splashTransition: SplashTransition.rotationTransition,
+          backgroundColor:Color.fromRGBO(88,133,96, 1),
+          nextScreen: isRegistered ? (hasLoggedIn? DashBoard() :InitialLoginPage()) :RegisterPage(),
+        )
 
       ),
     );
