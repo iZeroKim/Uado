@@ -17,6 +17,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _firstNameController = TextEditingController();
   TextEditingController _secondNameController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,6 +125,20 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
+                  TextField(
+                    controller: _phoneController,
+                    decoration: InputDecoration(
+                      label: Text(
+                        'Phone number',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.left,
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        //<-- SEE HERE
+                        borderSide: BorderSide(width: 1, color: Colors.grey),
+                      ),
+                    ),
+                  ),
                   const SizedBox(
                     height: 20.0,
                   ),
@@ -182,6 +197,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           lastname: _secondNameController.text,
                           email: _emailController.text,
                           password: _passwordController.text,
+                          phoneNumber: "+2547016009514"
                         );
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -229,76 +245,76 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'or',
-                        style: TextStyle(color: Colors.grey),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'sign up with',
-                        style: TextStyle(
-                            color: Colors.grey,),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(
-                    height: 15.0,
-                  ),
-                  //Row to hold facebook and google buttons
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-
-                          color: Colors.blue,
-                          elevation: 8,
-                          child: InkWell(
-                            onTap: () {
-                              print("tapped");
-                            },
-                            child: Container(
-                                child: const Center(
-                                  child: Text("f",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.w900)),
-                                )),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Expanded(
-                          child: Card(
-                            color: Colors.white,
-                            elevation: 8,
-                            child: new InkWell(
-                              onTap: () {
-                                print("tapped");
-                              },
-                              child: Container(
-                                  child: Center(
-                                    child: Image.asset(
-                                      'assets/images/google.png',
-                                      width: 35.0,
-                                      height: 35.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  )),
-                            ),
-                          )),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     const Text(
+                  //       'or',
+                  //       style: TextStyle(color: Colors.grey),
+                  //       textAlign: TextAlign.center,
+                  //     ),
+                  //   ],
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     const Text(
+                  //       'sign up with',
+                  //       style: TextStyle(
+                  //           color: Colors.grey,),
+                  //       textAlign: TextAlign.center,
+                  //     ),
+                  //   ],
+                  // ),
+                  //
+                  // const SizedBox(
+                  //   height: 15.0,
+                  // ),
+                  // //Row to hold facebook and google buttons
+                  // Row(
+                  //   children: [
+                  //     Expanded(
+                  //       child: Card(
+                  //
+                  //         color: Colors.blue,
+                  //         elevation: 8,
+                  //         child: InkWell(
+                  //           onTap: () {
+                  //             print("tapped");
+                  //           },
+                  //           child: Container(
+                  //               child: const Center(
+                  //                 child: Text("f",
+                  //                     style: TextStyle(
+                  //                         color: Colors.white,
+                  //                         fontSize: 32,
+                  //                         fontWeight: FontWeight.w900)),
+                  //               )),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     const SizedBox(width: 5),
+                  //     Expanded(
+                  //         child: Card(
+                  //           color: Colors.white,
+                  //           elevation: 8,
+                  //           child: new InkWell(
+                  //             onTap: () {
+                  //               print("tapped");
+                  //             },
+                  //             child: Container(
+                  //                 child: Center(
+                  //                   child: Image.asset(
+                  //                     'assets/images/google.png',
+                  //                     width: 35.0,
+                  //                     height: 35.0,
+                  //                     fit: BoxFit.cover,
+                  //                   ),
+                  //                 )),
+                  //           ),
+                  //         )),
+                  //   ],
+                  // ),
                   //Or text
                   const SizedBox(
                     height: 20.0,

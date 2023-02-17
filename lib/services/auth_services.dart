@@ -1,20 +1,44 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uado/models/User.dart';
 
 class AuthService {
-  Future<String?> registration({required String firstname, required String lastname, required String email, required String password,}) async {
+
+  Future<String?> registration({required String firstname, required String lastname, required String email, required String password, required String phoneNumber}) async {
     try {
 
       UserCredential result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
       var user = result.user;
-      user?.updateProfile(displayName: firstname );
+      user?.updateDisplayName(firstname+" "+lastname);
+      // Create user profile
+
+
+      Map<String, String> user_profile = {
+        "first_name":firstname,
+        "second_name":lastname,
+        "phone_number":phoneNumber,
+        "email":email,
+        "profile_pic_url":"https://example.com/${user?.uid}.png"
+      };
+      Map<String, Map> profile = {
+        "profile" : user_profile
+      };
+      if(user != null) {
+        FirebaseFirestore.instance.collection("users").doc(user.uid).set(profile)
+            .then((value) => print("Profile created"))
+            .catchError((error) => {
+              print('Error creating profile : $error')
+            });
+      }
+      print("user id: ${result.user?.uid}");
       return 'Success';
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        return 'The password provided is too weak.';
+        return 'The password provided is. too weak.';
       } else if (e.code == 'email-already-in-use') {
         return 'The account already exists for that email.';
       } else {
@@ -31,6 +55,8 @@ class AuthService {
         email: email,
         password: password,
       );
+      print("Logged in user id : ${FirebaseAuth.instance.currentUser?.uid}");
+      await getUserProfile();
       return 'Success';
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -43,6 +69,32 @@ class AuthService {
     } catch (e) {
       return e.toString();
     }
+  }
+
+  Future<AppUser?> getUserProfile() async {
+    AppUser? user;
+    DocumentReference docRef = FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser?.uid);
+
+
+    docRef.get().then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        var data = documentSnapshot.data() as Map<String, dynamic>;
+
+        user = AppUser(
+          email: data['profile']["email"] ?? "",
+          password:"",
+          phonenumber: data['profile']["phone_number"] ?? "",
+          firstname: data['profile']["first_name"] ?? "",
+          profilePicUrl: data['profile']["profile_pic_url"] ?? "",
+          lastname: data['profile']["last_name"] ?? "",
+        );
+      } else {
+        print('Document does not exist on the database');
+      }
+    }).catchError((error) {
+      print('Error getting document: $error');
+    });
+    return user;
   }
 
   static Future<User?> signInWithGoogle({required BuildContext context}) async {
