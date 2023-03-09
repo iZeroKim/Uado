@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
   final String loginRole;
   MyApp({required this.isRegistered, required this.hasLoggedIn, required this.loginRole});
 
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -65,7 +64,6 @@ class MyApp extends StatelessWidget {
         //   nextScreen: isRegistered ? (hasLoggedIn? DashBoard() :InitialLoginPage()) :RegisterPage(),
         // )
         home: RegisterPage(),
-
       ),
     );
   }

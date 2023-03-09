@@ -26,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        foregroundColor: Color.fromRGBO(88,133,96, 1),
+        foregroundColor: const Color.fromRGBO(88,133,96, 1),
       ),
       body: SafeArea(
         child: Padding(
@@ -43,8 +43,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         'Register',
                         style: TextStyle(
                           color: Colors.black,
@@ -59,8 +59,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         'Let\'s Get Started',
                         style: TextStyle(
                           color: Colors.black,
@@ -74,8 +74,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         'Create an account',
                         style: TextStyle(
                           color: Colors.grey,),
@@ -94,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   TextField(
 
                     controller: _firstNameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label:Text(
                         'First name',
                         style: TextStyle(color: Colors.grey),
@@ -113,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   //Or text
                   TextField(
                     controller: _secondNameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label: Text(
                         'Second name',
                         style: TextStyle(color: Colors.grey),
@@ -127,7 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   TextField(
                     controller: _phoneController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label: Text(
                         'Phone number',
                         style: TextStyle(color: Colors.grey),
@@ -146,7 +146,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   // Note: Same code is applied for the TextFormField as well
                   TextField(
                     controller: _emailController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label:  Text(
                         'Email',
                         style: TextStyle(color: Colors.grey),
@@ -164,7 +164,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   TextField(
                     obscureText: true,
                     controller: _passwordController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       label: Text(
                         'Password',
                         style: TextStyle(color: Colors.grey),
@@ -209,7 +209,6 @@ class _RegisterPageState extends State<RegisterPage> {
                           prefs.setBool('is_registered', true);
                           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const At4Page()), (Route<dynamic> route) => false);
                         }
-
                       },
                       child: Container(
                         width: double.infinity,
